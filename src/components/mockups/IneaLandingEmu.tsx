@@ -132,7 +132,7 @@ export function IneaLandingEmu() {
         </div>
 
         {/* Page */}
-        <div ref={scrollRef} data-lenis-prevent className="flex h-[380px] flex-col gap-5 overflow-y-auto px-5 py-5">
+        <div ref={scrollRef} data-lenis-prevent className="flex h-[380px] flex-col gap-5 overflow-y-auto overscroll-contain px-5 py-5">
           {/* Hero */}
           <div className="flex flex-col items-center gap-2 py-4 text-center">
             <p className="text-[11px] font-semibold uppercase tracking-[0.18em]" style={{ color: muted }}>

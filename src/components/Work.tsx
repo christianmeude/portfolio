@@ -75,11 +75,11 @@ export default function Work() {
     <section id="work" aria-labelledby="work-heading" className="section-pad">
       <div className="mx-auto w-full max-w-6xl px-5 sm:px-8">
         <p className="reveal text-sm font-semibold uppercase tracking-[0.2em] text-(--color-accent)">
-          Selected work
+          Work
         </p>
         <div className="reveal mt-3 flex flex-wrap items-end justify-between gap-4">
           <h2 id="work-heading" className="font-display text-4xl font-bold sm:text-5xl">
-            Proven in code
+            Projects with live code
           </h2>
           <div className="flex items-center gap-2 lg:hidden" role="group" aria-label="Carousel controls">
             <CarouselArrow direction="prev" onPress={() => slideTo(active - 1)} />
@@ -90,7 +90,7 @@ export default function Work() {
           ref={trackRef}
           role="region"
           aria-roledescription="carousel"
-          aria-label="Selected projects. Use left and right arrow keys to move between projects."
+          aria-label="Projects. Use left and right arrow keys to move between projects."
           tabIndex={0}
           onKeyDown={onTrackKeyDown}
           data-lenis-prevent

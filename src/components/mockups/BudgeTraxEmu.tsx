@@ -232,7 +232,7 @@ export function BudgeTraxEmu() {
     <PhoneFrame label="BudgeTrax budgeting app interactive preview — sample content" interactive>
       <div
         ref={frameRef}
-        className="flex h-[600px] flex-col [font-family:system-ui,sans-serif]"
+        className="flex h-[500px] flex-col [font-family:system-ui,sans-serif] sm:h-[540px]"
         style={{ background: BG, color: INK }}
       >
         <p aria-live="polite" className="sr-only">
@@ -254,7 +254,7 @@ export function BudgeTraxEmu() {
         </div>
 
         {/* Screen */}
-        <div ref={screenRef} data-lenis-prevent className="flex min-h-0 flex-1 flex-col gap-3 overflow-y-auto px-4 pb-4">
+        <div ref={screenRef} data-lenis-prevent className="flex min-h-0 flex-1 flex-col gap-3 overflow-y-auto overscroll-contain px-4 pb-4">
           <h3 ref={titleRef} tabIndex={-1} className="sr-only">
             {VIEW_TITLES[key]}
           </h3>

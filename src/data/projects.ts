@@ -36,10 +36,10 @@ export const PROJECTS: Project[] = [
   {
     slug: 'nucleus-mobile',
     title: 'Nucleus Mobile Capstone',
-    tagline: 'Research repository app for NU-Dasmariñas students and faculty',
+    tagline: 'Research app for NU-Dasmariñas',
     stack: ['Expo', 'React Native', 'Supabase'],
     outcome:
-      'Shipped: provisioned sign-in, paper discovery, submissions with drafts, and faculty review queues on Supabase.',
+      'Shipped with sign-in, paper discovery, drafts, and faculty reviews on Supabase.',
     status: 'shipped',
     links: [
       {
@@ -51,26 +51,26 @@ export const PROJECTS: Project[] = [
   {
     slug: 'inea-scents',
     title: 'Inea Scents System',
-    tagline: 'One product, three surfaces — landing, app, and admin',
+    tagline: 'Scent-bar bookings for events',
     stack: ['Landing', 'Flutter App', 'Laravel + Inertia Admin'],
     outcome:
-      'Landing, Flutter client, and Laravel admin — one coherent system, end to end.',
+      'Landing, Flutter app, and Laravel admin — shipped end to end.',
     status: 'shipped',
     links: [],
     parts: [
       {
         label: 'Landing',
-        detail: 'Marketing site for brand + conversion',
+        detail: 'Brand and inquiry site',
         url: gh('https://github.com/christianmeude/inea-scents-landing.git'),
       },
       {
         label: 'Flutter App',
-        detail: 'Customer-facing mobile experience',
+        detail: 'Customer booking app',
         url: gh('https://github.com/christianmeude/inea-scents-client.git'),
       },
       {
         label: 'Admin',
-        detail: 'Laravel + Inertia (Vue) admin — bookings queue, packages, inquiries; polling, no realtime',
+        detail: 'Bookings, packages, inquiries. Polling, no realtime',
         url: gh('https://github.com/christianmeude/inea-scents.git'),
       },
     ],
@@ -78,10 +78,10 @@ export const PROJECTS: Project[] = [
   {
     slug: 'budgetrax',
     title: 'BudgeTrax',
-    tagline: 'Pay-cutoff budgeting tracker — in active development',
+    tagline: 'Pay-cutoff budgeting tracker',
     stack: ['Expo', 'React Native', 'expo-router'],
     outcome:
-      'In progress: cutoff salary allotments, bill payoff tracking, and a to-spare running balance.',
+      'Cutoff allotments, bill payoff, and a to-spare balance.',
     status: 'wip',
     links: [
       {
@@ -93,10 +93,10 @@ export const PROJECTS: Project[] = [
   {
     slug: 'lalatracker',
     title: 'Lalatracker',
-    tagline: 'Outcome-focused tracking concept',
+    tagline: 'Outcome-based tracking concept',
     stack: ['Product Design', 'Prototype'],
     outcome:
-      'No public repo — tracking model and success metrics, defined without code.',
+      'Tracking model and metrics, no code yet.',
     status: 'text-only',
     links: [],
   },

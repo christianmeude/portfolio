@@ -217,7 +217,7 @@ export function NucleusEmu() {
     <PhoneFrame label="NUcleus research app interactive preview — sample content" interactive>
       <div
         ref={frameRef}
-        className={`flex h-[600px] flex-col [font-family:Inter,system-ui,sans-serif] ${dark ? 'bg-[#0A1226]' : 'bg-[#F1F4FA]'}`}
+        className={`flex h-[500px] flex-col [font-family:Inter,system-ui,sans-serif] sm:h-[540px] ${dark ? 'bg-[#0A1226]' : 'bg-[#F1F4FA]'}`}
       >
         <p aria-live="polite" className="sr-only">
           {VIEW_TITLES[key]}
@@ -235,7 +235,7 @@ export function NucleusEmu() {
         </div>
 
         {/* Screen */}
-        <div ref={screenRef} data-lenis-prevent className="flex min-h-0 flex-1 flex-col gap-2.5 overflow-y-auto px-4 pb-3">
+        <div ref={screenRef} data-lenis-prevent className="flex min-h-0 flex-1 flex-col gap-2.5 overflow-y-auto overscroll-contain px-4 pb-3">
           <h3 ref={titleRef} tabIndex={-1} className="sr-only">
             {VIEW_TITLES[key]}
           </h3>

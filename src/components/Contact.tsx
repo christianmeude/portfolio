@@ -34,7 +34,7 @@ export default function Contact() {
           Let&apos;s build something calm.
         </h2>
         <p className="reveal mt-3 max-w-xl text-(--color-muted-foreground)">
-          Open to roles, freelance, and collaboration. Email is fastest.
+          Open to roles and freelance. Email is fastest.
         </p>
         <div className="reveal mt-8 flex flex-wrap gap-3">
           <a
@@ -78,7 +78,7 @@ export default function Contact() {
           )}
         </p>
         <div className="mt-16 flex flex-wrap items-center justify-between gap-4 border-t border-(--color-border) pt-6 text-sm text-(--color-muted-foreground)">
-          <p>© {new Date().getFullYear()} Christian Meude. Static single-page portfolio.</p>
+          <p>© {new Date().getFullYear()} Christian Meude.</p>
           <a href="#top" className="inline-flex min-h-[44px] items-center font-semibold hover:underline">
             Back to top ↑
           </a>

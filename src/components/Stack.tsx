@@ -42,7 +42,7 @@ export default function Stack() {
           Stack
         </p>
         <h2 id="stack-heading" className="reveal font-display mt-3 text-4xl font-bold sm:text-5xl">
-          Tools I reach for
+          My tools
         </h2>
         <h3 className="reveal mt-10 text-sm font-semibold uppercase tracking-[0.18em] text-(--color-muted-foreground)">
           Tech

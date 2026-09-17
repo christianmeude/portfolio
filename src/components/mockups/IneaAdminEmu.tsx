@@ -239,7 +239,7 @@ export function IneaAdminEmu() {
           </nav>
 
           {/* Screen */}
-          <div ref={screenRef} data-lenis-prevent className="flex min-h-[380px] min-w-0 flex-1 flex-col gap-3 overflow-y-auto p-4">
+          <div ref={screenRef} data-lenis-prevent className="flex min-h-[380px] min-w-0 flex-1 flex-col gap-3 overflow-y-auto overscroll-contain p-4">
             <h3 ref={titleRef} tabIndex={-1} className="sr-only">
               {VIEW_TITLES[tab]}
             </h3>

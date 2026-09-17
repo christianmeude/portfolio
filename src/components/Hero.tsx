@@ -13,14 +13,14 @@ export default function Hero() {
           Christian Meude
         </h1>
         <p className="reveal mt-5 text-xl font-medium text-(--color-muted-foreground) sm:text-2xl">
-          Full-stack developer — mobile, web &amp; systems.
+          Mobile, web &amp; systems developer.
         </p>
         <div className="reveal mt-10 flex justify-center">
           <a
             href="#work"
             className="inline-flex min-h-[44px] cursor-pointer items-center rounded-full bg-(--color-accent) px-8 font-semibold text-(--color-on-accent) transition-transform duration-200 hover:-translate-y-0.5"
           >
-            View selected work
+            Browse projects
           </a>
         </div>
       </div>

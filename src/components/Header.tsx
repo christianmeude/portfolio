@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react'
 import type { Theme } from '../hooks/useTheme'
 
 interface Props {
@@ -6,8 +7,29 @@ interface Props {
 }
 
 export default function Header({ theme, onToggle }: Props) {
+  const [scrolled, setScrolled] = useState(false)
+
+  useEffect(() => {
+    let frame = 0
+    const onScroll = () => {
+      cancelAnimationFrame(frame)
+      frame = requestAnimationFrame(() => setScrolled(window.scrollY > 8))
+    }
+    onScroll()
+    window.addEventListener('scroll', onScroll, { passive: true })
+    return () => {
+      window.removeEventListener('scroll', onScroll)
+      cancelAnimationFrame(frame)
+    }
+  }, [])
+
   return (
-    <header className="sticky top-0 z-50 border-b border-(--color-border) bg-(--color-background)/90 backdrop-blur">
+    <header
+      className={`sticky top-0 z-50 transition-[background-color,border-color] duration-300 ${
+        scrolled
+          ? 'border-b border-(--color-border) bg-(--color-background)/70 backdrop-blur-xl'
+          : 'border-b border-transparent bg-transparent'
+      }`}>
       <a
         href="#main"
         className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 focus:rounded focus:bg-(--color-accent) focus:px-4 focus:py-2 focus:text-(--color-on-accent)"

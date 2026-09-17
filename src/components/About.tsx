@@ -7,14 +7,13 @@ export default function About() {
           Calm interfaces, solid systems
         </h2>
         <p className="reveal mx-auto mt-4 max-w-xl text-lg leading-relaxed text-(--color-muted-foreground)">
-          I&apos;m Christian Meude. I work across mobile and web — minimal surfaces,
-          readable code, accessible defaults.{' '}
+          I&apos;m Christian. Mobile and web — minimal surfaces, readable code.{' '}
           <a href="#work" className="font-semibold text-(--color-foreground) underline decoration-(--color-accent) decoration-2 underline-offset-4">
-            See the work
+            See projects
           </a>{' '}
           or{' '}
           <a href="#contact" className="font-semibold text-(--color-foreground) underline decoration-(--color-accent) decoration-2 underline-offset-4">
-            get in touch
+            contact me
           </a>
           .
         </p>

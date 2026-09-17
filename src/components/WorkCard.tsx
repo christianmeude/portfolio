@@ -129,10 +129,10 @@ function IneaTrio() {
  *  one try-line per emulator so scanners know the box is playable. */
 const TRY_LINES: Record<string, string> = {
   'nucleus-mobile':
-    'Interactive preview — try signing in, then browsing the repository. Sample data.',
+    'Try it — sign in, browse papers. Sample data.',
   'inea-scents':
-    'Interactive preview — try the Admin ledger, the Landing inquiry form, or booking a scent in the app. Sample data.',
-  budgetrax: 'Interactive preview — try switching pay cutoffs, then opening a bill. Sample data.',
+    'Try it — check the ledger, send an inquiry, or book a scent. Sample data.',
+  budgetrax: 'Try it — switch cutoffs, open a bill. Sample data.',
 }
 
 function SlideMockup({ project }: { project: Project }) {
@@ -217,7 +217,7 @@ export default function WorkCard({ project, index }: { project: Project; index: 
             ))
           ) : (
             <p className="text-sm leading-relaxed text-(--color-muted-foreground)">
-              Text-only outcome — no public repository.
+              No public repo yet.
             </p>
           )}
         </div>

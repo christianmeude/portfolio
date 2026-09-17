@@ -34,12 +34,12 @@ typography:
     fontWeight: 700
     lineHeight: 1.2
   body:
-    fontFamily: "Space Grotesk, system-ui, sans-serif"
+    fontFamily: "Inter, system-ui, sans-serif"
     fontSize: "1rem"
     fontWeight: 400
     lineHeight: 1.6
   label:
-    fontFamily: "Space Grotesk, system-ui, sans-serif"
+    fontFamily: "Inter, system-ui, sans-serif"
     fontSize: "0.875rem"
     fontWeight: 600
     lineHeight: 1.4
@@ -93,7 +93,7 @@ components:
 
 Dark first, minimal text, proof you can see. The visitor lands on a name dead center over slow liquid chrome — then scrolls into a carousel where each project shows its actual surface in a device frame, a stack section wearing real brand marks, and one email action to end it. Every claim resolves to a repo, a mockup of the real surface, or an honest label (WIP, concept, text-only).
 
-The chrome is atmosphere, never content: fixed behind everything, frozen under reduced-motion, invisible to assistive tech. Type stays Archivo display against Space Grotesk body; the single blue accent survives the dark shift as sky. Shadows still don't exist — depth comes from the chrome glow and hairline borders.
+The chrome is atmosphere, never content: fixed behind everything, frozen under reduced-motion, invisible to assistive tech. Type stays Archivo display against Inter body; the single blue accent survives the dark shift as sky. Shadows still don't exist — depth comes from the chrome glow and hairline borders.
 
 **Key Characteristics:**
 - Dark-first minimalism — name, proof, contact
@@ -127,7 +127,7 @@ Near-black paper with silvery chrome and a single sky accent.
 ## Typography
 
 **Display Font:** Archivo (with system-ui, -apple-system, Segoe UI fallback)
-**Body Font:** Space Grotesk (with system-ui, -apple-system, Segoe UI fallback)
+**Body Font:** Inter (with system-ui, -apple-system, Segoe UI fallback)
 
 **Character:** Oversized centered display once (the name), then quiet confident headlines. Body copy is cut to proof lines — one outcome sentence per project, two lines of About.
 
@@ -187,7 +187,7 @@ Dark, restrained, evidence-led. Brand-mark color lives only inside stack chips.
 - **State:** hover and focus shift border and text to accent; nothing is hover-only
 
 ### Navigation
-- Sticky top header, 64px height, blurred paper at 90% with hairline bottom border. Wordmark `CM.` in Archivo extrabold 18px with accent period. Work / Stack / About / Contact always visible at 44px targets, tighter tracking on mobile. Theme toggle is a 44px pill with an 18px SVG sun/moon and `aria-pressed`. Skip-to-content link appears on focus in accent fill. Footer repeats contact actions with a hairline top rule, copyright line, and back-to-top link.
+- Sticky top header, 64px height, transparent at top; on scroll (>8px) blurred paper at 70% with hairline bottom border, no shadow. Wordmark `CM.` in Archivo extrabold 18px with accent period. Work / Stack / About / Contact always visible at 44px targets, tighter tracking on mobile. Theme toggle is a 44px pill with an 18px SVG sun/moon and `aria-pressed`. Skip-to-content link appears on focus in accent fill. Footer repeats contact actions with a hairline top rule, copyright line, and back-to-top link.
 
 ### Carousel
 - Below the large breakpoint: scroll-snap track (`x mandatory`, hidden scrollbar), one full-width slide per view, arrow buttons (44px pills) beside the title, 44px dot buttons below with `aria-current`, polite live-region announcement of the current project. No autoplay. On desktop the same DOM stacks as a static list and the carousel controls hide.
@@ -195,7 +195,7 @@ Dark, restrained, evidence-led. Brand-mark color lives only inside stack chips.
 
 ### Device Mockups
 - **Phone hardware:** photorealistic dark bezel (~10px, metallic gradient), punch-hole camera, side buttons, diagonal screen glare, soft floor reflection. Hardware realism lives in the frame; the screen content follows the app it depicts, not portfolio tokens.
-- **Emulator:** an interactive `region` variant of the frame — the real app's IA, flows, and branding (e.g. NUcleus navy/gold Inter UI: sign-in, tab bar, repository screens; Inea plum/cream Figtree: admin sidebar + bookings ledger, client packages → scent-pick booking, landing tiers + inquiry form; BudgeTrax near-black/violet system UI: cutoff pills, allotments + To Spare, bill payoff cards), driven by local state. Each emulator is introduced by a one-line try-line (the sighted equivalent of the screen-reader preview label); login gates carry "any input signs in" sample microcopy. Real data is replaced by clearly badged sample content; simulated legs are labelled simulated; unbuilt concepts never get emulators. Full-width 44px controls, live-region announcements, focus moved on screen change.
+- **Emulator:** an interactive `region` variant of the frame — the real app's IA, flows, and branding (e.g. NUcleus navy/gold Inter UI: sign-in, tab bar, repository screens; Inea plum/cream Figtree: admin sidebar + bookings ledger, client packages → scent-pick booking, landing tiers + inquiry form; BudgeTrax near-black/violet system UI: cutoff pills, allotments + To Spare, bill payoff cards), driven by local state. Phone screens are fixed to Pixel 7 Pro proportions (19.5:9 — 500px high at 250px wide, 540px at sm). Each emulator is introduced by a one-line try-line (the sighted equivalent of the screen-reader preview label); login gates carry "any input signs in" sample microcopy. Real data is replaced by clearly badged sample content; simulated legs are labelled simulated; unbuilt concepts never get emulators. Full-width 44px controls, live-region announcements, focus moved on screen change.
 - **Browser (laptop/desktop):** traffic dots plus URL pill, 12px radius; desktop variant wider (fluid in trios)
 - **Scenes:** abstract bars, pills, and live dots with real product words (surface names, statuses); micro-type (10–13px) is reserved for mockup screens and never appears in page content; wireframe dashed treatment reserved for unbuilt concepts (Lalatracker)
 
@@ -215,4 +215,4 @@ Concrete guardrails grounded in the shipped implementation.
 - **Don't** add shadows, autoplay, or hover-dependent information.
 - **Don't** invent screenshots, metrics, testimonials, or product copy the repos don't support.
 - **Don't** treat light as second-class — retuned per ADR 0004 (dimmed chrome, AA-verified tokens, no-flash init); emulator screens and device hardware stay fixed app/hardware truth in both themes.
-- **Don't** replace Archivo / Space Grotesk or introduce a third family without an explicit rebrand decision.
+- **Don't** replace Archivo / Inter or introduce a third family without an explicit rebrand decision.
