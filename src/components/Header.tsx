@@ -22,6 +22,9 @@ export default function Header({ theme, onToggle }: Props) {
           <a href="#work" className="flex min-h-[44px] items-center">
             Work
           </a>
+          <a href="#stack" className="hidden min-h-[44px] items-center md:flex">
+            Stack
+          </a>
           <a href="#about" className="flex min-h-[44px] items-center">
             About
           </a>
