@@ -1,0 +1,27 @@
+# Dependencies
+node_modules/
+.npm/
+
+# Build output
+dist/
+dist-ssr/
+
+# Vite
+*.local
+.vite/
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+
+# OS / editor
+.DS_Store
+Thumbs.db
+*.swp
+.vscode/*
+!.vscode/extensions.json
+.idea/
+
+# Stale pre-redesign critique snapshot (reference only, not tracked)
+.impeccable/critique/
