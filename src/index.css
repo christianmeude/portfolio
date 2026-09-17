@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Archivo", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-body: "Space Grotesk", system-ui, -apple-system, "Segoe UI", sans-serif;
+
+  --color-background: #FAFAFA;
+  --color-foreground: #09090B;
+  --color-card: #FFFFFF;
+  --color-card-foreground: #09090B;
+  --color-muted: #E8ECF0;
+  --color-muted-foreground: #334155;
+  --color-border: #E4E4E7;
+  --color-accent: #1E40AF;
+  --color-on-accent: #FFFFFF;
+  --color-primary: #18181B;
+  --color-ring: #1E40AF;
+
+  --space-section: clamp(64px, 10vw, 144px);
+}
+
+[data-theme="dark"] {
+  --color-background: #09090B;
+  --color-foreground: #FAFAFA;
+  --color-card: #121214;
+  --color-card-foreground: #FAFAFA;
+  --color-muted: #1C1C1F;
+  --color-muted-foreground: #CBD5E1;
+  --color-border: #27272A;
+  --color-accent: #60A5FA;
+  --color-on-accent: #09090B;
+  --color-primary: #FAFAFA;
+  --color-ring: #60A5FA;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+body {
+  font-family: var(--font-body);
+  background: var(--color-background);
+  color: var(--color-foreground);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+.font-display {
+  font-family: var(--font-display);
+  letter-spacing: -0.03em;
+  text-wrap: balance;
+}
+
+.hero-display {
+  font-size: clamp(3rem, 10vw, 8rem);
+  line-height: 0.95;
+}
+
+.section-pad {
+  padding-top: var(--space-section);
+  padding-bottom: var(--space-section);
+}
+
+:focus-visible {
+  outline: 3px solid var(--color-ring);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+.js .reveal {
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity 350ms ease-out, transform 350ms ease-out;
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .js .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+.hero-scrim {
+  background: color-mix(in srgb, var(--color-background) 72%, transparent);
+}
+
+[data-theme="dark"] .hero-scrim {
+  background: color-mix(in srgb, var(--color-background) 78%, transparent);
+}

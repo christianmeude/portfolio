@@ -178,6 +178,7 @@ Refined and restrained: bordered pills and flat cards with crisp focus and no sh
 - **Shadow Strategy:** none — see Elevation & Depth
 - **Border:** 1px hairline; text-only variant uses 1px dashed hairline
 - **Internal Padding:** 24px mobile, 40px on sm+; inner part rows 16–20px
+- **Disclosure rows:** the Inea three-surface system renders as native disclosure rows (`details`/`summary`) with an inline SVG chevron; first row open by default, no JavaScript required
 
 ### Inputs / Fields
 - None exist in this static site. Do not invent input styling.
@@ -186,7 +187,7 @@ Refined and restrained: bordered pills and flat cards with crisp focus and no sh
 - Sticky top header, 64px height, blurred paper at 90% with hairline bottom border. Wordmark `CM.` in Archivo extrabold 18px with accent period. Primary nav 15px medium; Work/About hidden on mobile, Contact always visible; all links 44px targets. Theme toggle is a 44px pill outlined in hairline with sun/moon glyph and `aria-pressed`. Skip-to-content link appears on focus in accent fill. Footer repeats contact actions with a hairline top rule, copyright line, and back-to-top link.
 
 ### Signature Component
-- **Hero scrim + ambient canvas.** A max-3xl 16px card over the hero canvas carries the headline and actions; its background is paper at 72% mix (78% in dark) so the ambient blobs stay subordinate. Canvas renders five slow indigo/violet radial blobs (hues 221/262, 10% alpha light / 16% dark) with pointer parallax, gated to fine pointers, ≥769px width, no reduced-motion, and no save-data; a three-stop static radial gradient (accent 10%, violet 8%, accent 6%) is always present underneath as the fallback.
+- **Hero scrim + ambient canvas.** A max-3xl 16px card over the hero canvas carries the headline and actions; its background is paper at 72% mix (78% in dark) so the ambient blobs stay subordinate. Canvas renders five slow indigo/violet radial blobs (hues 221/262, 10% alpha light / 16% dark) with pointer parallax, gated to fine pointers, ≥769px width, no reduced-motion, and no save-data; a three-stop static radial gradient (accent 10%, violet 8%, accent 6%) is always present underneath as the fallback. Inside the scrim, a proof strip names the three real systems (Nucleus, Inea Scents, BudgeTrax) with 6px accent markers over a hairline rule — the product fingerprint in the first viewport.
 
 ## Do's and Don'ts
 
