@@ -34,9 +34,7 @@
   --color-ring: #60A5FA;
 }
 
-html {
-  scroll-behavior: smooth;
-}
+/* Page scroll easing is owned by Lenis (see useSmoothScroll); native otherwise. */
 
 @media (prefers-reduced-motion: reduce) {
   html {

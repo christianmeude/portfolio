@@ -8,11 +8,21 @@ function MockDot({ className = '' }: { className?: string }) {
   return <div aria-hidden="true" className={`rounded-full ${className}`} />
 }
 
-export function PhoneFrame({ label, children }: { label: string; children: ReactNode }) {
+export function PhoneFrame({
+  label,
+  children,
+  interactive = false,
+}: {
+  label: string
+  children: ReactNode
+  /** Interactive emulator mode: exposed as a labelled region instead of one image summary. */
+  interactive?: boolean
+}) {
   return (
     <div
-      role="img"
+      role={interactive ? 'region' : 'img'}
       aria-label={label}
+      aria-roledescription={interactive ? 'interactive app preview' : undefined}
       className="relative w-[230px] shrink-0 rounded-[2.2rem] border border-(--color-border) bg-(--color-card) p-2 shadow-none sm:w-[250px]"
     >
       <div className="relative overflow-hidden rounded-[1.7rem] bg-(--color-background)">

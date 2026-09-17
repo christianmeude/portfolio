@@ -7,10 +7,12 @@ import Contact from './components/Contact'
 import ChromeBackdrop from './components/ChromeBackdrop'
 import { useTheme } from './hooks/useTheme'
 import { useReveal } from './hooks/useReveal'
+import { useSmoothScroll } from './hooks/useSmoothScroll'
 
 export default function App() {
   const { theme, toggle } = useTheme()
   useReveal()
+  useSmoothScroll()
 
   return (
     <div className="relative min-h-svh text-(--color-foreground)">

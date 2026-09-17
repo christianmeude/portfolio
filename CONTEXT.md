@@ -10,6 +10,10 @@ The public single-page portfolio of Christian Meude: convert a short scan of sel
 A device frame (phone, laptop, desktop) drawn in CSS/SVG showing a project's real surface structure and words — never a screenshot, never invented product data.
 _Avoid_: Screenshot, preview image, render
 
+**Emulator**:
+An interactive mockup variant: 2–3 tap screens of the real surface flow as local state, honestly labelled where simulated. A taste of the app, not the app.
+_Avoid_: Demo, prototype, live app
+
 **Proof line**:
 The single outcome sentence on a work slide. The only paragraph-length text a project gets.
 _Avoid_: Description, outcome paragraph, case study body

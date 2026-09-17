@@ -7,8 +7,8 @@ import {
   IneaAppScene,
   IneaLandingScene,
   LalatrackerScene,
-  NucleusScene,
 } from './mockups/scenes'
+import { NucleusEmu } from './mockups/NucleusEmu'
 
 function GithubMark() {
   return (
@@ -66,11 +66,7 @@ function IneaTrio() {
 function SlideMockup({ project }: { project: Project }) {
   switch (project.slug) {
     case 'nucleus-mobile':
-      return (
-        <PhoneFrame label="Nucleus mobile app mockup">
-          <NucleusScene />
-        </PhoneFrame>
-      )
+      return <NucleusEmu />
     case 'inea-scents':
       return <IneaTrio />
     case 'budgetrax':

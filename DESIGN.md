@@ -149,6 +149,10 @@ Centered hero filling the first viewport (name, profession line, one CTA). Work 
 
 Flat surfaces over a glowing depth. Cards, chips, and frames stay shadowless with 1px hairline borders; the sense of depth comes from the blurred chrome layer fixed behind everything — never from `box-shadow`. Chrome wash gradients blend freely between Chrome Silver (#C3CCD9) and Chrome Steel (#67718A); intermediate stops are atmosphere, not tokens.
 
+## Motion
+
+One authored moment per surface, never scattered effects. Page scroll is eased by Lenis (driven off GSAP's ticker, single RAF, `lagSmoothing(0)`); anchor jumps carry a 72px offset for the sticky header, and the mobile Work carousel track opts out via `data-lenis-prevent`. The chrome layer drifts on scroll (subtle scrub parallax on the layer itself — blobs keep their CSS keyframes). Emulator screens transition slide/fade (`power2.out`, 350ms, transform + opacity only). Reveal-on-scroll stays on the IntersectionObserver system; GSAP never duplicates it. Under `prefers-reduced-motion` there is no Lenis instance, no GSAP tween, no smooth scroll — content renders in its final state.
+
 ### Named Rules (optional)
 **The Flat-By-Default Rule.** Surfaces stay flat. The only lift is a 2px rise on the primary action; everything else changes border color, never shadow. The chrome may glow; components may not.
 
@@ -190,6 +194,7 @@ Dark, restrained, evidence-led. Brand-mark color lives only inside stack chips.
 
 ### Device Mockups
 - **Phone:** 230–250px frame, ~35px outer radius, island notch, home indicator; `role="img"` with a named label so readers hear one summary, not bars
+- **Emulator:** an interactive `region` variant of the frame (2–3 tap screens, full-width 44px buttons, polite live-region announcements, focus moved to the new screen on change). Copy stays at static-scene fidelity; simulated legs are labelled simulated; unbuilt concepts never get emulators
 - **Browser (laptop/desktop):** traffic dots plus URL pill, 12px radius; desktop variant wider (fluid in trios)
 - **Scenes:** abstract bars, pills, and live dots with real product words (surface names, statuses); micro-type (10–13px) is reserved for mockup screens and never appears in page content; wireframe dashed treatment reserved for unbuilt concepts (Lalatracker)
 

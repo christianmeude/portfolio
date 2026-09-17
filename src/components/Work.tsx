@@ -93,6 +93,7 @@ export default function Work() {
           aria-label="Selected projects. Use left and right arrow keys to move between projects."
           tabIndex={0}
           onKeyDown={onTrackKeyDown}
+          data-lenis-prevent
           className="carousel reveal -mx-5 mt-10 flex gap-5 overflow-x-auto px-5 pb-2 sm:-mx-8 sm:px-8 lg:mx-0 lg:grid lg:gap-12 lg:overflow-visible lg:px-0 lg:pb-0"
         >
           {PROJECTS.map((p, i) => (

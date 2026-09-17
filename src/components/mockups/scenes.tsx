@@ -21,26 +21,6 @@ function AppRow({ title, sub, right }: { title: string; sub: string; right?: str
   )
 }
 
-/** Nucleus Mobile Capstone — Expo + Supabase auth/sync flow on a phone. */
-export function NucleusScene() {
-  return (
-    <>
-      <div className="flex items-center justify-between">
-        <p className="font-display text-lg font-bold text-(--color-foreground)">Nucleus</p>
-        <LiveMockDot />
-      </div>
-      <MockBar className="h-2 w-2/3" />
-      <AppRow title="Signed in" sub="Supabase auth session" right="Active" />
-      <AppRow title="Data sync" sub="Backed by Supabase" right="Synced" />
-      <AppRow title="Offline queue" sub="Tolerant UI, retries on reconnect" right="Empty" />
-      <div className="mt-auto flex gap-2">
-        <div className="h-9 flex-1 rounded-full bg-(--color-accent)" />
-        <div className="h-9 flex-1 rounded-full border border-(--color-border)" />
-      </div>
-    </>
-  )
-}
-
 /** BudgeTrax — budgeting tracker in active development, on a phone. */
 export function BudgeTraxScene() {
   return (
