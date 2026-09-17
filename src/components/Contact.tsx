@@ -61,7 +61,7 @@ export default function Contact() {
           <a
             href={GITHUB_PROFILE}
             target="_blank"
-            rel="noreferrer"
+            rel="noreferrer noopener"
             className="inline-flex min-h-[44px] cursor-pointer items-center rounded-full border border-(--color-border) bg-(--color-card) px-7 font-semibold transition-colors duration-200 hover:border-(--color-accent)"
           >
             <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" className="mr-2">

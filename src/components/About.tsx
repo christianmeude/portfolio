@@ -8,7 +8,15 @@ export default function About() {
         </h2>
         <p className="reveal mx-auto mt-4 max-w-xl text-lg leading-relaxed text-(--color-muted-foreground)">
           I&apos;m Christian Meude. I work across mobile and web — minimal surfaces,
-          readable code, accessible defaults.
+          readable code, accessible defaults.{' '}
+          <a href="#work" className="font-semibold text-(--color-foreground) underline decoration-(--color-accent) decoration-2 underline-offset-4">
+            See the work
+          </a>{' '}
+          or{' '}
+          <a href="#contact" className="font-semibold text-(--color-foreground) underline decoration-(--color-accent) decoration-2 underline-offset-4">
+            get in touch
+          </a>
+          .
         </p>
       </div>
     </section>

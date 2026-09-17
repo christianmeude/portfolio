@@ -18,7 +18,7 @@ export default function Header({ theme, onToggle }: Props) {
         <a href="#top" className="font-display text-lg font-extrabold tracking-tight">
           CM<span className="text-(--color-accent)">.</span>
         </a>
-        <nav aria-label="Primary" className="flex items-center gap-3 text-sm font-medium sm:gap-5 sm:text-[15px]">
+        <nav aria-label="Primary" className="flex items-center gap-3 text-sm font-medium sm:gap-5 sm:text-base">
           <a href="#work" className="flex min-h-[44px] items-center">
             Work
           </a>

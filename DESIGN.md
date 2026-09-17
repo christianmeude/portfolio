@@ -173,6 +173,7 @@ Dark, restrained, evidence-led. Brand-mark color lives only inside stack chips.
 ### Chips
 - **Style:** card fill, ink text, hairline border, pill shape, 44px minimum height, 0.95rem medium label; 18px brand mark in brand color (near-black marks resolve to foreground) or an 18px initials tile (5px radius, 10px bold accent type on muted)
 - **State:** static only — no selected/unselected treatment
+- **Card stack tags:** the same pill dialect at label ramp (44px, 14px, no mark) — one chip language everywhere, brand color still never leaves the 18px chip
 
 ### Cards / Containers
 - **Corner Style:** large soft rectangle (16px)

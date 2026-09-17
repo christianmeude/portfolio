@@ -22,7 +22,7 @@ function RepoLink({ label, url }: { label: string; url: string }) {
     <a
       href={url}
       target="_blank"
-      rel="noreferrer"
+      rel="noreferrer noopener"
       className="repo-link inline-flex max-w-full min-h-[44px] cursor-pointer items-center gap-2 rounded-full border border-(--color-border) px-5 font-semibold transition-colors duration-200 hover:border-(--color-accent) hover:text-(--color-accent)"
     >
       <GithubMark />
@@ -32,10 +32,10 @@ function RepoLink({ label, url }: { label: string; url: string }) {
   )
 }
 
-/** Plain stack tag (strings only) — distinct from the brand-mark Logo chip in Stack. */
+/** Plain stack tag (strings only) — same pill dialect as the brand-mark Logo chip in Stack (44px, label ramp), minus the mark. */
 function Tag({ children }: { children: string }) {
   return (
-    <span className="inline-flex min-h-[28px] items-center rounded-full border border-(--color-border) bg-(--color-muted) px-3 text-[13px] font-medium text-(--color-foreground)">
+    <span className="inline-flex min-h-[44px] items-center rounded-full border border-(--color-border) bg-(--color-muted) px-4 text-sm font-medium text-(--color-foreground)">
       {children}
     </span>
   )
@@ -88,7 +88,7 @@ export default function WorkCard({ project, index }: { project: Project; index: 
       <div className={trio ? 'grid gap-6 lg:grid-cols-[1.1fr_0.9fr] lg:items-start' : undefined}>
         <div>
           <p className="text-sm font-semibold uppercase tracking-[0.18em] text-(--color-muted-foreground)">
-            {index} — {project.status === 'wip' ? 'Work in progress' : project.status === 'text-only' ? 'Outcome card' : 'Case study'}
+            {index} — {project.status === 'wip' ? 'Work in progress' : project.status === 'text-only' ? 'Concept' : 'Shipped'}
           </p>
           <h3 id={`${project.slug}-title`} className="font-display mt-3 text-3xl font-bold leading-tight sm:text-4xl lg:text-5xl">
             {project.title}
