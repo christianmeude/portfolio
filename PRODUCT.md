@@ -28,7 +28,7 @@ Static single-page site with anchored sections: Hero (`#top`), Selected work (`#
 
 Confirmed functionality:
 
-- 4 projects defined in `src/data/projects.ts`: Nucleus Mobile Capstone (shipped, Expo/React Native/Supabase), Inea Scents System (shipped, 3 parts: landing / Flutter app / Laravel + Inertia admin), BudgeTrax (WIP, React/Vite/Tailwind), Lalatracker (text-only concept, no public repo).
+- 4 projects defined in `src/data/projects.ts`: Nucleus Mobile Capstone (shipped, Expo/React Native/Supabase), Inea Scents System (shipped, 3 parts: landing / Flutter app / Laravel + Inertia admin), BudgeTrax (WIP, Expo/React Native/expo-router), Lalatracker (text-only concept, no public repo).
 - Real links only: repo URLs via GitHub + `mailto:christianmeude17@gmail.com`; empty link lists mean no link is rendered.
 - Light/dark theme toggle (`data-theme`), reveal-on-scroll, hero canvas backdrop, responsive stacked mobile / focused desktop layout, 44px minimum touch targets.
 - Static deployable SPA; no router, no CMS, no analytics confirmed.

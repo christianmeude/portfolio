@@ -78,10 +78,10 @@ export const PROJECTS: Project[] = [
   {
     slug: 'budgetrax',
     title: 'BudgeTrax',
-    tagline: 'Personal budgeting tracker — in active development',
-    stack: ['React', 'Vite', 'Tailwind'],
+    tagline: 'Pay-cutoff budgeting tracker — in active development',
+    stack: ['Expo', 'React Native', 'expo-router'],
     outcome:
-      'In progress: expense tracking with budgets and visual summaries.',
+      'In progress: cutoff salary allotments, bill payoff tracking, and a to-spare running balance.',
     status: 'wip',
     links: [
       {

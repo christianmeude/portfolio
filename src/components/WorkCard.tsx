@@ -1,8 +1,9 @@
 import type { Project } from '../data/projects'
 import { resolveLinks } from '../data/projects'
 import { PhoneFrame } from './mockups/frames'
-import { BudgeTraxScene, LalatrackerScene } from './mockups/scenes'
+import { LalatrackerScene } from './mockups/scenes'
 import { NucleusEmu } from './mockups/NucleusEmu'
+import { BudgeTraxEmu } from './mockups/BudgeTraxEmu'
 import { IneaAdminEmu } from './mockups/IneaAdminEmu'
 import { IneaAppEmu } from './mockups/IneaAppEmu'
 import { IneaLandingEmu } from './mockups/IneaLandingEmu'
@@ -61,11 +62,7 @@ function SlideMockup({ project }: { project: Project }) {
     case 'inea-scents':
       return <IneaTrio />
     case 'budgetrax':
-      return (
-        <PhoneFrame label="BudgeTrax app mockup">
-          <BudgeTraxScene />
-        </PhoneFrame>
-      )
+      return <BudgeTraxEmu />
     default:
       return (
         <PhoneFrame label="Lalatracker concept mockup">
