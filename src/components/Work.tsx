@@ -33,7 +33,8 @@ export default function Work() {
     if (!track) return
     const clamped = (index + count) % count
     const slide = track.children[clamped] as HTMLElement | undefined
-    slide?.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' })
+    const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+    slide?.scrollIntoView({ behavior: reduced ? 'auto' : 'smooth', inline: 'center', block: 'nearest' })
   }, [count])
 
   const onTrackKeyDown = (e: React.KeyboardEvent) => {

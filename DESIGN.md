@@ -185,7 +185,7 @@ Dark, restrained, evidence-led. Brand-mark color lives only inside stack chips.
 - Sticky top header, 64px height, blurred paper at 90% with hairline bottom border. Wordmark `CM.` in Archivo extrabold 18px with accent period. Work / About / Contact always visible at 44px targets, tighter tracking on mobile. Theme toggle is a 44px pill with sun/moon glyph and `aria-pressed`. Skip-to-content link appears on focus in accent fill. Footer repeats contact actions with a hairline top rule, copyright line, and back-to-top link.
 
 ### Carousel
-- Scroll-snap track (`x mandatory`, hidden scrollbar), one full-width slide per view, arrow buttons (44px pills) beside the title, 44px dot tabs below with `aria-selected`, polite live-region announcement of the current project. No autoplay.
+- Scroll-snap track (`x mandatory`, hidden scrollbar), one full-width slide per view, arrow buttons (44px pills) beside the title, 44px dot buttons below with `aria-current`, polite live-region announcement of the current project. No autoplay.
 
 ### Device Mockups
 - **Phone:** 230–250px frame, ~35px outer radius, island notch, home indicator; `role="img"` with a named label so readers hear one summary, not bars
