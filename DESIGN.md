@@ -143,7 +143,7 @@ Near-black paper with silvery chrome and a single sky accent.
 
 ## Layout
 
-Centered hero filling the first viewport (name, profession line, one CTA). Work stacks all four project cards on desktop and becomes a horizontal snap carousel below the large breakpoint: one slide per view, full-bleed track with container padding, arrows beside the section title, dots below, screen-reader announcements on change (arrows, dots, and keyboard handling are carousel-mode only). Standard slides split mockup / text in two columns on desktop (70vh minimum); the Inea slide stacks its device trio above a two-column text row with a per-surface detail list. Stack groups Tech then Deploy in wrapping rows. About is centered text. All inside a 72rem container with 20px gutters (32px on sm+), breathing on the fluid section rhythm (`clamp(64px, 10vw, 144px)`).
+Centered hero filling the first viewport (name, profession line, one CTA). Work stacks all four project cards on desktop and becomes a horizontal snap carousel below the large breakpoint: one slide per view, full-bleed track with container padding, arrows beside the section title, dots below, screen-reader announcements on change (arrows, dots, and keyboard handling are carousel-mode only). Standard slides split mockup / text in two columns on desktop (70vh minimum); the Inea slide shows one surface at a time behind an Admin / Landing / Flutter-app tab row (roving-tabindex tabs, one panel mounted) above a two-column text row with a per-surface detail list. Stack groups Tech then Deploy in wrapping rows. About is centered text. All inside a 72rem container with 20px gutters (32px on sm+), breathing on the fluid section rhythm (`clamp(64px, 10vw, 144px)`).
 
 ## Elevation & Depth
 

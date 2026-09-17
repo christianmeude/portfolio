@@ -1,3 +1,4 @@
+import { useRef, useState } from 'react'
 import type { Project } from '../data/projects'
 import { resolveLinks } from '../data/projects'
 import { PhoneFrame } from './mockups/frames'
@@ -41,15 +42,83 @@ function Tag({ children }: { children: string }) {
   )
 }
 
+/**
+ * Inea trio as a tabbed shell: one surface visible at a time.
+ * The three stacked devices (~15 interactive zones, three nested scroll
+ * regions) crushed the scan rhythm; tabs cut the card ~60% while the
+ * per-surface detail list below stays whole for scanners and readers.
+ */
+const INEA_SURFACES = [
+  { id: 'admin', label: 'Admin' },
+  { id: 'landing', label: 'Landing' },
+  { id: 'client', label: 'Flutter app' },
+] as const
+
+type IneaSurface = (typeof INEA_SURFACES)[number]['id']
+
 function IneaTrio() {
+  const [surface, setSurface] = useState<IneaSurface>('admin')
+  const tabRefs = useRef<(HTMLButtonElement | null)[]>([])
+
+  const onTabKeyDown = (e: React.KeyboardEvent, index: number) => {
+    let next: number | null = null
+    if (e.key === 'ArrowRight') next = (index + 1) % INEA_SURFACES.length
+    else if (e.key === 'ArrowLeft') next = (index - 1 + INEA_SURFACES.length) % INEA_SURFACES.length
+    else if (e.key === 'Home') next = 0
+    else if (e.key === 'End') next = INEA_SURFACES.length - 1
+    if (next !== null) {
+      e.preventDefault()
+      setSurface(INEA_SURFACES[next].id)
+      tabRefs.current[next]?.focus()
+    }
+  }
+
   return (
-    <div className="flex w-full flex-col items-center gap-4">
-      <IneaAdminEmu />
-      <div className="grid w-full items-end gap-4 md:grid-cols-[1fr_auto]">
-        <IneaLandingEmu />
-        <div className="mx-auto">
-          <IneaAppEmu />
-        </div>
+    <div className="flex w-full flex-col items-center gap-6">
+      <div role="tablist" aria-label="Inea Scents surfaces" className="flex flex-wrap justify-center gap-2">
+        {INEA_SURFACES.map((s, i) => {
+          const active = surface === s.id
+          return (
+            <button
+              key={s.id}
+              ref={(el) => {
+                tabRefs.current[i] = el
+              }}
+              type="button"
+              role="tab"
+              id={`inea-tab-${s.id}`}
+              aria-selected={active}
+              aria-controls={`inea-panel-${s.id}`}
+              tabIndex={active ? 0 : -1}
+              onClick={() => setSurface(s.id)}
+              onKeyDown={(e) => onTabKeyDown(e, i)}
+              className={`inline-flex min-h-[44px] cursor-pointer items-center rounded-full px-5 font-semibold transition-colors duration-200 ${
+                active
+                  ? 'bg-(--color-accent) text-(--color-on-accent)'
+                  : 'border border-(--color-border) bg-(--color-card) hover:border-(--color-accent)'
+              }`}
+            >
+              {s.label}
+            </button>
+          )
+        })}
+      </div>
+      <div className="flex w-full justify-center">
+        {surface === 'admin' && (
+          <div role="tabpanel" id="inea-panel-admin" aria-labelledby="inea-tab-admin" className="w-full">
+            <IneaAdminEmu />
+          </div>
+        )}
+        {surface === 'landing' && (
+          <div role="tabpanel" id="inea-panel-landing" aria-labelledby="inea-tab-landing" className="w-full">
+            <IneaLandingEmu />
+          </div>
+        )}
+        {surface === 'client' && (
+          <div role="tabpanel" id="inea-panel-client" aria-labelledby="inea-tab-client" className="mx-auto">
+            <IneaAppEmu />
+          </div>
+        )}
       </div>
     </div>
   )
