@@ -8,6 +8,17 @@
     <title>Christian Meude — Developer Portfolio</title>
     <script>
       document.documentElement.classList.add('js')
+      // Apply the stored theme before first paint to avoid a dark flash
+      // for light-theme visitors (key must match useTheme in src/hooks/useTheme.ts).
+      try {
+        var storedTheme = window.localStorage.getItem('meude-theme')
+        if (storedTheme === 'light' || storedTheme === 'dark') {
+          document.documentElement.setAttribute('data-theme', storedTheme)
+          document.documentElement.style.colorScheme = storedTheme
+        }
+      } catch (e) {
+        /* ignore — default data-theme="dark" stands */
+      }
     </script>
   </head>
   <body>

@@ -106,15 +106,15 @@ The chrome is atmosphere, never content: fixed behind everything, frozen under r
 Near-black paper with silvery chrome and a single sky accent.
 
 ### Primary
-- **Calm Operations Sky** (#60A5FA): primary actions, eyebrows, focus, live-sync dots on dark. Light theme keeps Calm Operations Blue (#1E40AF); light is frozen, scheduled for retune.
+- **Calm Operations Sky** (#60A5FA): primary actions, eyebrows, focus, live-sync dots on dark. Light theme uses Calm Operations Blue (#1E40AF, 8.36:1 on paper — AA/AAA); retuned per ADR 0004, no longer frozen.
 
 ### Secondary (optional; omit if the project has only one accent)
 - **Chrome Silver** (#C3CCD9): the light edge of the metallic washes — ambient only, never text or actions.
 - **Chrome Steel** (#67718A): the dark edge of the metallic washes — ambient only.
 
 ### Neutral
-- **Paper** (#08080A): dark page background; light theme Paper Light (#FAFAFA, frozen).
-- **Ink** (#FAFAFA): dark foreground text; light theme Ink Light (#09090B, frozen).
+- **Paper** (#08080A): dark page background; light theme Paper Light (#FAFAFA, retuned per ADR 0004).
+- **Ink** (#FAFAFA): dark foreground text; light theme Ink Light (#09090B, retuned per ADR 0004).
 - **Card Dark** (#101014): cards, chips, repo links, frames on dark.
 - **Mist Dark** (#1A1A20): muted fills and mockup bars on dark.
 - **Slate Light** (#CBD5E1): secondary body copy on dark.
@@ -147,7 +147,7 @@ Centered hero filling the first viewport (name, profession line, one CTA). Work 
 
 ## Elevation & Depth
 
-Flat surfaces over a glowing depth. Cards, chips, and frames stay shadowless with 1px hairline borders; the sense of depth comes from the blurred chrome layer fixed behind everything — never from `box-shadow`. Chrome wash gradients blend freely between Chrome Silver (#C3CCD9) and Chrome Steel (#67718A); intermediate stops are atmosphere, not tokens.
+Flat surfaces over a glowing depth. Cards, chips, and frames stay shadowless with 1px hairline borders; the sense of depth comes from the blurred chrome layer fixed behind everything — never from `box-shadow`. Chrome wash gradients blend freely between Chrome Silver (#C3CCD9) and Chrome Steel (#67718A); intermediate stops are atmosphere, not tokens. On light the same blobs render at roughly half opacity so paper keeps depth without washing out text.
 
 ## Motion
 
@@ -213,5 +213,5 @@ Concrete guardrails grounded in the shipped implementation.
 - **Don't** add a second accent or let brand-mark colors leak outside chips.
 - **Don't** add shadows, autoplay, or hover-dependent information.
 - **Don't** invent screenshots, metrics, testimonials, or product copy the repos don't support.
-- **Don't** put light-theme work in this pass — light tokens are frozen until the retune.
+- **Don't** treat light as second-class — retuned per ADR 0004 (dimmed chrome, AA-verified tokens, no-flash init); emulator screens and device hardware stay fixed app/hardware truth in both themes.
 - **Don't** replace Archivo / Space Grotesk or introduce a third family without an explicit rebrand decision.

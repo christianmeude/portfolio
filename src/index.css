@@ -165,6 +165,26 @@ body {
   animation: chrome-spin 90s linear infinite;
 }
 
+/* ---- Light-theme retune (ADR 0004): same shapes, less ink.
+   Dark-first blobs would wash out paper, so halve their presence;
+   emulator screens and device hardware are untouched app/hardware truth. ---- */
+
+[data-theme="light"] .chrome-blob-a {
+  opacity: 0.16;
+}
+
+[data-theme="light"] .chrome-blob-b {
+  opacity: 0.14;
+}
+
+[data-theme="light"] .chrome-blob-c {
+  opacity: 0.12;
+}
+
+[data-theme="light"] .chrome-sheen {
+  opacity: 0.5;
+}
+
 @keyframes chrome-drift-a {
   from { transform: translate3d(0, 0, 0) scale(1); }
   to { transform: translate3d(7vmax, 5vmax, 0) scale(1.12); }
