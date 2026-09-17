@@ -154,7 +154,7 @@ Flat surfaces over a glowing depth. Cards, chips, and frames stay shadowless wit
 One authored moment per surface, never scattered effects. Page scroll is eased by Lenis (driven off GSAP's ticker, single RAF, `lagSmoothing(0)`); anchor jumps carry a 72px offset for the sticky header, and the mobile Work carousel track opts out via `data-lenis-prevent`. The chrome layer drifts on scroll (subtle scrub parallax on the layer itself — blobs keep their CSS keyframes). Emulator screens transition slide/fade (`power2.out`, 350ms, transform + opacity only). Reveal-on-scroll stays on the IntersectionObserver system; GSAP never duplicates it. Under `prefers-reduced-motion` there is no Lenis instance, no GSAP tween, no smooth scroll — content renders in its final state.
 
 ### Named Rules (optional)
-**The Flat-By-Default Rule.** Surfaces stay flat. The only lift is a 2px rise on the primary action; everything else changes border color, never shadow. The chrome may glow; components may not.
+**The Flat-By-Default Rule.** Surfaces stay flat. The only lift is a 2px rise on the primary action; everything else changes border color, never shadow. The chrome may glow; components may not. Device hardware is exempt: bezels, glare, and floor reflections depict a physical object, not UI elevation.
 
 ## Shapes
 
@@ -193,8 +193,8 @@ Dark, restrained, evidence-led. Brand-mark color lives only inside stack chips.
 - Multi-surface projects render a per-surface detail list (label + outcome detail + repo link) so the end-to-end story needs no click to understand.
 
 ### Device Mockups
-- **Phone:** 230–250px frame, ~35px outer radius, island notch, home indicator; `role="img"` with a named label so readers hear one summary, not bars
-- **Emulator:** an interactive `region` variant of the frame (2–3 tap screens, full-width 44px buttons, polite live-region announcements, focus moved to the new screen on change). Copy stays at static-scene fidelity; simulated legs are labelled simulated; unbuilt concepts never get emulators
+- **Phone hardware:** photorealistic dark bezel (~10px, metallic gradient), punch-hole camera, side buttons, diagonal screen glare, soft floor reflection. Hardware realism lives in the frame; the screen content follows the app it depicts, not portfolio tokens.
+- **Emulator:** an interactive `region` variant of the frame — the real app's IA, flows, and branding (e.g. NUcleus navy/gold Inter UI: sign-in, tab bar, repository screens), driven by local state. Real data is replaced by clearly badged sample content; simulated legs are labelled simulated; unbuilt concepts never get emulators. Full-width 44px controls, live-region announcements, focus moved on screen change.
 - **Browser (laptop/desktop):** traffic dots plus URL pill, 12px radius; desktop variant wider (fluid in trios)
 - **Scenes:** abstract bars, pills, and live dots with real product words (surface names, statuses); micro-type (10–13px) is reserved for mockup screens and never appears in page content; wireframe dashed treatment reserved for unbuilt concepts (Lalatracker)
 

@@ -36,10 +36,10 @@ export const PROJECTS: Project[] = [
   {
     slug: 'nucleus-mobile',
     title: 'Nucleus Mobile Capstone',
-    tagline: 'Cross-platform mobile capstone with live backend sync',
+    tagline: 'Research repository app for NU-Dasmariñas students and faculty',
     stack: ['Expo', 'React Native', 'Supabase'],
     outcome:
-      'Shipped: auth, data sync, and offline-tolerant UI on Supabase.',
+      'Shipped: provisioned sign-in, paper discovery, submissions with drafts, and faculty review queues on Supabase.',
     status: 'shipped',
     links: [
       {

@@ -19,17 +19,40 @@ export function PhoneFrame({
   interactive?: boolean
 }) {
   return (
-    <div
-      role={interactive ? 'region' : 'img'}
-      aria-label={label}
-      aria-roledescription={interactive ? 'interactive app preview' : undefined}
-      className="relative w-[230px] shrink-0 rounded-[2.2rem] border border-(--color-border) bg-(--color-card) p-2 shadow-none sm:w-[250px]"
-    >
-      <div className="relative overflow-hidden rounded-[1.7rem] bg-(--color-background)">
-        <div aria-hidden="true" className="absolute left-1/2 top-2 z-10 h-5 w-20 -translate-x-1/2 rounded-full bg-(--color-foreground)" />
-        <div className="flex min-h-[420px] flex-col gap-3 p-4 pt-10 sm:min-h-[450px]">{children}</div>
-        <div aria-hidden="true" className="mx-auto mb-2 h-1 w-16 rounded-full bg-(--color-border)" />
+    <div className="relative w-[250px] shrink-0 sm:w-[270px]">
+      {/* Side buttons */}
+      <div aria-hidden="true" className="absolute -left-[2px] top-28 h-8 w-[3px] rounded-l-md bg-[#3a3f47]" />
+      <div aria-hidden="true" className="absolute -left-[2px] top-40 h-12 w-[3px] rounded-l-md bg-[#3a3f47]" />
+      <div aria-hidden="true" className="absolute -left-[2px] top-54 h-12 w-[3px] rounded-l-md bg-[#3a3f47]" />
+      <div aria-hidden="true" className="absolute -right-[2px] top-36 h-16 w-[3px] rounded-r-md bg-[#3a3f47]" />
+      {/* Bezel */}
+      <div className="relative rounded-[3rem] bg-gradient-to-b from-[#33373e] via-[#141619] to-[#050607] p-[10px] shadow-[0_50px_100px_-24px_rgba(0,0,0,0.85)]">
+        {/* Punch-hole camera */}
+        <div aria-hidden="true" className="absolute left-1/2 top-[22px] z-10 size-2.5 -translate-x-1/2 rounded-full bg-black ring-1 ring-white/15">
+          <div className="ml-[3px] mt-[3px] size-1 rounded-full bg-[#1a2340]" />
+        </div>
+        <div
+          role={interactive ? 'region' : 'img'}
+          aria-label={label}
+          aria-roledescription={interactive ? 'interactive app preview' : undefined}
+          className="relative overflow-hidden rounded-[2.5rem]"
+        >
+          {interactive ? (
+            children
+          ) : (
+            <div className="flex min-h-[420px] flex-col gap-3 bg-(--color-background) p-4 pt-8 sm:min-h-[450px]">
+              {children}
+            </div>
+          )}
+          {/* Screen glare */}
+          <div
+            aria-hidden="true"
+            className="pointer-events-none absolute inset-0 z-20 rounded-[2.5rem] bg-[linear-gradient(115deg,rgba(255,255,255,0.16)_0%,rgba(255,255,255,0.04)_28%,transparent_45%)]"
+          />
+        </div>
       </div>
+      {/* Floor reflection */}
+      <div aria-hidden="true" className="mx-auto mt-3 h-6 w-2/3 rounded-[100%] bg-black/70 blur-xl" />
     </div>
   )
 }
