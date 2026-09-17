@@ -243,7 +243,7 @@ export function NucleusEmu() {
           {view.name === 'login' && (
             <div className="flex flex-1 flex-col justify-center gap-3 py-6">
               <p className={`text-[22px] font-bold leading-tight ${ink}`}>Research, in your pocket</p>
-              <p className={`text-[12px] leading-relaxed ${muted}`}>National University – Dasmariñas. Sign in with your provisioned account.</p>
+              <p className={`text-[12px] leading-relaxed ${muted}`}>National University – Dasmariñas. Sample preview — any email and password signs in.</p>
               <Field label="Email" value={email} onChange={setEmail} dark={dark} />
               <Field label="Password" value={password} onChange={setPassword} secret dark={dark} />
               {loginError && (

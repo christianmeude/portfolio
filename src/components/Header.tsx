@@ -22,7 +22,7 @@ export default function Header({ theme, onToggle }: Props) {
           <a href="#work" className="flex min-h-[44px] items-center">
             Work
           </a>
-          <a href="#stack" className="hidden min-h-[44px] items-center md:flex">
+          <a href="#stack" className="flex min-h-[44px] items-center">
             Stack
           </a>
           <a href="#about" className="flex min-h-[44px] items-center">
@@ -38,7 +38,28 @@ export default function Header({ theme, onToggle }: Props) {
             aria-label={theme === 'dark' ? 'Switch to light theme' : 'Switch to dark theme'}
             className="flex min-h-[44px] min-w-[44px] cursor-pointer items-center justify-center rounded-full border border-(--color-border) px-3 transition-colors duration-200 hover:border-(--color-accent)"
           >
-            <span aria-hidden="true">{theme === 'dark' ? '☾' : '☀'}</span>
+            <span aria-hidden="true" className="inline-flex">
+              {theme === 'dark' ? (
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                  <path
+                    d="M20 13.5A8 8 0 0 1 10.5 4 6.5 6.5 0 1 0 20 13.5Z"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinejoin="round"
+                  />
+                </svg>
+              ) : (
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                  <circle cx="12" cy="12" r="4.5" stroke="currentColor" strokeWidth="2" />
+                  <path
+                    d="M12 2.5v2.5M12 19v2.5M2.5 12H5M19 12h2.5M5 5l1.8 1.8M17.2 17.2 19 19M19 5l-1.8 1.8M6.8 17.2 5 19"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                  />
+                </svg>
+              )}
+            </span>
             <span className="sr-only">{theme === 'dark' ? 'Dark' : 'Light'}</span>
           </button>
         </nav>

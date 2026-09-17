@@ -107,7 +107,7 @@ export function IneaLandingEmu() {
             INEA <span className="font-normal italic">Scents</span>
           </p>
           <div className="flex items-center gap-1.5">
-            <span className="hidden rounded-full px-2 py-0.5 text-[10px] font-semibold min-[560px]:inline-block" style={{ background: '#C4ACAC', color: PLUM_DARK }}>
+            <span className="rounded-full px-2 py-0.5 text-[10px] font-semibold" style={{ background: '#C4ACAC', color: PLUM_DARK }}>
               Sample data
             </span>
             <button

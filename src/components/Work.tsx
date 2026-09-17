@@ -79,7 +79,7 @@ export default function Work() {
         </p>
         <div className="reveal mt-3 flex flex-wrap items-end justify-between gap-4">
           <h2 id="work-heading" className="font-display text-4xl font-bold sm:text-5xl">
-            Selected work, proven in code
+            Proven in code
           </h2>
           <div className="flex items-center gap-2 lg:hidden" role="group" aria-label="Carousel controls">
             <CarouselArrow direction="prev" onPress={() => slideTo(active - 1)} />

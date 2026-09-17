@@ -255,7 +255,7 @@ export function IneaAppEmu() {
             <div className="flex flex-1 flex-col justify-center gap-3 py-6">
               <p className="text-[22px] font-bold leading-tight">Welcome back</p>
               <p className="text-[12px] leading-relaxed" style={{ color: MUTED }}>
-                Sign in to browse packages and track your event booking.
+                Sign in to browse packages and track your event booking. Sample preview — any email and password signs in.
               </p>
               <label className="block">
                 <span className="mb-1 block text-[11px] font-semibold" style={{ color: MUTED }}>Email</span>

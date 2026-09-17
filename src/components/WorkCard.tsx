@@ -1,4 +1,5 @@
 import { useRef, useState } from 'react'
+import type { ReactNode } from 'react'
 import type { Project } from '../data/projects'
 import { resolveLinks } from '../data/projects'
 import { PhoneFrame } from './mockups/frames'
@@ -124,21 +125,42 @@ function IneaTrio() {
   )
 }
 
+/** Sighted equivalent of the screen-reader "interactive app preview" label:
+ *  one try-line per emulator so scanners know the box is playable. */
+const TRY_LINES: Record<string, string> = {
+  'nucleus-mobile':
+    'Interactive preview — try signing in, then browsing the repository. Sample data.',
+  'inea-scents':
+    'Interactive preview — try the Admin ledger, the Landing inquiry form, or booking a scent in the app. Sample data.',
+  budgetrax: 'Interactive preview — try switching pay cutoffs, then opening a bill. Sample data.',
+}
+
 function SlideMockup({ project }: { project: Project }) {
+  const tryLine = TRY_LINES[project.slug]
+  let emulator: ReactNode
   switch (project.slug) {
     case 'nucleus-mobile':
-      return <NucleusEmu />
+      emulator = <NucleusEmu />
+      break
     case 'inea-scents':
-      return <IneaTrio />
+      emulator = <IneaTrio />
+      break
     case 'budgetrax':
-      return <BudgeTraxEmu />
+      emulator = <BudgeTraxEmu />
+      break
     default:
-      return (
+      emulator = (
         <PhoneFrame label="Lalatracker concept mockup">
           <LalatrackerScene />
         </PhoneFrame>
       )
   }
+  return (
+    <div className="flex w-full flex-col items-center gap-3">
+      {tryLine && <p className="text-center text-sm text-(--color-muted-foreground)">{tryLine}</p>}
+      {emulator}
+    </div>
+  )
 }
 
 export default function WorkCard({ project, index }: { project: Project; index: string }) {
@@ -161,11 +183,6 @@ export default function WorkCard({ project, index }: { project: Project; index: 
           </p>
           <h3 id={`${project.slug}-title`} className="font-display mt-3 text-3xl font-bold leading-tight sm:text-4xl lg:text-5xl">
             {project.title}
-            {project.status === 'wip' && (
-              <span className="ml-3 inline-flex items-center rounded-full bg-(--color-accent) px-3 py-1 align-middle text-sm font-semibold text-(--color-on-accent)">
-                WIP
-              </span>
-            )}
           </h3>
           <p className="mt-2 text-lg font-medium text-(--color-foreground)">{project.tagline}</p>
           <p className="mt-4 max-w-xl leading-relaxed text-(--color-muted-foreground)">{project.outcome}</p>

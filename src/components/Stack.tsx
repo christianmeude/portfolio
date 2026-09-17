@@ -38,7 +38,7 @@ export default function Stack() {
   return (
     <section id="stack" aria-labelledby="stack-heading" className="section-pad border-t border-(--color-border)">
       <div className="mx-auto w-full max-w-6xl px-5 sm:px-8">
-        <p className="reveal text-sm font-semibold uppercase tracking-[0.2em] text-(--color-accent)">
+        <p className="reveal text-sm font-semibold uppercase tracking-[0.2em] text-(--color-muted-foreground)">
           Stack
         </p>
         <h2 id="stack-heading" className="reveal font-display mt-3 text-4xl font-bold sm:text-5xl">

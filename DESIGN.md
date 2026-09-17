@@ -133,7 +133,7 @@ Near-black paper with silvery chrome and a single sky accent.
 
 ### Hierarchy
 - **Display** (800, clamp(3rem, 10vw, 8rem), 0.95): hero name only, centered, balanced.
-- **Headline** (700, 2.25rem rising to 3rem on sm, 1.1): section titles (Selected work, Stack, About, Contact).
+- **Headline** (700, 2.25rem rising to 3rem on sm, 1.1): Work and Stack section titles. About and Contact step down to 1.875rem/2.25rem — accent eyebrows are reserved for Work (scan) and Contact (act); Stack and About eyebrows render muted.
 - **Title** (700, 1.875rem rising to 2.25rem / 3rem, 1.2 tight): carousel project titles.
 - **Body** (400, 1rem, 1.6 relaxed): proof lines, About lines, part details.
 - **Label** (600, 0.875rem, 0.2em tracking, uppercase): eyebrows and card index lines.
@@ -187,7 +187,7 @@ Dark, restrained, evidence-led. Brand-mark color lives only inside stack chips.
 - **State:** hover and focus shift border and text to accent; nothing is hover-only
 
 ### Navigation
-- Sticky top header, 64px height, blurred paper at 90% with hairline bottom border. Wordmark `CM.` in Archivo extrabold 18px with accent period. Work / About / Contact always visible at 44px targets, tighter tracking on mobile. Theme toggle is a 44px pill with sun/moon glyph and `aria-pressed`. Skip-to-content link appears on focus in accent fill. Footer repeats contact actions with a hairline top rule, copyright line, and back-to-top link.
+- Sticky top header, 64px height, blurred paper at 90% with hairline bottom border. Wordmark `CM.` in Archivo extrabold 18px with accent period. Work / Stack / About / Contact always visible at 44px targets, tighter tracking on mobile. Theme toggle is a 44px pill with an 18px SVG sun/moon and `aria-pressed`. Skip-to-content link appears on focus in accent fill. Footer repeats contact actions with a hairline top rule, copyright line, and back-to-top link.
 
 ### Carousel
 - Below the large breakpoint: scroll-snap track (`x mandatory`, hidden scrollbar), one full-width slide per view, arrow buttons (44px pills) beside the title, 44px dot buttons below with `aria-current`, polite live-region announcement of the current project. No autoplay. On desktop the same DOM stacks as a static list and the carousel controls hide.
@@ -195,7 +195,7 @@ Dark, restrained, evidence-led. Brand-mark color lives only inside stack chips.
 
 ### Device Mockups
 - **Phone hardware:** photorealistic dark bezel (~10px, metallic gradient), punch-hole camera, side buttons, diagonal screen glare, soft floor reflection. Hardware realism lives in the frame; the screen content follows the app it depicts, not portfolio tokens.
-- **Emulator:** an interactive `region` variant of the frame — the real app's IA, flows, and branding (e.g. NUcleus navy/gold Inter UI: sign-in, tab bar, repository screens; Inea plum/cream Figtree: admin sidebar + bookings ledger, client packages → scent-pick booking, landing tiers + inquiry form; BudgeTrax near-black/violet system UI: cutoff pills, allotments + To Spare, bill payoff cards), driven by local state. Real data is replaced by clearly badged sample content; simulated legs are labelled simulated; unbuilt concepts never get emulators. Full-width 44px controls, live-region announcements, focus moved on screen change.
+- **Emulator:** an interactive `region` variant of the frame — the real app's IA, flows, and branding (e.g. NUcleus navy/gold Inter UI: sign-in, tab bar, repository screens; Inea plum/cream Figtree: admin sidebar + bookings ledger, client packages → scent-pick booking, landing tiers + inquiry form; BudgeTrax near-black/violet system UI: cutoff pills, allotments + To Spare, bill payoff cards), driven by local state. Each emulator is introduced by a one-line try-line (the sighted equivalent of the screen-reader preview label); login gates carry "any input signs in" sample microcopy. Real data is replaced by clearly badged sample content; simulated legs are labelled simulated; unbuilt concepts never get emulators. Full-width 44px controls, live-region announcements, focus moved on screen change.
 - **Browser (laptop/desktop):** traffic dots plus URL pill, 12px radius; desktop variant wider (fluid in trios)
 - **Scenes:** abstract bars, pills, and live dots with real product words (surface names, statuses); micro-type (10–13px) is reserved for mockup screens and never appears in page content; wireframe dashed treatment reserved for unbuilt concepts (Lalatracker)
 

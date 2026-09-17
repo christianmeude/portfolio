@@ -30,7 +30,7 @@ export default function Contact() {
     <footer id="contact" aria-labelledby="contact-heading" className="section-pad border-t border-(--color-border)">
       <div className="mx-auto w-full max-w-6xl px-5 sm:px-8">
         <p className="reveal text-sm font-semibold uppercase tracking-[0.2em] text-(--color-accent)">Contact</p>
-        <h2 id="contact-heading" className="reveal font-display mt-3 text-4xl font-bold sm:text-5xl">
+        <h2 id="contact-heading" className="reveal font-display mt-3 text-3xl font-bold sm:text-4xl">
           Let&apos;s build something calm.
         </h2>
         <p className="reveal mt-3 max-w-xl text-(--color-muted-foreground)">
@@ -70,7 +70,7 @@ export default function Contact() {
             GitHub
           </a>
         </div>
-        <p aria-live="polite" className="reveal mt-4 text-(--color-muted-foreground)">
+        <p aria-live="polite" className="reveal mt-4 select-all text-(--color-muted-foreground)">
           {EMAIL}
           {copied && <span className="ml-2 font-semibold text-(--color-accent)">— copied</span>}
           {copyState === 'fail' && (
