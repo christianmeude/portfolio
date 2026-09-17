@@ -63,18 +63,22 @@ export function BrowserFrame({
   children,
   laptop = false,
   fluid = false,
+  interactive = false,
 }: {
   label: string
   url: string
   children: ReactNode
   laptop?: boolean
   fluid?: boolean
+  /** Interactive emulator mode: exposed as a labelled region instead of one image summary. */
+  interactive?: boolean
 }) {
   return (
     <div className={`w-full shrink-0 ${fluid ? 'max-w-none' : 'max-w-[420px]'}`}>
       <div
-        role="img"
+        role={interactive ? 'region' : 'img'}
         aria-label={label}
+        aria-roledescription={interactive ? 'interactive app preview' : undefined}
         className="relative w-full overflow-hidden rounded-xl rounded-b-none border border-(--color-border) bg-(--color-card)"
       >
       <div className="flex items-center gap-2 border-b border-(--color-border) px-3 py-2.5">
@@ -85,7 +89,7 @@ export function BrowserFrame({
           {url}
         </div>
       </div>
-      <div className="flex min-h-[300px] flex-col gap-3 bg-(--color-background) p-5 sm:min-h-[330px]">
+      <div className={interactive ? undefined : 'flex min-h-[300px] flex-col gap-3 bg-(--color-background) p-5 sm:min-h-[330px]'}>
         {children}
       </div>
       </div>

@@ -70,7 +70,7 @@ export const PROJECTS: Project[] = [
       },
       {
         label: 'Admin',
-        detail: 'Laravel + Inertia operations dashboard',
+        detail: 'Laravel + Inertia (Vue) admin — bookings queue, packages, inquiries; polling, no realtime',
         url: gh('https://github.com/christianmeude/inea-scents.git'),
       },
     ],

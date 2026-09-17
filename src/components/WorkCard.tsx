@@ -1,14 +1,11 @@
 import type { Project } from '../data/projects'
 import { resolveLinks } from '../data/projects'
-import { BrowserFrame, PhoneFrame } from './mockups/frames'
-import {
-  BudgeTraxScene,
-  IneaAdminScene,
-  IneaAppScene,
-  IneaLandingScene,
-  LalatrackerScene,
-} from './mockups/scenes'
+import { PhoneFrame } from './mockups/frames'
+import { BudgeTraxScene, LalatrackerScene } from './mockups/scenes'
 import { NucleusEmu } from './mockups/NucleusEmu'
+import { IneaAdminEmu } from './mockups/IneaAdminEmu'
+import { IneaAppEmu } from './mockups/IneaAppEmu'
+import { IneaLandingEmu } from './mockups/IneaLandingEmu'
 
 function GithubMark() {
   return (
@@ -46,17 +43,11 @@ function Tag({ children }: { children: string }) {
 function IneaTrio() {
   return (
     <div className="flex w-full flex-col items-center gap-4">
-      <BrowserFrame fluid label="Inea admin dashboard mockup" url="inea-scents / admin">
-        <IneaAdminScene />
-      </BrowserFrame>
+      <IneaAdminEmu />
       <div className="grid w-full items-end gap-4 md:grid-cols-[1fr_auto]">
-        <BrowserFrame fluid laptop label="Inea landing page mockup" url="inea-scents / landing">
-          <IneaLandingScene />
-        </BrowserFrame>
+        <IneaLandingEmu />
         <div className="mx-auto">
-          <PhoneFrame label="Inea customer app mockup">
-            <IneaAppScene />
-          </PhoneFrame>
+          <IneaAppEmu />
         </div>
       </div>
     </div>
