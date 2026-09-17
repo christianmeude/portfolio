@@ -18,9 +18,9 @@ _Avoid_: Description, outcome paragraph, case study body
 A pill carrying an 18px brand mark (or initials tile where no mark exists) plus the skill name. Brand color never leaves the chip.
 _Avoid_: Badge, tag, skill pill
 
-**Repo hover-reveal**:
-A repository link showing its short surface label by default and swapping to the full `github.com/…` URL on hover or keyboard focus; touch always shows the full URL.
-_Avoid_: Repository button, GitHub link
+**Repo link**:
+A repository pill pairing its short surface label with the always-visible `github.com/…` URL — reachable on touch, keyboard, and scan alike, with no hover step.
+_Avoid_: Repository button, GitHub link, hover-reveal
 
 **Chrome ambient**:
 The fixed full-page liquid-chrome layer behind all content. Atmosphere only — it never carries information and is hidden from assistive technology.

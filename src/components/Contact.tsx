@@ -2,21 +2,28 @@ import { useState } from 'react'
 import { EMAIL, GITHUB_PROFILE } from '../data/projects'
 
 export default function Contact() {
-  const [copied, setCopied] = useState(false)
+  const [copyState, setCopyState] = useState<'idle' | 'ok' | 'fail'>('idle')
+  const copied = copyState === 'ok'
 
   const copyEmail = async () => {
+    let ok = false
     try {
       await navigator.clipboard.writeText(EMAIL)
+      ok = true
     } catch {
-      const area = document.createElement('textarea')
-      area.value = EMAIL
-      document.body.appendChild(area)
-      area.select()
-      document.execCommand('copy')
-      document.body.removeChild(area)
+      try {
+        const area = document.createElement('textarea')
+        area.value = EMAIL
+        document.body.appendChild(area)
+        area.select()
+        ok = document.execCommand('copy')
+        document.body.removeChild(area)
+      } catch {
+        ok = false
+      }
     }
-    setCopied(true)
-    window.setTimeout(() => setCopied(false), 2500)
+    setCopyState(ok ? 'ok' : 'fail')
+    window.setTimeout(() => setCopyState('idle'), 2500)
   }
 
   return (
@@ -49,7 +56,7 @@ export default function Contact() {
               <rect x="9" y="9" width="12" height="12" rx="2" stroke="currentColor" strokeWidth="2" />
               <path d="M5 15V5a2 2 0 0 1 2-2h10" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
             </svg>
-            {copied ? 'Copied to clipboard' : 'Copy email address'}
+            {copyState === 'fail' ? 'Copy failed — select the address below' : copied ? 'Copied to clipboard' : 'Copy email address'}
           </button>
           <a
             href={GITHUB_PROFILE}
@@ -66,6 +73,9 @@ export default function Contact() {
         <p aria-live="polite" className="reveal mt-4 text-(--color-muted-foreground)">
           {EMAIL}
           {copied && <span className="ml-2 font-semibold text-(--color-accent)">— copied</span>}
+          {copyState === 'fail' && (
+            <span className="ml-2 font-semibold text-(--color-accent)">— copy failed, long-press to select</span>
+          )}
         </p>
         <div className="mt-16 flex flex-wrap items-center justify-between gap-4 border-t border-(--color-border) pt-6 text-sm text-(--color-muted-foreground)">
           <p>© {new Date().getFullYear()} Christian Meude. Static single-page portfolio.</p>

@@ -38,6 +38,10 @@ export default function Work() {
   }, [count])
 
   const onTrackKeyDown = (e: React.KeyboardEvent) => {
+    const track = trackRef.current
+    if (!track) return
+    // Stacked (non-scrollable) on desktop: leave arrow keys to normal scrolling.
+    if (track.scrollWidth <= track.clientWidth + 1) return
     if (e.key === 'ArrowRight') {
       e.preventDefault()
       slideTo(active + 1)
@@ -77,7 +81,7 @@ export default function Work() {
           <h2 id="work-heading" className="font-display text-4xl font-bold sm:text-5xl">
             Selected work, proven in code
           </h2>
-          <div className="flex items-center gap-2" role="group" aria-label="Carousel controls">
+          <div className="flex items-center gap-2 lg:hidden" role="group" aria-label="Carousel controls">
             <CarouselArrow direction="prev" onPress={() => slideTo(active - 1)} />
             <CarouselArrow direction="next" onPress={() => slideTo(active + 1)} />
           </div>
@@ -89,20 +93,20 @@ export default function Work() {
           aria-label="Selected projects. Use left and right arrow keys to move between projects."
           tabIndex={0}
           onKeyDown={onTrackKeyDown}
-          className="carousel reveal -mx-5 mt-10 flex gap-5 overflow-x-auto px-5 pb-2 sm:-mx-8 sm:px-8"
+          className="carousel reveal -mx-5 mt-10 flex gap-5 overflow-x-auto px-5 pb-2 sm:-mx-8 sm:px-8 lg:mx-0 lg:grid lg:gap-12 lg:overflow-visible lg:px-0 lg:pb-0"
         >
           {PROJECTS.map((p, i) => (
-            <div key={p.slug} className="carousel-slide min-w-full" role="group" aria-roledescription="slide" aria-label={`${i + 1} of ${count}: ${p.title}`}>
+            <div key={p.slug} className="carousel-slide min-w-full lg:min-w-0" role="group" aria-roledescription="slide" aria-label={`${i + 1} of ${count}: ${p.title}`}>
               <WorkCard project={p} index={String(i + 1).padStart(2, '0')} />
             </div>
           ))}
         </div>
-        <div className="mt-6 flex items-center justify-center gap-2" role="group" aria-label="Choose project">
+        <div className="mt-6 flex items-center justify-center gap-2 lg:hidden" role="group" aria-label="Choose project">
           {PROJECTS.map((p, i) => (
             <button
               key={p.slug}
               type="button"
-              aria-current={i === active}
+              aria-current={i === active ? true : undefined}
               aria-label={`Show ${p.title}`}
               onClick={() => slideTo(i)}
               className={`inline-flex min-h-[44px] min-w-[44px] cursor-pointer items-center justify-center rounded-full transition-colors duration-200 ${

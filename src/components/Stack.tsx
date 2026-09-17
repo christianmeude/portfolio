@@ -53,9 +53,9 @@ export default function Stack() {
           ))}
         </ul>
         <h3 className="reveal mt-10 text-sm font-semibold uppercase tracking-[0.18em] text-(--color-muted-foreground)">
-          Tools
+          Deploy
         </h3>
-        <ul className="reveal mt-4 flex flex-wrap gap-2.5" aria-label="Tools and platforms">
+        <ul className="reveal mt-4 flex flex-wrap gap-2.5" aria-label="Deploy and hosting">
           {TOOL_SKILLS.map((s) => (
             <Chip key={s.label} skill={s} />
           ))}

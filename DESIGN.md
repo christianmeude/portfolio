@@ -143,7 +143,7 @@ Near-black paper with silvery chrome and a single sky accent.
 
 ## Layout
 
-Centered hero filling the first viewport (name, profession line, one CTA). Work is a horizontal snap carousel: one slide per view, full-bleed track with container padding, arrows beside the section title, dots below, screen-reader announcements on change. Standard slides split mockup / text in two columns on desktop (70vh minimum); the Inea slide stacks its device trio above a two-column text row. Stack groups Tech then Tools in wrapping rows. About is centered text. All inside a 72rem container with 20px gutters (32px on sm+), breathing on the fluid section rhythm (`clamp(64px, 10vw, 144px)`).
+Centered hero filling the first viewport (name, profession line, one CTA). Work stacks all four project cards on desktop and becomes a horizontal snap carousel below the large breakpoint: one slide per view, full-bleed track with container padding, arrows beside the section title, dots below, screen-reader announcements on change (arrows, dots, and keyboard handling are carousel-mode only). Standard slides split mockup / text in two columns on desktop (70vh minimum); the Inea slide stacks its device trio above a two-column text row with a per-surface detail list. Stack groups Tech then Deploy in wrapping rows. About is centered text. All inside a 72rem container with 20px gutters (32px on sm+), breathing on the fluid section rhythm (`clamp(64px, 10vw, 144px)`).
 
 ## Elevation & Depth
 
@@ -178,14 +178,15 @@ Dark, restrained, evidence-led. Brand-mark color lives only inside stack chips.
 - **Internal Padding:** 24px mobile, 40px on sm+
 
 ### Repo Links
-- **Style:** pill with 16px GitHub mark and short label (surface name); on fine-pointer hover or keyboard focus the label swaps for the full `github.com/…` URL truncated to 240px; on touch the full URL always shows
-- **State:** hover shifts border and text to accent; nothing is hover-only — touch and keyboard always reach the URL
+- **Style:** pill with 16px GitHub mark, short label (surface name), and always-visible muted `github.com/…` URL truncated to 240px — reachable on touch, keyboard, and desktop scan alike
+- **State:** hover and focus shift border and text to accent; nothing is hover-only
 
 ### Navigation
 - Sticky top header, 64px height, blurred paper at 90% with hairline bottom border. Wordmark `CM.` in Archivo extrabold 18px with accent period. Work / About / Contact always visible at 44px targets, tighter tracking on mobile. Theme toggle is a 44px pill with sun/moon glyph and `aria-pressed`. Skip-to-content link appears on focus in accent fill. Footer repeats contact actions with a hairline top rule, copyright line, and back-to-top link.
 
 ### Carousel
-- Scroll-snap track (`x mandatory`, hidden scrollbar), one full-width slide per view, arrow buttons (44px pills) beside the title, 44px dot buttons below with `aria-current`, polite live-region announcement of the current project. No autoplay.
+- Below the large breakpoint: scroll-snap track (`x mandatory`, hidden scrollbar), one full-width slide per view, arrow buttons (44px pills) beside the title, 44px dot buttons below with `aria-current`, polite live-region announcement of the current project. No autoplay. On desktop the same DOM stacks as a static list and the carousel controls hide.
+- Multi-surface projects render a per-surface detail list (label + outcome detail + repo link) so the end-to-end story needs no click to understand.
 
 ### Device Mockups
 - **Phone:** 230–250px frame, ~35px outer radius, island notch, home indicator; `role="img"` with a named label so readers hear one summary, not bars
@@ -199,7 +200,7 @@ Concrete guardrails grounded in the shipped implementation.
 ### Do:
 - **Do** keep the hero to name, profession, one action — nothing else above the fold.
 - **Do** give every project a mockup of its real surface; wireframe treatment only for concepts.
-- **Do** keep repo URLs reachable on touch and keyboard, never hover-only.
+- **Do** keep repo URLs always visible — never hover-only, never truncated beyond recognition.
 - **Do** freeze chrome motion under `prefers-reduced-motion` and keep the static wash.
 - **Do** keep landmarks, a visible 3px focus ring, and 44px targets on everything interactive.
 

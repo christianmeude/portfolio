@@ -239,34 +239,16 @@ body {
   flex-shrink: 0;
 }
 
-/* ---- Repository hover-reveal link ---- */
+/* ---- Repository link: short label + always-visible URL ---- */
 
 .repo-link .repo-url {
-  display: none;
+  display: inline-block;
+  vertical-align: bottom;
   max-width: 240px;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-}
-
-@media (hover: hover) {
-  .repo-link:hover .repo-short,
-  .repo-link:focus-visible .repo-short {
-    display: none;
-  }
-  .repo-link:hover .repo-url,
-  .repo-link:focus-visible .repo-url {
-    display: inline-block;
-    vertical-align: bottom;
-  }
-}
-
-@media (hover: none) {
-  .repo-link .repo-short {
-    display: none;
-  }
-  .repo-link .repo-url {
-    display: inline-block;
-    vertical-align: bottom;
-  }
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--color-muted-foreground);
 }

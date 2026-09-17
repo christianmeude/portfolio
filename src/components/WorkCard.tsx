@@ -123,7 +123,23 @@ export default function WorkCard({ project, index }: { project: Project; index: 
           </div>
         </div>
         <div className="flex flex-col gap-3 lg:pt-1">
-          {links.length > 0 ? (
+          {project.parts ? (
+            <ul className="flex flex-col gap-5">
+              {project.parts.map((part) => (
+                <li key={part.label}>
+                  <p className="font-semibold text-(--color-foreground)">{part.label}</p>
+                  <p className="mt-0.5 text-sm leading-relaxed text-(--color-muted-foreground)">
+                    {part.detail}
+                  </p>
+                  {part.url && (
+                    <div className="mt-2">
+                      <RepoLink label={part.label} url={part.url} />
+                    </div>
+                  )}
+                </li>
+              ))}
+            </ul>
+          ) : links.length > 0 ? (
             links.map((l) => (
               <div key={l.url}>
                 <RepoLink label={l.label} url={l.url} />
