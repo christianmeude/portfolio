@@ -1,0 +1,202 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: var(--font-display), "Arial Narrow", system-ui, sans-serif;
+  --font-body: var(--font-body), system-ui, sans-serif;
+  --font-mono: var(--font-mono), ui-monospace, monospace;
+
+  --color-cream: #f5f2ee;
+  --color-ink: #0a0a0a;
+  --color-grey: #cccccc;
+  --color-smoke: #777777;
+  --color-coal: #444444;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Anchor offset for the sticky 3px nav. */
+[id] {
+  scroll-margin-top: 84px;
+}
+
+body {
+  font-family: var(--font-body);
+  background: #f5f2ee;
+  color: #0a0a0a;
+  overflow-x: hidden;
+}
+
+.font-display {
+  font-family: var(--font-display);
+  letter-spacing: -0.01em;
+  text-wrap: balance;
+}
+
+.type-mono-label {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+}
+
+.border-main {
+  border: 3px solid #0a0a0a;
+}
+
+.shadow-brutal {
+  box-shadow: 3px 3px 0 #0a0a0a;
+}
+.shadow-brutal-sm {
+  box-shadow: 3px 3px 0 #555;
+}
+
+.type-outline {
+  color: transparent;
+  -webkit-text-stroke: 3px #0a0a0a;
+}
+.type-outline-cream {
+  color: transparent;
+  -webkit-text-stroke: 3px #f5f2ee;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+:focus-visible {
+  outline: 3px solid #0a0a0a;
+  outline-offset: 3px;
+}
+
+/* Cream ring where the surface is dark. */
+#projects :focus-visible {
+  outline-color: #f5f2ee;
+}
+
+@keyframes marquee-x {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+.animate-marquee {
+  animation: marquee-x 22s linear infinite;
+}
+
+@keyframes marquee-y {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-50%);
+  }
+}
+.animate-marquee-y {
+  animation: marquee-y 26s linear infinite;
+}
+
+.btn-brutal {
+  display: inline-flex;
+  min-height: 44px;
+  align-items: center;
+  justify-content: center;
+  border: 3px solid #0a0a0a;
+  padding: 0.65rem 1.5rem;
+  font-weight: 700;
+  transition:
+    transform 150ms ease,
+    box-shadow 150ms ease;
+}
+.btn-primary-brutal {
+  background: #0a0a0a;
+  color: #f5f2ee;
+  box-shadow: 3px 3px 0 #555;
+}
+.btn-primary-brutal:hover {
+  transform: translate(2px, 2px);
+  box-shadow: 1px 1px 0 #555;
+}
+.btn-ghost-brutal {
+  background: #f5f2ee;
+  color: #0a0a0a;
+  box-shadow: 3px 3px 0 #0a0a0a;
+}
+.btn-ghost-brutal:hover {
+  transform: translate(2px, 2px);
+  box-shadow: 1px 1px 0 #0a0a0a;
+}
+
+/* ---- Repo pill: collapsed [icon] label, expands to full URL + copy ---- */
+
+.repo-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.repo-pill .repo-url {
+  display: inline-block;
+  max-width: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  opacity: 0;
+  font-size: 0.75rem;
+  transition:
+    max-width 350ms ease,
+    opacity 250ms ease;
+}
+
+.repo-pill:hover .repo-url,
+.repo-pill:focus-within .repo-url,
+.repo-pill[data-open] .repo-url {
+  max-width: 260px;
+  opacity: 0.7;
+}
+
+.repo-pill .repo-copy,
+.repo-pill .repo-expand {
+  opacity: 0;
+  width: 0;
+  min-width: 0;
+  padding: 0;
+  overflow: hidden;
+  border-width: 0;
+  transition:
+    opacity 250ms ease,
+    width 350ms ease;
+}
+
+.repo-pill:hover .repo-copy,
+.repo-pill:focus-within .repo-copy,
+.repo-pill[data-open] .repo-copy,
+.repo-pill:hover .repo-expand,
+.repo-pill:focus-within .repo-expand,
+.repo-pill[data-open] .repo-expand {
+  opacity: 1;
+  width: 44px;
+  min-width: 44px;
+  border-width: 2px;
+}
+
+/* Touch: no hover — the + toggle is the only affordance, so keep it visible. */
+@media (hover: none) {
+  .repo-pill .repo-expand {
+    opacity: 1;
+    width: 44px;
+    min-width: 44px;
+    border-width: 2px;
+  }
+}
