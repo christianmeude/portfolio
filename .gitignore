@@ -5,10 +5,12 @@ node_modules/
 # Build output
 dist/
 dist-ssr/
+.next/
+out/
 
-# Vite
-*.local
-.vite/
+# Env (keys never committed)
+.env*.local
+.env
 
 # Logs
 logs/
