@@ -32,6 +32,6 @@ _Avoid_: Background animation, hero canvas, gradient blobs
 
 ### Positioning
 
-**Midnight Chrome**:
-The committed visual world: dark-first minimalism, device mockups as evidence, fixed chrome atmosphere, one sky accent.
-_Avoid_: Dark mode, dark theme (those describe a setting, not the world)
+**Cream Brutalism**:
+The committed visual world: cream-first neo-brutalism, numbered projects as evidence, marquee + preloader as the two authored motions, honest stats only.
+_Avoid_: Midnight Chrome, dark mode, dark theme (those describe the retired world)

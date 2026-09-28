@@ -22,16 +22,16 @@ Full-stack developer across mobile, web, and systems — calm, spacious interfac
 
 ## Operating Context
 
-Static single-page site with anchored sections: Hero (`#top`), Selected work (`#work`), About (`#about`), Contact footer (`#contact`). Entry `src/main.tsx`, App composition in `src/App.tsx`. Local dev: `npm run dev` (Vite); build: `npm run build` (tsc + vite build). Evaluation happens in browser on desktop and mobile web; no accounts, no backend, `mailto:` is the fastest path.
+Next.js App Router single-page site with anchored sections: Hero (`#top`), About (`#about`), Skills (`#skills`), Projects (`#projects`), Contact footer (`#contact`). Entry `app/page.tsx`, layout in `app/layout.tsx`. Local dev: `npm run dev` (Next); build: `npm run build` (Next). Deploy: Vercel static-first. Evaluation happens in browser on desktop and mobile web; no accounts, intent-select `mailto:` composer is the fastest path. The only server surface is `/api/chat` (chatbot answers from the curated `lib/answers.ts`, key in env).
 
 ## Capabilities and Constraints
 
 Confirmed functionality:
 
-- 4 projects defined in `src/data/projects.ts`: Nucleus Mobile Capstone (shipped, Expo/React Native/Supabase), Inea Scents System (shipped, 3 parts: landing / Flutter app / Laravel + Inertia admin), BudgeTrax (WIP, Expo/React Native/expo-router), Lalatracker (text-only concept, no public repo).
+- 4 projects defined in `lib/site.ts`: Nucleus Mobile Capstone (shipped, Expo/React Native/Supabase), Inea Scents System (shipped, 3 parts: landing / Flutter app / Laravel + Inertia admin), BudgeTrax (WIP, Expo/React Native/expo-router), Lalatracker (WIP, Expo/expo-router/expo-sqlite offline ledger).
 - Real links only: repo URLs via GitHub + `mailto:christianmeude17@gmail.com`; empty link lists mean no link is rendered.
-- Light/dark theme toggle (`data-theme`), reveal-on-scroll, hero canvas backdrop, responsive stacked mobile / focused desktop layout, 44px minimum touch targets.
-- Static deployable SPA; no router, no CMS, no analytics confirmed.
+- Cream-first brutalism: 3px ink borders, hard shadows, preloader 000/100, marquee dividers, responsive stacked mobile / split desktop hero, 44px minimum touch targets.
+- Static-first Next.js on Vercel; no CMS, no analytics confirmed. Server code is limited to the `/api/chat` chatbot route.
 
 Explicitly undecided / allowed to expand: adding projects, resume/CV, additional socials, or blog sections later. No decision yet on which comes first.
 
@@ -41,7 +41,7 @@ Name: Christian Meude. Voice: minimal, content-first, calm ("Let's build somethi
 
 ## Evidence on Hand
 
-Real proof in repo: project outcomes + repo links in `src/data/projects.ts`, About capabilities list (`src/components/About.tsx`), contact actions (`src/components/Contact.tsx`). No testimonials, customers, case studies, press, benchmarks, pricing, or deployment claims on hand — future work must not fabricate them.
+Real proof in repo: project outcomes + repo links in `lib/site.ts`, About fact-grid (`components/About.tsx`), contact composer (`components/Contact.tsx`). No testimonials, customers, case studies, press, benchmarks, pricing, or deployment claims on hand — future work must not fabricate them.
 
 ## Product Principles
 

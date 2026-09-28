@@ -1,49 +1,47 @@
 ---
 name: Christian Meude Portfolio
-description: Dark-first chrome portfolio — name, proof, contact.
+description: Cream-first brutalist portfolio — badge, proof, contact.
 colors:
-  paper: "#08080A"
-  ink: "#FAFAFA"
-  card-dark: "#101014"
-  mist-dark: "#1A1A20"
-  slate-light: "#CBD5E1"
-  hairline-dark: "#26262E"
-  calm-operations-sky: "#60A5FA"
-  on-accent-dark: "#08080A"
-  chrome-silver: "#C3CCD9"
-  chrome-steel: "#67718A"
-  paper-light: "#FAFAFA"
-  ink-light: "#09090B"
-  calm-operations-blue: "#1E40AF"
+  paper: "#f5f2ee"
+  ink: "#0a0a0a"
+  cream: "#f5f2ee"
+  soot: "#0a0a0a"
+  grey: "#cccccc"
+  smoke: "#777777"
+  muted-fill: "#444444"
+  card-cream: "#FFFFFF"
+  card-dark: "#0a0a0a"
+  accent-ink: "#0a0a0a"
+  on-accent-cream: "#f5f2ee"
 typography:
   display:
-    fontFamily: "Archivo, system-ui, sans-serif"
-    fontSize: "clamp(3rem, 10vw, 8rem)"
+    fontFamily: "Barlow Condensed, Bebas Neue, Archivo, system-ui, sans-serif"
+    fontSize: "clamp(3.5rem, 12vw, 9rem)"
     fontWeight: 800
-    lineHeight: 0.95
-    letterSpacing: "-0.03em"
+    lineHeight: 0.9
+    letterSpacing: "-0.01em"
   headline:
-    fontFamily: "Archivo, system-ui, sans-serif"
-    fontSize: "2.25rem"
-    fontWeight: 700
-    lineHeight: 1.1
-    letterSpacing: "-0.02em"
+    fontFamily: "Barlow Condensed, Archivo, system-ui, sans-serif"
+    fontSize: "2.5rem"
+    fontWeight: 800
+    lineHeight: 1.0
+    letterSpacing: "-0.01em"
   title:
-    fontFamily: "Archivo, system-ui, sans-serif"
-    fontSize: "1.875rem"
+    fontFamily: "Barlow Condensed, Archivo, system-ui, sans-serif"
+    fontSize: "2rem"
     fontWeight: 700
-    lineHeight: 1.2
+    lineHeight: 1.05
   body:
-    fontFamily: "Inter, system-ui, sans-serif"
+    fontFamily: "Montserrat, Inter, system-ui, sans-serif"
     fontSize: "1rem"
     fontWeight: 400
     lineHeight: 1.6
   label:
-    fontFamily: "Inter, system-ui, sans-serif"
-    fontSize: "0.875rem"
-    fontWeight: 600
+    fontFamily: "Space Mono, system-ui, monospace"
+    fontSize: "0.75rem"
+    fontWeight: 700
     lineHeight: 1.4
-    letterSpacing: "0.2em"
+    letterSpacing: "0.25em"
 rounded:
   full: "9999px"
   2xl: "16px"
@@ -89,130 +87,125 @@ components:
 
 ## Overview
 
-**Creative North Star: "Midnight Chrome"**
+**Creative North Star: "Cream Brutalism" — ADR 0007.**
 
-Dark first, minimal text, proof you can see. The visitor lands on a name dead center over slow liquid chrome — then scrolls into a carousel where each project shows its actual surface in a device frame, a stack section wearing real brand marks, and one email action to end it. Every claim resolves to a repo, a mockup of the real surface, or an honest label (WIP, concept, text-only).
-
-The chrome is atmosphere, never content: fixed behind everything, frozen under reduced-motion, invisible to assistive tech. Type stays Archivo display against Inter body; the single blue accent survives the dark shift as sky. Shadows still don't exist — depth comes from the chrome glow and hairline borders.
+Cream first, loud borders, honest proof. The visitor lands on a sticky nav + badge + giant condensed name with an outline surname + info ledger (Location / Status / Email) — then scrolls an About fact-grid, Proficient/Familiar stack cards, numbered projects 01–04 with Live/WIP pills and always-visible repo pills, and ends in an intent-select mailto composer. A marquee strip divides Skills from Projects; a 000/100 preloader opens the page. Every claim resolves to a repo, a WIP label, or an explicit concept tag.
 
 **Key Characteristics:**
-- Dark-first minimalism — name, proof, contact
-- Device mockups carry the evidence, not paragraphs
-- Fixed liquid-chrome ambient, calm and slow
-- One accent, real brand marks, no invented claims
+- Cream-first neo-brutalism — 3px ink borders, hard `3px 3px 0` shadows, outline display type
+- Hero renders settled on first paint — no entrance animation, no stats row
+- Numbered project cards carry the evidence, not mockups or carousels
+- Three motions only: preloader + marquee + scroll reveal
 
 ## Colors
 
-Near-black paper with silvery chrome and a single sky accent.
+Ink on cream, inverted to cream on ink for the Projects section. No hue accent — contrast is the accent.
 
 ### Primary
-- **Calm Operations Sky** (#60A5FA): primary actions, eyebrows, focus, live-sync dots on dark. Light theme uses Calm Operations Blue (#1E40AF, 8.36:1 on paper — AA/AAA); retuned per ADR 0004, no longer frozen.
-
-### Secondary (optional; omit if the project has only one accent)
-- **Chrome Silver** (#C3CCD9): the light edge of the metallic washes — ambient only, never text or actions.
-- **Chrome Steel** (#67718A): the dark edge of the metallic washes — ambient only.
+- **Cream Paper** (#f5f2ee): page ground, hero and section grounds, ghost-button fill.
+- **Ink** (#0a0a0a): text, 3px borders, primary-button fill, hard shadows, Projects section ground.
 
 ### Neutral
-- **Paper** (#08080A): dark page background; light theme Paper Light (#FAFAFA, retuned per ADR 0004).
-- **Ink** (#FAFAFA): dark foreground text; light theme Ink Light (#09090B, retuned per ADR 0004).
-- **Card Dark** (#101014): cards, chips, repo links, frames on dark.
-- **Mist Dark** (#1A1A20): muted fills and mockup bars on dark.
-- **Slate Light** (#CBD5E1): secondary body copy on dark.
-- **Hairline Dark** (#26262E): all borders and dividers on dark.
-- **On-Accent Dark** (#08080A): text on sky actions.
+- **Card White** (#FFFFFF): About fact cards, Skills Proficient card, Contact composer cards.
+- **Card Ink** (#0a0a0a): Skills Familiar card, project cards sit on the ink section ground.
+- **Grey** (#cccccc): muted mono labels on dark, preloader sub-copy.
+- **Smoke** (#777777): secondary mono labels on light (ledgers, fact keys), mobile overlay numerals.
+- **Coal** (#444444): preloader track, muted fills.
 
 ### Named Rules (optional, powerful)
-**The One Accent Rule.** Sky blue is the sole meaningful accent. Chrome silvers never carry meaning, and brand-mark colors stay inside their 18px chips.
+**The Contrast-Is-The-Accent Rule.** No sky blue, no chrome wash. Meaning comes from ink↔cream inversion and border weight, never from a hue accent.
 
 ## Typography
 
-**Display Font:** Archivo (with system-ui, -apple-system, Segoe UI fallback)
-**Body Font:** Inter (with system-ui, -apple-system, Segoe UI fallback)
+**Display Font:** Barlow Condensed (with Arial Narrow, system-ui fallback)
+**Body Font:** Montserrat (with system-ui fallback)
+**Label/Mono Font:** Space Mono (with ui-monospace fallback)
 
-**Character:** Oversized centered display once (the name), then quiet confident headlines. Body copy is cut to proof lines — one outcome sentence per project, two lines of About.
+**Character:** Oversized condensed uppercase display once per section, calm geometric body, tracked-out mono labels for eyebrows and ledgers. Outline surnames via 3px text-stroke.
 
 ### Hierarchy
-- **Display** (800, clamp(3rem, 10vw, 8rem), 0.95): hero name only, centered, balanced.
-- **Headline** (700, 2.25rem rising to 3rem on sm, 1.1): Work and Stack section titles. About and Contact step down to 1.875rem/2.25rem — accent eyebrows are reserved for Work (scan) and Contact (act); Stack and About eyebrows render muted.
-- **Title** (700, 1.875rem rising to 2.25rem / 3rem, 1.2 tight): carousel project titles.
-- **Body** (400, 1rem, 1.6 relaxed): proof lines, About lines, part details.
-- **Label** (600, 0.875rem, 0.2em tracking, uppercase): eyebrows and card index lines.
+- **Display** (800, clamp(3.5rem, 10vw, 7.5rem), 0.9): hero name and section closers, uppercase, tight.
+- **Headline** (800, 2.5rem rising to 3rem+ on sm, 1.0): section titles (About, Stack, Selected work, Let's build).
+- **Title** (700, 2rem, 1.05): project names inside cards.
+- **Body** (400, 1rem, 1.6 relaxed): proof lines, outcomes, About copy.
+- **Label** (700, 0.72rem, 0.25em tracking, uppercase): eyebrows (`01 — About`), badges, ledger keys, pills.
 
 ### Named Rules (optional)
-**The Type Does the Work Rule.** Hierarchy comes from size, weight, and whitespace — never from extra colors or decoration.
+**The Type Does The Work Rule.** Hierarchy comes from size, weight, and whitespace — never from extra colors or decoration.
 
 ## Layout
 
-Centered hero filling the first viewport (name, profession line, one CTA). Work stacks all four project cards on desktop and becomes a horizontal snap carousel below the large breakpoint: one slide per view, full-bleed track with container padding, arrows beside the section title, dots below, screen-reader announcements on change (arrows, dots, and keyboard handling are carousel-mode only). Standard slides split mockup / text in two columns on desktop (70vh minimum); the Inea slide shows one surface at a time behind an Admin / Landing / Flutter-app tab row (roving-tabindex tabs, one panel mounted) above a two-column text row with a per-surface detail list. Stack groups Tech then Deploy in wrapping rows. About is centered text. All inside a 72rem container with 20px gutters (32px on sm+), breathing on the fluid section rhythm (`clamp(64px, 10vw, 144px)`).
+Single-page anchors: Hero (`#top`), About (`#about`), Skills (`#skills`), Projects (`#projects`), Contact footer (`#contact`). Content lives in a centered 72rem container with 20px gutters (32px on sm+), sections padded 64px mobile / 96px desktop.
+
+Hero is a 2-column split on desktop (content left, ink surfaces panel right with 3px left border) and single-column stacked on mobile (static 2-col surfaces grid replaces the desktop vertical loop). About fact-grid is 1 column mobile / 2 columns sm+. Skills is 1 column / 2 columns md. Projects is a vertically stacked card list (`space-y-6`). Contact composer is 1 column / 2 columns md (intent+scope card, details+actions card). Sticky nav carries an 84px anchor offset (`scroll-margin-top`).
 
 ## Elevation & Depth
 
-Flat surfaces over a glowing depth. Cards, chips, and frames stay shadowless with 1px hairline borders; the sense of depth comes from the blurred chrome layer fixed behind everything — never from `box-shadow`. Chrome wash gradients blend freely between Chrome Silver (#C3CCD9) and Chrome Steel (#67718A); intermediate stops are atmosphere, not tokens. On light the same blobs render at roughly half opacity so paper keeps depth without washing out text.
+Hard offset shadows only — depth is structural, never ambient glow.
 
-## Motion
-
-One authored moment per surface, never scattered effects. Page scroll is eased by Lenis (driven off GSAP's ticker, single RAF, `lagSmoothing(0)`); anchor jumps carry a 72px offset for the sticky header, and the mobile Work carousel track opts out via `data-lenis-prevent`. The chrome layer drifts on scroll (subtle scrub parallax on the layer itself — blobs keep their CSS keyframes). Emulator screens transition slide/fade (`power2.out`, 350ms, transform + opacity only). Reveal-on-scroll stays on the IntersectionObserver system; GSAP never duplicates it. Under `prefers-reduced-motion` there is no Lenis instance, no GSAP tween, no smooth scroll — content renders in its final state.
+### Shadow Vocabulary (if applicable)
+- **Brutal** (`box-shadow: 3px 3px 0 #0a0a0a`): cards, badges, ghost buttons, nav toggle on light grounds.
+- **Brutal smoke** (`box-shadow: 3px 3px 0 #555`): primary buttons on light grounds.
+- **Press** (translate 2px + collapse to `1px 1px 0`): button hover/active feedback.
 
 ### Named Rules (optional)
-**The Flat-By-Default Rule.** Surfaces stay flat. The only lift is a 2px rise on the primary action; everything else changes border color, never shadow. The chrome may glow; components may not. Device hardware is exempt: bezels, glare, and floor reflections depict a physical object, not UI elevation.
+**The Hard-Shadow-Only Rule.** Surfaces lift by exactly one hard offset. No blur, no glow, no `box-shadow` larger than the 3px grid.
 
 ## Shapes
 
-Pills for actions, soft rectangles for evidence, tall rounds for devices. Primary/secondary actions, stack chips, repo links, and carousel arrows are fully rounded pills (9999px). Work slides are large soft rectangles (16px); browser mockups smaller ones (12px); phone frames tall rounds (~35px outer, ~27px screen). Focus is a sharp 3px ring with 3px offset and 4px corner.
+Squared brutal containers, pill actions. Section cards, fact cards, composer cards, and project cards are square (3px ink border, no radius). Buttons are square 3px-bordered bars; chips, repo pills, intent/scope toggles, and stack tags are fully rounded pills (9999px). Focus is a sharp 3px ring with 3px offset (cream ring on the dark Projects ground).
 
 ## Components
 
-Dark, restrained, evidence-led. Brand-mark color lives only inside stack chips.
+Honest, tactile, evidence-led. Ink borders everywhere; pills for actions, squares for evidence.
 
 ### Buttons
-- **Shape:** fully rounded pill (9999px)
-- **Primary:** sky fill with near-black text, 32px horizontal / 12px vertical padding, 44px minimum height, semibold; hover lifts 2px
-- **Hover / Focus:** primary lifts on hover; all actions show a 3px sky focus ring with 3px offset; secondary shifts border to accent
-- **Secondary / Ghost / Tertiary (if applicable):** card fill with hairline border and ink text (copy-email, carousel arrows, GitHub)
+- **Shape:** square bar (3px ink border), 44px minimum height
+- **Primary:** ink fill with cream text, smoke hard shadow; hover presses (translate + shadow collapse)
+- **Hover / Focus:** press on hover; 3px focus ring with 3px offset on all actions
+- **Secondary / Ghost:** cream fill with ink text and ink hard shadow (`btn-ghost-brutal`)
 
 ### Chips
-- **Style:** card fill, ink text, hairline border, pill shape, 44px minimum height, 0.95rem medium label; 18px brand mark in brand color (near-black marks resolve to foreground) or an 18px initials tile (5px radius, 10px bold accent type on muted)
-- **State:** static only — no selected/unselected treatment
-- **Card stack tags:** the same pill dialect at label ramp (44px, 14px, no mark) — one chip language everywhere, brand color still never leaves the 18px chip
+- **Style:** pill, 3px border, 44px minimum height, bold 14px label; white pill on light, ink pill with cream text on dark
+- **State:** static on Skills; `aria-pressed` ink-fill toggle on Contact intent/scope
 
 ### Cards / Containers
-- **Corner Style:** large soft rectangle (16px)
-- **Background:** card surface over the fixed chrome
-- **Shadow Strategy:** none — see Elevation & Depth
-- **Border:** 1px hairline
-- **Internal Padding:** 24px mobile, 40px on sm+
-
-### Repo Links
-- **Style:** pill with 16px GitHub mark, short label (surface name), and always-visible muted `github.com/…` URL truncated to 240px — reachable on touch, keyboard, and desktop scan alike
-- **State:** hover and focus shift border and text to accent; nothing is hover-only
+- **Corner Style:** square
+- **Background:** white cards on cream grounds; ink cards for Familiar skills and all project cards
+- **Shadow Strategy:** hard 3px offset — see Elevation & Depth
+- **Border:** 3px ink (cream 3px on the dark Projects ground)
+- **Internal Padding:** 20–24px mobile, 32–40px on sm+
 
 ### Navigation
-- Sticky top header, 64px height, transparent at top; on scroll (>8px) blurred paper at 70% with hairline bottom border, no shadow. Wordmark `CM.` in Archivo extrabold 18px with accent period. Work / Stack / About / Contact always visible at 44px targets, tighter tracking on mobile. Theme toggle is a 44px pill with an 18px SVG sun/moon and `aria-pressed`. Skip-to-content link appears on focus in accent fill. Footer repeats contact actions with a hairline top rule, copyright line, and back-to-top link.
+- Sticky top bar, 3px bottom border, cream ground; wordmark `CM.` in display extrabold. Desktop: numbered links + `Hire me` primary button. Mobile: 44px hamburger opens a fullscreen ink overlay dialog (numbered 48px+ links, `Hire me`, email) with ESC close, focus moved to the close button, body scroll locked. Skip-to-content link on focus.
 
-### Carousel
-- Below the large breakpoint: scroll-snap track (`x mandatory`, hidden scrollbar), one full-width slide per view, arrow buttons (44px pills) beside the title, 44px dot buttons below with `aria-current`, polite live-region announcement of the current project. No autoplay. On desktop the same DOM stacks as a static list and the carousel controls hide.
-- Multi-surface projects render a per-surface detail list (label + outcome detail + repo link) so the end-to-end story needs no click to understand.
+### Hero
+- Badge (`★ Open to roles & freelance`), giant `Christian` + outline `Meude`, one proof line, `View my work` / `Get in touch` / conditional `Download CV` (hidden until `public/cv.pdf` lands). Info ledger below CTAs: Location / Status / Email. Right panel: ink ground, vertical surfaces loop on desktop, static 2-col grid on mobile. No entrance animation, no stats row, no divider marquee in the hero.
 
-### Device Mockups
-- **Phone hardware:** photorealistic dark bezel (~10px, metallic gradient), punch-hole camera, side buttons, diagonal screen glare, soft floor reflection. Hardware realism lives in the frame; the screen content follows the app it depicts, not portfolio tokens.
-- **Emulator:** an interactive `region` variant of the frame — the real app's IA, flows, and branding (e.g. NUcleus navy/gold Inter UI: sign-in, tab bar, repository screens; Inea plum/cream Figtree: admin sidebar + bookings ledger, client packages → scent-pick booking, landing tiers + inquiry form; BudgeTrax near-black/violet system UI: cutoff pills, allotments + To Spare, bill payoff cards), driven by local state. Phone screens are fixed to Pixel 7 Pro proportions (19.5:9 — 500px high at 250px wide, 540px at sm). Each emulator is introduced by a one-line try-line (the sighted equivalent of the screen-reader preview label); login gates carry "any input signs in" sample microcopy. Real data is replaced by clearly badged sample content; simulated legs are labelled simulated; unbuilt concepts never get emulators. Full-width 44px controls, live-region announcements, focus moved on screen change.
-- **Browser (laptop/desktop):** traffic dots plus URL pill, 12px radius; desktop variant wider (fluid in trios)
-- **Scenes:** abstract bars, pills, and live dots with real product words (surface names, statuses); micro-type (10–13px) is reserved for mockup screens and never appears in page content; wireframe dashed treatment reserved for unbuilt concepts (Lalatracker)
+### Projects
+- Stacked numbered cards 01–04: index numeral, Live/WIP status pill, display title, tagline, outcome line, stack pills, per-part label/detail rows (Inea trio), repo pills with always-visible URLs. No grid, no carousel, no emulators (see ADR-0006 supersede notice).
+
+### Repo Links
+- **Style:** pill with 18px GitHub mark, short label, full URL revealed on hover/focus/toggle (expand `+` affordance always visible on touch), copy button with 2s confirmation + live region
+- **State:** hover/focus inverts to cream on ink; nothing is hover-only
+
+### Contact + Chatbot
+- Contact is an intent-select mailto composer: intent pills (Full-time / Freelance / Collaboration / Hi) + scope pills compose the subject/body of a `mailto:` with a free-text details field; `Compose email` + `GitHub` actions beside the selectable email address. Chatbot answers from curated `lib/answers.ts` via `/api/chat` (Gemini key in env); unconfigured or unmatched questions fall back to the refusal / email redirect, never invented copy.
 
 ## Do's and Don'ts
 
 Concrete guardrails grounded in the shipped implementation.
 
 ### Do:
-- **Do** keep the hero to name, profession, one action — nothing else above the fold.
-- **Do** give every project a mockup of its real surface; wireframe treatment only for concepts.
-- **Do** keep repo URLs always visible — never hover-only, never truncated beyond recognition.
-- **Do** freeze chrome motion under `prefers-reduced-motion` and keep the static wash.
-- **Do** keep landmarks, a visible 3px focus ring, and 44px targets on everything interactive.
+- **Do** keep 3px ink borders, hard shadows, and 44px targets on everything interactive.
+- **Do** keep repo URLs always visible or one toggle away — never hover-only, never truncated beyond recognition.
+- **Do** keep the hero settled on first paint; reserve motion for preloader, marquee, and scroll reveals.
+- **Do** freeze all motion under `prefers-reduced-motion` and keep content in its final state.
+- **Do** keep landmarks, a visible 3px focus ring, and a skip link.
 
 ### Don't:
-- **Don't** add a second accent or let brand-mark colors leak outside chips.
-- **Don't** add shadows, autoplay, or hover-dependent information.
-- **Don't** invent screenshots, metrics, testimonials, or product copy the repos don't support.
-- **Don't** treat light as second-class — retuned per ADR 0004 (dimmed chrome, AA-verified tokens, no-flash init); emulator screens and device hardware stay fixed app/hardware truth in both themes.
-- **Don't** replace Archivo / Inter or introduce a third family without an explicit rebrand decision.
+- **Don't** add a second accent, gradient wash, glow, or shadow outside the 3px hard grid.
+- **Don't** add stats, metrics, testimonials, or product copy the repos don't support.
+- **Don't** invent mockups, screenshots, emulators, or carousels for projects — cards + repo links are the evidence.
+- **Don't** wire the chatbot to anything but the curated answers file; no free-form generation.
+- **Don't** replace Barlow Condensed / Montserrat / Space Mono without an explicit rebrand decision.
