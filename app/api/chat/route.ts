@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server'
 import { ANSWERS, REFUSAL } from '../../../lib/answers'
 
-const MODEL = process.env.GEMINI_MODEL ?? 'gemini-2.5-flash'
+const MODEL = process.env.GEMINI_MODEL ?? 'gemini-3.5-flash-lite'
 
 function words(s: string): string[] {
   return s
