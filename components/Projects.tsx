@@ -39,7 +39,7 @@ export default function Projects() {
                 {p.stack.map((s) => (
                   <li
                     key={s}
-                    className="inline-flex min-h-[36px] items-center rounded-full border-2 border-[#f5f2ee]/40 px-3 text-xs font-bold uppercase tracking-widest"
+                    className="inline-flex min-h-[44px] items-center rounded-full border-2 border-[#f5f2ee]/40 px-4 text-xs font-bold uppercase tracking-widest"
                   >
                     {s}
                   </li>

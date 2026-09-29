@@ -15,6 +15,7 @@ export default function SiteNav() {
   const [render, setRender] = useState(false)
   const dialogRef = useRef<HTMLDivElement | null>(null)
   const closeRef = useRef<HTMLButtonElement | null>(null)
+  const triggerRef = useRef<HTMLButtonElement | null>(null)
   const closing = useRef(false)
 
   const reduceMotion = () =>
@@ -31,6 +32,7 @@ export default function SiteNav() {
     const el = dialogRef.current
     if (!el || reduceMotion()) {
       setRender(false)
+      triggerRef.current?.focus()
       return
     }
     closing.current = true
@@ -41,6 +43,7 @@ export default function SiteNav() {
       onComplete: () => {
         closing.current = false
         setRender(false)
+        triggerRef.current?.focus()
       },
     })
   }
@@ -73,9 +76,15 @@ export default function SiteNav() {
   return (
     <>
       <nav className="sticky top-0 z-50 flex items-center justify-between border-b-[3px] border-[#0a0a0a] bg-[#f5f2ee] px-6 py-4 md:px-10">
-        <a href="#top" className="font-display text-3xl font-extrabold tracking-tight">
-          CM.
-        </a>
+        <div className="flex items-center gap-3">
+          <a href="#top" className="font-display text-3xl font-extrabold tracking-tight">
+            CM.
+          </a>
+          <span className="hidden items-center gap-2 border-[3px] border-[#0a0a0a] bg-white px-2 py-1 font-mono text-[10px] font-bold uppercase tracking-[0.2em] sm:inline-flex">
+            <span aria-hidden="true" className="inline-block h-2 w-2 rounded-full bg-[#0a0a0a]" />
+            Open
+          </span>
+        </div>
         <ul className="hidden items-center gap-8 lg:flex">
           {LINKS.map((l) => (
             <li key={l.href}>
@@ -83,6 +92,9 @@ export default function SiteNav() {
                 href={l.href}
                 className="font-body text-sm font-bold uppercase tracking-[0.2em] opacity-60 transition-opacity hover:opacity-100"
               >
+                <span aria-hidden="true" className="mr-1 font-mono text-[10px] tracking-[0.2em]">
+                  {l.n}
+                </span>
                 {l.label}
               </a>
             </li>
@@ -101,6 +113,7 @@ export default function SiteNav() {
             Hire me
           </a>
           <button
+            ref={triggerRef}
             type="button"
             onClick={openMenu}
             aria-expanded={render}

@@ -4,7 +4,7 @@ import { useMemo, useState } from 'react'
 import { EMAIL, GITHUB_PROFILE } from '../lib/site'
 
 const INTENTS = ['Full-time role', 'Freelance project', 'Collaboration', 'Just saying hi'] as const
-const SCOPES = ['Mobile app', 'Web app', 'Systems / backend', 'Design + build', 'Not sure yet'] as const
+const SCOPES = ['Mobile app', 'Web app', 'Systems / backend'] as const
 
 export default function Contact() {
   const [intent, setIntent] = useState<(typeof INTENTS)[number]>('Freelance project')
@@ -32,13 +32,18 @@ export default function Contact() {
           Pick an intent and scope — it composes the email. No spam trap; the chat widget
           answers from approved notes only.
         </p>
+        <p className="mt-4 md:hidden">
+          <a href={`mailto:${EMAIL}`} className="font-bold underline">
+            {EMAIL}
+          </a>
+        </p>
 
         <div data-reveal className="mt-8 grid grid-cols-1 gap-5 md:grid-cols-2">
           <div className="border-[3px] border-[#0a0a0a] bg-white p-6 shadow-brutal">
-            <label className="type-mono-label" htmlFor="intent">
+            <p className="type-mono-label" id="intent-label">
               Intent
-            </label>
-            <div className="mt-3 flex flex-wrap gap-2" role="group" aria-label="Intent">
+            </p>
+            <div className="mt-3 flex flex-wrap gap-2" role="group" aria-labelledby="intent-label">
               {INTENTS.map((i) => (
                 <button
                   key={i}
@@ -53,10 +58,10 @@ export default function Contact() {
                 </button>
               ))}
             </div>
-            <label className="type-mono-label mt-6 block" htmlFor="scope">
+            <p className="type-mono-label mt-6" id="scope-label">
               Scope
-            </label>
-            <div className="mt-3 flex flex-wrap gap-2" role="group" aria-label="Scope">
+            </p>
+            <div className="mt-3 flex flex-wrap gap-2" role="group" aria-labelledby="scope-label">
               {SCOPES.map((s) => (
                 <button
                   key={s}

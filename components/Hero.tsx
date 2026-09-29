@@ -19,7 +19,7 @@ export default function Hero() {
             <span className="type-outline">Meude</span>
           </h1>
           <p className="font-body mt-2 max-w-md text-lg">
-            Mobile, web &amp; systems developer. Landing, app, and admin — shipped end to end.
+            Mobile, web &amp; systems developer. 2 shipped, 2 WIP — every claim links to a repo.
           </p>
           <div className="mt-6 flex flex-wrap gap-3">
             <a href="#projects" className="btn-brutal btn-primary-brutal">

@@ -166,8 +166,7 @@ body {
   opacity: 0.7;
 }
 
-.repo-pill .repo-copy,
-.repo-pill .repo-expand {
+.repo-pill .repo-copy {
   opacity: 0;
   width: 0;
   min-width: 0;
@@ -179,16 +178,28 @@ body {
     width 350ms ease;
 }
 
-.repo-pill:hover .repo-copy,
-.repo-pill:focus-within .repo-copy,
-.repo-pill[data-open] .repo-copy,
-.repo-pill:hover .repo-expand,
-.repo-pill:focus-within .repo-expand,
-.repo-pill[data-open] .repo-expand {
+.repo-pill .repo-expand {
   opacity: 1;
   width: 44px;
   min-width: 44px;
   border-width: 2px;
+}
+
+.repo-pill:hover .repo-copy,
+.repo-pill:focus-within .repo-copy,
+.repo-pill[data-open] .repo-copy {
+  opacity: 1;
+  width: 44px;
+  min-width: 44px;
+  border-width: 2px;
+}
+
+/* Desktop: proof visible without hover — short URL inline by default on sm+. */
+@media (min-width: 640px) and (hover: hover) {
+  .repo-pill .repo-url {
+    max-width: 260px;
+    opacity: 0.7;
+  }
 }
 
 /* Touch: no hover — the + toggle is the only affordance, so keep it visible. */
