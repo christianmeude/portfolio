@@ -2,7 +2,7 @@
 
 Cream-first brutalist developer portfolio for Christian Meude — mobile, web & systems.
 
-- **Live:** coming soon (`*.vercel.app` — URL added here after first deploy)
+- **Live:** [christianmeude.vercel.app](https://christianmeude.vercel.app/)
 - **Stack:** Next.js App Router, Tailwind, GSAP, Supabase (chat route only)
 - **Contact:** christianmeude17@gmail.com · [github.com/christianmeude](https://github.com/christianmeude)
 
