@@ -89,13 +89,13 @@ components:
 
 **Creative North Star: "Cream Brutalism" — ADR 0007.**
 
-Cream first, loud borders, honest proof. The visitor lands on a sticky nav + badge + giant condensed name with an outline surname + info ledger (Location / Status / Email) — then scrolls an About fact-grid, Proficient/Familiar stack cards, numbered projects 01–04 with Live/WIP pills and always-visible repo pills, and ends in an intent-select mailto composer. A marquee strip divides Skills from Projects; a 000/100 preloader opens the page. Every claim resolves to a repo, a WIP label, or an explicit concept tag.
+Cream first, loud borders, honest proof. The visitor lands on a sticky nav + badge + giant condensed name with an outline surname + CTAs — then scrolls an About fact-grid, Proficient/Familiar stack cards, numbered projects 01–04 with Live/WIP pills and always-visible repo pills, and ends in an intent-select mailto composer. A 000/100 preloader opens the page; marquee motion is surfaces-only (vertical loop on the desktop hero panel, horizontal strip below the hero on mobile). Every claim resolves to a repo, a WIP label, or an explicit concept tag.
 
 **Key Characteristics:**
 - Cream-first neo-brutalism — 3px ink borders, hard `3px 3px 0` shadows, outline display type
 - Hero renders settled on first paint — no entrance animation, no stats row
 - Numbered project cards carry the evidence, not mockups or carousels
-- Three motions only: preloader + marquee + scroll reveal
+- Four motions only: GSAP-tweened preloader + surfaces marquee + scroll reveal + overlay fade
 
 ## Colors
 
@@ -109,7 +109,7 @@ Ink on cream, inverted to cream on ink for the Projects section. No hue accent �
 - **Card White** (#FFFFFF): About fact cards, Skills Proficient card, Contact composer cards.
 - **Card Ink** (#0a0a0a): Skills Familiar card, project cards sit on the ink section ground.
 - **Grey** (#cccccc): muted mono labels on dark, preloader sub-copy.
-- **Smoke** (#777777): secondary mono labels on light (ledgers, fact keys), mobile overlay numerals.
+- **Smoke** (#777777): secondary mono labels on light (fact keys), mobile overlay numerals.
 - **Coal** (#444444): preloader track, muted fills.
 
 ### Named Rules (optional, powerful)
@@ -121,14 +121,14 @@ Ink on cream, inverted to cream on ink for the Projects section. No hue accent �
 **Body Font:** Montserrat (with system-ui fallback)
 **Label/Mono Font:** Space Mono (with ui-monospace fallback)
 
-**Character:** Oversized condensed uppercase display once per section, calm geometric body, tracked-out mono labels for eyebrows and ledgers. Outline surnames via 3px text-stroke.
+**Character:** Oversized condensed uppercase display once per section, calm geometric body, tracked-out mono labels for eyebrows and pills. Outline surnames via 3px text-stroke.
 
 ### Hierarchy
 - **Display** (800, clamp(3.5rem, 10vw, 7.5rem), 0.9): hero name and section closers, uppercase, tight.
 - **Headline** (800, 2.5rem rising to 3rem+ on sm, 1.0): section titles (About, Stack, Selected work, Let's build).
 - **Title** (700, 2rem, 1.05): project names inside cards.
 - **Body** (400, 1rem, 1.6 relaxed): proof lines, outcomes, About copy.
-- **Label** (700, 0.72rem, 0.25em tracking, uppercase): eyebrows (`01 — About`), badges, ledger keys, pills.
+- **Label** (700, 0.72rem, 0.25em tracking, uppercase): eyebrows (`01 — About`), badges, pills.
 
 ### Named Rules (optional)
 **The Type Does The Work Rule.** Hierarchy comes from size, weight, and whitespace — never from extra colors or decoration.
@@ -177,10 +177,10 @@ Honest, tactile, evidence-led. Ink borders everywhere; pills for actions, square
 - **Internal Padding:** 20–24px mobile, 32–40px on sm+
 
 ### Navigation
-- Sticky top bar, 3px bottom border, cream ground; wordmark `CM.` in display extrabold. Desktop: numbered links + `Hire me` primary button. Mobile: 44px hamburger opens a fullscreen ink overlay dialog (numbered 48px+ links, `Hire me`, email) with ESC close, focus moved to the close button, body scroll locked. Skip-to-content link on focus.
+- Sticky top bar, 3px bottom border, cream ground; wordmark `CM.` in plain display extrabold text (no dot mark). Desktop: numbered links + `Hire me` primary button. Mobile: compact `Hire me` beside the 44px hamburger; the hamburger opens a fullscreen ink overlay dialog (GSAP fade + link stagger on open, fade on close; numbered 48px+ links, `Hire me`, email) with ESC close, focus moved to the close button, body scroll locked. Skip-to-content link on focus.
 
 ### Hero
-- Badge (`★ Open to roles & freelance`), giant `Christian` + outline `Meude`, one proof line, `View my work` / `Get in touch` / conditional `Download CV` (hidden until `public/cv.pdf` lands). Info ledger below CTAs: Location / Status / Email. Right panel: ink ground, vertical surfaces loop on desktop, static 2-col grid on mobile. No entrance animation, no stats row, no divider marquee in the hero.
+- Badge (`★ Open to roles & freelance`), giant `Christian` + outline `Meude`, one proof line, `View my work` / `Get in touch` / conditional `Download CV` (hidden until `public/cv.pdf` lands). No ledger, no stats — breathing room instead, sized so the full hero fits a 1440×900 viewport. Right panel: ink ground with vertical surfaces loop on desktop only; mobile gets a horizontal ink surfaces marquee strip below the hero content (desktop pixel-identical). No entrance animation, no divider marquee between sections.
 
 ### Projects
 - Stacked numbered cards 01–04: index numeral, Live/WIP status pill, display title, tagline, outcome line, stack pills, per-part label/detail rows (Inea trio), repo pills with always-visible URLs. No grid, no carousel, no emulators (see ADR-0006 supersede notice).
@@ -199,7 +199,7 @@ Concrete guardrails grounded in the shipped implementation.
 ### Do:
 - **Do** keep 3px ink borders, hard shadows, and 44px targets on everything interactive.
 - **Do** keep repo URLs always visible or one toggle away — never hover-only, never truncated beyond recognition.
-- **Do** keep the hero settled on first paint; reserve motion for preloader, marquee, and scroll reveals.
+- **Do** keep the hero settled on first paint; reserve motion for the tweened preloader, surfaces marquee, scroll reveals, and overlay fade.
 - **Do** freeze all motion under `prefers-reduced-motion` and keep content in its final state.
 - **Do** keep landmarks, a visible 3px focus ring, and a skip link.
 

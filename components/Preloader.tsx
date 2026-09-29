@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect, useState } from 'react'
+import gsap from 'gsap'
 
 export default function Preloader() {
   const [done, setDone] = useState(false)
@@ -12,20 +13,22 @@ export default function Preloader() {
       window.dispatchEvent(new Event('cm:ready'))
       return
     }
-    let v = 0
-    const id = window.setInterval(() => {
-      v += Math.ceil(Math.random() * 14)
-      if (v >= 100) {
-        v = 100
-        window.clearInterval(id)
+    const counter = { v: 0 }
+    const tween = gsap.to(counter, {
+      v: 100,
+      duration: 1.2,
+      ease: 'power1.inOut',
+      onUpdate: () => setN(Math.round(counter.v)),
+      onComplete: () => {
         window.setTimeout(() => {
           setDone(true)
           window.dispatchEvent(new Event('cm:ready'))
         }, 250)
-      }
-      setN(v)
-    }, 90)
-    return () => window.clearInterval(id)
+      },
+    })
+    return () => {
+      tween.kill()
+    }
   }, [])
 
   if (done) return null

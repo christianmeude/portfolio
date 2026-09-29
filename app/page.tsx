@@ -2,7 +2,6 @@ import About from '../components/About'
 import Chatbot from '../components/Chatbot'
 import Contact from '../components/Contact'
 import Hero from '../components/Hero'
-import Marquee from '../components/Marquee'
 import Motion from '../components/Motion'
 import Preloader from '../components/Preloader'
 import Projects from '../components/Projects'
@@ -19,7 +18,6 @@ export default function Page() {
       <main id="main">
         <About />
         <Skills />
-        <Marquee items={['Expo', 'React Native', 'Supabase', 'Flutter', 'Laravel', 'TypeScript']} />
         <Projects />
       </main>
       <Contact />
