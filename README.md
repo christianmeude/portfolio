@@ -1,6 +1,6 @@
 # Christian Meude — Portfolio
 
-Cream-first brutalist developer portfolio. Mobile, web & systems — 2 shipped, 2 WIP, every claim links to a repo.
+Cream-first brutalist developer portfolio for Christian Meude — mobile, web & systems.
 
 - **Live:** coming soon (`*.vercel.app` — URL added here after first deploy)
 - **Stack:** Next.js App Router, Tailwind, GSAP, Supabase (chat route only)
