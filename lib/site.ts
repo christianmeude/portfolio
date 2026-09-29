@@ -114,11 +114,12 @@ export const PROFICIENT = [
   'Supabase',
   'Git',
 ]
-export const FAMILIAR = ['Flutter', 'Dart', 'Laravel', 'Inertia', 'PostgreSQL', 'Vercel', 'Neon']
+export const FAMILIAR = ['Flutter', 'Dart', 'Laravel', 'Inertia', 'PostgreSQL', 'expo-router', 'expo-sqlite', 'REST APIs', 'Vercel', 'Neon']
 
 export const FACTS = [
   { k: 'Focus', v: 'Mobile, web & systems — Expo + Supabase apps to Laravel operations dashboards' },
   { k: 'Location', v: 'Philippines — open to remote roles and freelance' },
+  { k: 'Education', v: "BS IT Mobile & Web, NU-Dasmariñas — Dean's Lister, 7 consecutive terms" },
   { k: 'Contact', v: EMAIL },
   { k: 'Proof', v: 'Every claim resolves to a repo, a WIP label, or an explicit concept tag' },
 ]

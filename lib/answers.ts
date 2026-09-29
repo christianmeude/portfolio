@@ -27,7 +27,7 @@ export const ANSWERS: Answer[] = [
   {
     id: 'stack',
     match: ['stack', 'technologies', 'tech', 'tools', 'languages', 'framework'],
-    text: 'Proficient: React, React Native, Expo, TypeScript, Tailwind, Supabase, Git. Familiar: Flutter, Dart, Laravel, Inertia, PostgreSQL, Vercel, Neon.',
+    text: 'Proficient: React, React Native, Expo, TypeScript, Tailwind, Supabase, Git. Familiar: Flutter, Dart, Laravel, Inertia, PostgreSQL, expo-router, expo-sqlite, REST APIs, Vercel, Neon. Foundations from his degree — Java, Python, Kotlin, PHP, Node/Express, MySQL, MongoDB, Firebase — stay in the CV.',
   },
   {
     id: 'nucleus',
@@ -52,12 +52,17 @@ export const ANSWERS: Answer[] = [
   {
     id: 'experience',
     match: ['experience', 'years', 'senior', 'junior', 'background', 'history'],
-    text: 'Christian has 3+ years of experience building mobile, web, and systems software — from Expo + Supabase apps to Flutter clients to Laravel operations dashboards.',
+    text: 'Christian has 4+ years of professional experience across customer-facing and technical support roles (2022–2026), and now builds full-stack mobile and web systems — Expo + Supabase apps to Laravel operations dashboards.',
   },
   {
     id: 'location',
     match: ['where', 'location', 'based', 'philippines', 'remote', 'timezone'],
     text: 'Christian is based in the Philippines and open to remote roles and freelance work worldwide.',
+  },
+  {
+    id: 'education',
+    match: ['education', 'study', 'studied', 'school', 'university', 'college', 'degree', 'dean', 'lister', 'honors', 'nu-dasma', 'dlsu'],
+    text: "Christian studies BS IT (Mobile & Web) at NU-Dasmariñas (2023–2026) — Dean's Lister, 7 consecutive terms. SHS with High Honors at DLSU-D (2019–2021).",
   },
   {
     id: 'cv',
