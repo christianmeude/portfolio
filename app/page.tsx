@@ -1,4 +1,5 @@
 import About from '../components/About'
+import Certifications from '../components/Certifications'
 import Chatbot from '../components/Chatbot'
 import Contact from '../components/Contact'
 import Hero from '../components/Hero'
@@ -19,6 +20,7 @@ export default function Page() {
         <About />
         <Skills />
         <Projects />
+        <Certifications />
       </main>
       <Contact />
       <Chatbot />

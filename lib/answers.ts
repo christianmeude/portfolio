@@ -37,7 +37,7 @@ export const ANSWERS: Answer[] = [
   {
     id: 'inea',
     match: ['inea', 'scent', 'booking', 'flutter', 'laravel', 'admin', 'events'],
-    text: 'Inea Scents System (shipped) is an end-to-end scent-bar booking system: a brand/landing site, a Flutter customer booking app, and a Laravel + Inertia admin for bookings, packages, and inquiries. Three repos: inea-scents-landing, inea-scents-client, and inea-scents — all on github.com/christianmeude.',
+    text: 'Inea Scents System (shipped) is an end-to-end scent-bar booking system: a brand/landing site live at ineascents.vercel.app, a Flutter customer booking app live at ineascents-app.vercel.app, and a Laravel + Inertia admin for bookings, packages, and inquiries. Three repos: inea-scents-landing, inea-scents-client, and inea-scents — all on github.com/christianmeude.',
   },
   {
     id: 'budgetrax',

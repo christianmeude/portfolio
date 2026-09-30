@@ -22,7 +22,7 @@ export default function Contact() {
   return (
     <footer id="contact" className="bg-[#f5f2ee]">
       <div className="mx-auto max-w-6xl px-6 py-16 md:px-10 md:py-24">
-        <p className="type-mono-label">04 — Contact</p>
+        <p className="type-mono-label">05 — Contact</p>
         <h2 data-reveal className="font-display mt-3 text-5xl font-extrabold uppercase leading-[0.9] md:text-7xl">
           Let&apos;s build
           <br />

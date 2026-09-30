@@ -13,7 +13,7 @@ export interface Project {
   status: ProjectStatus
   statusLabel: string
   links: { label: string; url: string }[]
-  parts?: { label: string; detail: string; url?: string }[]
+  parts?: { label: string; detail: string; url?: string; liveUrl?: string }[]
 }
 
 function gh(url: string): string {
@@ -49,11 +49,13 @@ export const PROJECTS: Project[] = [
         label: 'Landing',
         detail: 'Brand and inquiry site',
         url: gh('https://github.com/christianmeude/inea-scents-landing.git'),
+        liveUrl: 'https://ineascents.vercel.app',
       },
       {
         label: 'Flutter App',
         detail: 'Customer booking app',
         url: gh('https://github.com/christianmeude/inea-scents-client.git'),
+        liveUrl: 'https://ineascents-app.vercel.app',
       },
       {
         label: 'Admin',

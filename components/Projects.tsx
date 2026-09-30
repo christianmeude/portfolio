@@ -55,7 +55,30 @@ export default function Projects() {
                   ))}
                 </ul>
               )}
+              {(p.parts ?? []).some((part) => part.liveUrl) && (
+                <div className="mt-5 flex flex-wrap gap-3">
+                  {(p.parts ?? [])
+                    .filter((part) => part.liveUrl)
+                    .map((part) => (
+                      <a
+                        key={part.liveUrl}
+                        href={part.liveUrl}
+                        target="_blank"
+                        rel="noreferrer noopener"
+                        className="inline-flex min-h-[44px] items-center gap-2 border-[3px] border-[#f5f2ee] bg-[#f5f2ee] px-5 text-sm font-bold text-[#0a0a0a]"
+                        aria-label={`Visit live ${part.label} (opens in new tab)`}
+                      >
+                        Visit {part.label} ↗
+                      </a>
+                    ))}
+                </div>
+              )}
               <div className="mt-5 flex flex-wrap gap-3">
+                {(p.parts ?? []).some((part) => part.liveUrl) && (
+                  <span className="w-full font-mono text-xs tracking-[0.15em] text-[#777] uppercase">
+                    Code
+                  </span>
+                )}
                 {resolveLinks(p).map((l) => (
                   <RepoPill key={l.url} label={l.label} url={l.url} />
                 ))}

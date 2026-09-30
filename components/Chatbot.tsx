@@ -61,7 +61,7 @@ export default function Chatbot() {
         <div
           role="dialog"
           aria-label="Chat about Christian's work"
-          className="flex h-[420px] max-h-[calc(100dvh-120px)] w-[min(92vw,360px)] flex-col overflow-hidden border-[3px] border-[#0a0a0a] bg-[#f5f2ee] shadow-brutal"
+          className="flex h-[420px] max-h-[calc(100dvh-120px)] w-[min(92vw,360px)] flex-col overflow-hidden border-[3px] border-[#0a0a0a] bg-[#f5f2ee] shadow-brutal outline outline-[3px] outline-[#f5f2ee]"
         >
           <div className="flex shrink-0 items-center justify-between border-b-[3px] border-[#0a0a0a] bg-[#0a0a0a] px-4 py-3 text-[#f5f2ee]">
             <span className="type-mono-label">Ask about my work</span>
@@ -85,7 +85,7 @@ export default function Chatbot() {
             {msgs.map((m, i) => (
               <p
                 key={i}
-                className={`max-w-[85%] rounded-2xl border-2 border-[#0a0a0a] px-3 py-2 text-sm leading-relaxed ${
+                className={`max-w-[85%] rounded-none border-2 border-[#0a0a0a] px-3 py-2 text-sm leading-relaxed ${
                   m.from === 'bot' ? 'bg-white' : 'ml-auto bg-[#0a0a0a] text-[#f5f2ee]'
                 }`}
               >
@@ -93,7 +93,7 @@ export default function Chatbot() {
               </p>
             ))}
             {busy && (
-              <p className="max-w-[85%] rounded-2xl border-2 border-[#0a0a0a] bg-white px-3 py-2 text-sm">
+              <p className="max-w-[85%] rounded-none border-2 border-[#0a0a0a] bg-white px-3 py-2 text-sm">
                 …
               </p>
             )}
@@ -140,7 +140,7 @@ export default function Chatbot() {
         onClick={() => setOpen((v) => !v)}
         aria-expanded={open}
         aria-label={open ? 'Close chat' : 'Open chat about Christian\u2019s work'}
-        className="inline-flex min-h-[56px] min-w-[56px] items-center justify-center rounded-full border-[3px] border-[#0a0a0a] bg-[#0a0a0a] text-2xl text-[#f5f2ee] shadow-brutal outline outline-[3px] outline-[#f5f2ee]"
+        className="inline-flex min-h-[56px] min-w-[56px] items-center justify-center rounded-none border-[3px] border-[#0a0a0a] bg-[#0a0a0a] text-2xl text-[#f5f2ee] outline outline-[3px] outline-[#f5f2ee]"
       >
         {open ? (
           <svg width="18" height="18" viewBox="0 0 14 14" fill="none" aria-hidden="true">

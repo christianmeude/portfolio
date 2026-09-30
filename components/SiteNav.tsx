@@ -8,7 +8,8 @@ const LINKS = [
   { n: '01', label: 'About', href: '#about' },
   { n: '02', label: 'Skills', href: '#skills' },
   { n: '03', label: 'Projects', href: '#projects' },
-  { n: '04', label: 'Contact', href: '#contact' },
+  { n: '04', label: 'Certifications', href: '#certifications' },
+  { n: '05', label: 'Contact', href: '#contact' },
 ]
 
 export default function SiteNav() {

@@ -9,8 +9,9 @@ export default function About() {
           The whole system, shipped
         </h2>
         <p data-reveal className="mt-4 max-w-2xl text-lg leading-relaxed">
-          I&apos;m Christian. Landing, app, and admin — I build all three and own everything
-          between them. No invented metrics, no div soup.
+          I&apos;m Christian, a developer from the Philippines building for remote roles and
+          freelance — from landing page to app to admin panel, shipped live. This page is
+          my CV in motion: every project below links to live work or real code.
         </p>
         <dl className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-2">
           {FACTS.map((f) => (
