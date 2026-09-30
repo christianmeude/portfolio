@@ -24,10 +24,37 @@ export default function Chatbot() {
   const inputRef = useRef<HTMLInputElement | null>(null)
 
   useEffect(() => {
-    fetch('/api/chat')
-      .then((r) => r.json())
-      .then((d) => setEnabled(Boolean(d.enabled)))
-      .catch(() => setEnabled(false))
+    let cancelled = false
+    const w = window as unknown as {
+      setTimeout: typeof window.setTimeout
+      clearTimeout: typeof window.clearTimeout
+      requestIdleCallback?: (cb: () => void, opts?: { timeout: number }) => number
+      cancelIdleCallback?: (id: number) => void
+    }
+    const probe = () => {
+      fetch('/api/chat')
+        .then((r) => r.json())
+        .then((d) => {
+          if (!cancelled) setEnabled(Boolean(d.enabled))
+        })
+        .catch(() => {
+          if (!cancelled) setEnabled(false)
+        })
+    }
+    // Deferred: never contend with first paint; idle or 3s cap.
+    if (w.requestIdleCallback && w.cancelIdleCallback) {
+      const idleId = w.requestIdleCallback(probe, { timeout: 3000 })
+      const cancel = w.cancelIdleCallback
+      return () => {
+        cancelled = true
+        cancel(idleId)
+      }
+    }
+    const t = w.setTimeout(probe, 1500)
+    return () => {
+      cancelled = true
+      w.clearTimeout(t)
+    }
   }, [])
 
   useEffect(() => {

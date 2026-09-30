@@ -1,6 +1,8 @@
+import dynamic from 'next/dynamic'
 import About from '../components/About'
 import Certifications from '../components/Certifications'
-import Chatbot from '../components/Chatbot'
+
+const Chatbot = dynamic(() => import('../components/Chatbot'))
 import Contact from '../components/Contact'
 import Hero from '../components/Hero'
 import Motion from '../components/Motion'
