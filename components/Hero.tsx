@@ -38,8 +38,10 @@ export default function Hero() {
           </div>
         </div>
         <div data-hero-entrance className="relative hidden min-h-[320px] overflow-hidden bg-[#0a0a0a] text-[#f5f2ee] md:block md:border-l-[3px]">
-          {/* Desktop: seamless vertical loop, clipped flush at the panel edges. */}
-          <div className="hidden h-full flex-col overflow-hidden px-8 opacity-60 md:flex md:px-12">
+          {/* Desktop: seamless vertical loop. Absolutely filled so the loop
+              never sizes the row — the panel inherits the hero height and
+              clips the loop at both edges. */}
+          <div className="absolute inset-0 hidden flex-col overflow-hidden px-8 opacity-60 md:flex md:px-12">
             <div
               className="animate-marquee-y flex shrink-0 flex-col will-change-transform"
               aria-label="Surfaces shipped"
