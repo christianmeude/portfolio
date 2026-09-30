@@ -56,14 +56,14 @@ export default function Chatbot() {
   }
 
   return (
-    <div className="fixed bottom-5 right-5 z-[60] flex flex-col items-end gap-3">
+    <div className="fixed right-4 bottom-4 z-[60] flex max-h-[calc(100dvh-2rem)] flex-col items-end gap-3">
       {open && (
         <div
           role="dialog"
           aria-label="Chat about Christian's work"
-          className="flex h-[420px] w-[min(92vw,360px)] flex-col border-[3px] border-[#0a0a0a] bg-[#f5f2ee] shadow-brutal"
+          className="flex h-[420px] max-h-[calc(100dvh-120px)] w-[min(92vw,360px)] flex-col overflow-hidden border-[3px] border-[#0a0a0a] bg-[#f5f2ee] shadow-brutal"
         >
-          <div className="flex items-center justify-between border-b-[3px] border-[#0a0a0a] bg-[#0a0a0a] px-4 py-3 text-[#f5f2ee]">
+          <div className="flex shrink-0 items-center justify-between border-b-[3px] border-[#0a0a0a] bg-[#0a0a0a] px-4 py-3 text-[#f5f2ee]">
             <span className="type-mono-label">Ask about my work</span>
             <button
               type="button"
@@ -81,7 +81,7 @@ export default function Chatbot() {
               </svg>
             </button>
           </div>
-          <div ref={logRef} className="flex-1 space-y-3 overflow-y-auto p-4" aria-live="polite">
+          <div ref={logRef} className="min-h-0 flex-1 space-y-3 overflow-y-auto p-4" aria-live="polite">
             {msgs.map((m, i) => (
               <p
                 key={i}
@@ -99,7 +99,7 @@ export default function Chatbot() {
             )}
           </div>
           <form
-            className="flex gap-2 border-t-[3px] border-[#0a0a0a] p-3"
+            className="flex shrink-0 gap-2 border-t-[3px] border-[#0a0a0a] p-3"
             onSubmit={(e) => {
               e.preventDefault()
               ask()
@@ -140,7 +140,7 @@ export default function Chatbot() {
         onClick={() => setOpen((v) => !v)}
         aria-expanded={open}
         aria-label={open ? 'Close chat' : 'Open chat about Christian\u2019s work'}
-        className="inline-flex min-h-[56px] min-w-[56px] items-center justify-center rounded-full border-[3px] border-[#0a0a0a] bg-[#0a0a0a] text-2xl text-[#f5f2ee] shadow-brutal"
+        className="inline-flex min-h-[56px] min-w-[56px] items-center justify-center rounded-full border-[3px] border-[#0a0a0a] bg-[#0a0a0a] text-2xl text-[#f5f2ee] shadow-brutal outline outline-[3px] outline-[#f5f2ee]"
       >
         {open ? (
           <svg width="18" height="18" viewBox="0 0 14 14" fill="none" aria-hidden="true">

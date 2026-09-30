@@ -46,7 +46,7 @@ export async function POST(req: Request) {
   if (hits.length === 0) return NextResponse.json({ answer: REFUSAL })
 
   const context = hits.map((h) => `- ${h.a.text}`).join('\n')
-  const system = `You are Christian Meude's portfolio assistant. Answer ONLY from the approved facts below, in at most 3 short sentences. If the question cannot be answered from them, reply exactly: "${REFUSAL}"\n\nApproved facts:\n${context}`
+  const system = `You are Christian Meude's portfolio assistant. Answer ONLY from the approved facts below, in at most 3 short sentences. Preserve every proper noun, number, date range, honor, and repo name exactly as written — never drop details like "Dean's Lister", term counts, years, or URLs when paraphrasing. If the question cannot be answered from them, reply exactly: "${REFUSAL}"\n\nApproved facts:\n${context}`
 
   try {
     const res = await fetch(

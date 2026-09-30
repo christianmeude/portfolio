@@ -10,18 +10,18 @@ export default function Hero() {
     <section id="top" className="border-b-[3px] border-[#0a0a0a]">
       <div className="grid grid-cols-1 gap-0 md:grid-cols-2">
         <div className="flex flex-col gap-5 px-6 py-12 md:gap-6 md:px-12 md:py-20">
-          <span className="type-mono-label inline-block w-fit border-[3px] border-[#0a0a0a] bg-white px-3 py-2 shadow-brutal">
+          <span data-hero-entrance className="type-mono-label inline-block w-fit border-[3px] border-[#0a0a0a] bg-white px-3 py-2 shadow-brutal">
             ★ Open to roles &amp; freelance
           </span>
-          <h1 className="font-display text-[clamp(3.5rem,10vw,7.5rem)] font-extrabold uppercase leading-[0.9]">
+          <h1 data-hero-entrance className="font-display text-[clamp(3.5rem,10vw,7.5rem)] font-extrabold uppercase leading-[0.9]">
             Christian
             <br />
             <span className="type-outline">Meude</span>
           </h1>
-          <p className="font-body mt-2 max-w-md text-lg">
+          <p data-hero-entrance className="font-body mt-2 max-w-md text-lg">
             Mobile, web &amp; systems developer. Landing, app, and admin — shipped end to end.
           </p>
-          <div className="mt-6 flex flex-wrap gap-3">
+          <div data-hero-entrance className="mt-6 flex flex-wrap gap-3">
             <a href="#projects" className="btn-brutal btn-primary-brutal">
               View my work
             </a>
@@ -35,7 +35,7 @@ export default function Hero() {
             )}
           </div>
         </div>
-        <div className="relative hidden min-h-[320px] overflow-hidden bg-[#0a0a0a] text-[#f5f2ee] md:block md:border-l-[3px]">
+        <div data-hero-entrance className="relative hidden min-h-[320px] overflow-hidden bg-[#0a0a0a] text-[#f5f2ee] md:block md:border-l-[3px]">
           {/* Desktop: seamless vertical loop. */}
           <div className="hidden h-full max-h-[560px] flex-col overflow-hidden p-8 opacity-40 md:flex md:p-12">
             <div
@@ -59,7 +59,7 @@ export default function Hero() {
         </div>
       </div>
       {/* Mobile: horizontal surfaces marquee below the hero. Desktop untouched. */}
-      <div className="overflow-hidden border-t-[3px] border-[#0a0a0a] bg-[#0a0a0a] py-3 text-[#f5f2ee] md:hidden">
+      <div data-hero-entrance className="overflow-hidden border-t-[3px] border-[#0a0a0a] bg-[#0a0a0a] py-3 text-[#f5f2ee] md:hidden">
         <div
           className="animate-marquee flex w-max whitespace-nowrap will-change-transform"
           aria-label="Surfaces shipped"

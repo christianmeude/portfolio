@@ -1,16 +1,28 @@
 'use client'
 
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import gsap from 'gsap'
+
+declare global {
+  interface Window {
+    __cmReady?: boolean
+  }
+}
+
+function signalReady() {
+  window.__cmReady = true
+  window.dispatchEvent(new Event('cm:ready'))
+}
 
 export default function Preloader() {
   const [done, setDone] = useState(false)
   const [n, setN] = useState(0)
+  const rootRef = useRef<HTMLDivElement | null>(null)
 
   useEffect(() => {
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
       setDone(true)
-      window.dispatchEvent(new Event('cm:ready'))
+      signalReady()
       return
     }
     const counter = { v: 0 }
@@ -20,10 +32,19 @@ export default function Preloader() {
       ease: 'power1.inOut',
       onUpdate: () => setN(Math.round(counter.v)),
       onComplete: () => {
-        window.setTimeout(() => {
+        const el = rootRef.current
+        signalReady()
+        if (!el) {
           setDone(true)
-          window.dispatchEvent(new Event('cm:ready'))
-        }, 250)
+          return
+        }
+        gsap.to(el, {
+          yPercent: -100,
+          duration: 0.7,
+          ease: 'power4.inOut',
+          delay: 0.25,
+          onComplete: () => setDone(true),
+        })
       },
     })
     return () => {
@@ -33,7 +54,7 @@ export default function Preloader() {
 
   if (done) return null
   return (
-    <div className="fixed inset-0 z-[9999] bg-[#0a0a0a] text-[#f5f2ee]" aria-hidden="true">
+    <div ref={rootRef} className="fixed inset-0 z-[9999] bg-[#0a0a0a] text-[#f5f2ee]" aria-hidden="true">
       <div className="flex h-full flex-col items-center justify-center px-6">
         <div className="font-display text-7xl font-extrabold tracking-tight">CM.</div>
         <div className="type-mono-label mt-3 text-[#cccccc]">Mobile · Web · Systems</div>
