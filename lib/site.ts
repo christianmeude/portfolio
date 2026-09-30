@@ -123,5 +123,4 @@ export const FACTS = [
   { k: 'Location', v: 'Philippines — open to remote roles and freelance' },
   { k: 'Education', v: "BS IT Mobile & Web, NU-Dasmariñas — Dean's Lister, 7 consecutive terms" },
   { k: 'Contact', v: EMAIL },
-  { k: 'Proof', v: 'Every claim resolves to a repo, a WIP label, or an explicit concept tag' },
 ]

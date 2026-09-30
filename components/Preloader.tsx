@@ -9,6 +9,8 @@ declare global {
   }
 }
 
+const SEEN_KEY = 'cm:seen'
+
 function signalReady() {
   window.__cmReady = true
   window.dispatchEvent(new Event('cm:ready'))
@@ -20,7 +22,14 @@ export default function Preloader() {
   const rootRef = useRef<HTMLDivElement | null>(null)
 
   useEffect(() => {
-    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+    let seen = false
+    try {
+      seen = window.sessionStorage.getItem(SEEN_KEY) === '1'
+    } catch {
+      seen = false
+    }
+    if (reduced || seen) {
       setDone(true)
       signalReady()
       return
@@ -28,10 +37,15 @@ export default function Preloader() {
     const counter = { v: 0 }
     const tween = gsap.to(counter, {
       v: 100,
-      duration: 1.2,
-      ease: 'power1.inOut',
+      duration: 1.8,
+      ease: 'expo.out',
       onUpdate: () => setN(Math.round(counter.v)),
       onComplete: () => {
+        try {
+          window.sessionStorage.setItem(SEEN_KEY, '1')
+        } catch {
+          // Private mode etc. — theatre simply replays next visit.
+        }
         const el = rootRef.current
         signalReady()
         if (!el) {

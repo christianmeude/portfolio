@@ -11,13 +11,31 @@ export default function Contact() {
   const [scope, setScope] = useState<(typeof SCOPES)[number]>('Mobile app')
   const [note, setNote] = useState('')
 
-  const href = useMemo(() => {
-    const subject = encodeURIComponent(`[${intent}] ${scope} — via portfolio`)
-    const body = encodeURIComponent(
-      `Hi Christian,\n\nIntent: ${intent}\nScope: ${scope}\n\nDetails:\n${note || '(write 2-3 lines: timeline, links, budget if any)'}\n\n—`,
-    )
-    return `mailto:${EMAIL}?subject=${subject}&body=${body}`
+  const { mailtoHref, gmailHref, plainText } = useMemo(() => {
+    const subject = `[${intent}] ${scope} — via portfolio`
+    const body = `Hi Christian,\n\nIntent: ${intent}\nScope: ${scope}\n\nDetails:\n${note || '(write 2-3 lines: timeline, links, budget if any)'}\n\n—`
+    return {
+      mailtoHref: `mailto:${EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`,
+      gmailHref: `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(EMAIL)}&su=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`,
+      plainText: `To: ${EMAIL}\nSubject: ${subject}\n\n${body}`,
+    }
   }, [intent, scope, note])
+  const [copied, setCopied] = useState(false)
+
+  const copyDetails = async () => {
+    try {
+      await navigator.clipboard.writeText(plainText)
+    } catch {
+      const area = document.createElement('textarea')
+      area.value = plainText
+      document.body.appendChild(area)
+      area.select()
+      document.execCommand('copy')
+      document.body.removeChild(area)
+    }
+    setCopied(true)
+    window.setTimeout(() => setCopied(false), 2000)
+  }
 
   return (
     <footer id="contact" className="bg-[#f5f2ee]">
@@ -90,9 +108,21 @@ export default function Contact() {
               className="mt-3 min-h-[120px] w-full border-[3px] border-[#0a0a0a] bg-[#f5f2ee] p-3 font-body text-sm"
             />
             <div className="mt-4 flex flex-wrap gap-3">
-              <a href={href} className="btn-brutal btn-primary-brutal">
+              <a href={mailtoHref} className="btn-brutal btn-primary-brutal">
                 Compose email
               </a>
+              <a
+                href={gmailHref}
+                target="_blank"
+                rel="noreferrer noopener"
+                className="btn-brutal btn-ghost-brutal"
+                aria-label="Compose in Gmail (opens in new tab)"
+              >
+                Gmail
+              </a>
+              <button type="button" onClick={copyDetails} className="btn-brutal btn-ghost-brutal">
+                {copied ? 'Copied ✓' : 'Copy details'}
+              </button>
               <a
                 href={GITHUB_PROFILE}
                 target="_blank"
@@ -102,6 +132,9 @@ export default function Contact() {
                 GitHub
               </a>
             </div>
+            <span aria-live="polite" className="sr-only">
+              {copied ? 'Email details copied to clipboard' : ''}
+            </span>
             <p className="mt-3 select-all font-mono text-xs text-muted">{EMAIL}</p>
           </div>
         </div>

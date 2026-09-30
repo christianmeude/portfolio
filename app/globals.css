@@ -56,11 +56,11 @@ body {
 
 .type-outline {
   color: transparent;
-  -webkit-text-stroke: 3px #0a0a0a;
+  -webkit-text-stroke: clamp(1.25px, 0.3vw + 0.5px, 3px) #0a0a0a;
 }
 .type-outline-cream {
   color: transparent;
-  -webkit-text-stroke: 3px #f5f2ee;
+  -webkit-text-stroke: clamp(1.25px, 0.3vw + 0.5px, 3px) #f5f2ee;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -94,7 +94,7 @@ body {
   }
 }
 .animate-marquee {
-  animation: marquee-x 22s linear infinite;
+  animation: marquee-x 26s linear infinite;
 }
 
 @keyframes marquee-y {

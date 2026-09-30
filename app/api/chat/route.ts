@@ -43,7 +43,11 @@ export async function POST(req: Request) {
   if (!question.trim()) return NextResponse.json({ error: 'Empty question.' }, { status: 400 })
 
   const hits = retrieve(question)
-  if (hits.length === 0) return NextResponse.json({ answer: REFUSAL })
+  if (hits.length === 0) {
+    // Same thinking beat as grounded answers so refusals don't pop instantly.
+    await new Promise((r) => setTimeout(r, 900))
+    return NextResponse.json({ answer: REFUSAL })
+  }
 
   const context = hits.map((h) => `- ${h.a.text}`).join('\n')
   const system = `You are Christian Meude's portfolio assistant. Answer ONLY from the approved facts below, in at most 3 short sentences. Preserve every proper noun, number, date range, honor, and repo name exactly as written — never drop details like "Dean's Lister", term counts, years, or URLs when paraphrasing. If the question cannot be answered from them, reply exactly: "${REFUSAL}"\n\nApproved facts:\n${context}`

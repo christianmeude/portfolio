@@ -31,12 +31,12 @@ export const ANSWERS: Answer[] = [
   },
   {
     id: 'nucleus',
-    match: ['nucleus', 'capstone', 'research', 'nu-dasma', 'dasmariñas', 'papers'],
+    match: ['nucleus', 'capstone', 'research', 'nu-dasma', 'dasmariñas', 'papers', 'live'],
     text: 'Nucleus Mobile Capstone is a research app for NU-Dasmariñas (shipped): sign-in, paper discovery, drafts, and faculty reviews on Supabase. Built with Expo, React Native, and Supabase. Repo: github.com/christianmeude/capstone-nucleus-rn.',
   },
   {
     id: 'inea',
-    match: ['inea', 'scent', 'booking', 'flutter', 'laravel', 'admin', 'events'],
+    match: ['inea', 'scent', 'booking', 'flutter', 'laravel', 'admin', 'events', 'live', 'website'],
     text: 'Inea Scents System (shipped) is an end-to-end scent-bar booking system: a brand/landing site live at ineascents.vercel.app, a Flutter customer booking app live at ineascents-app.vercel.app, and a Laravel + Inertia admin for bookings, packages, and inquiries. Three repos: inea-scents-landing, inea-scents-client, and inea-scents — all on github.com/christianmeude.',
   },
   {
@@ -63,6 +63,21 @@ export const ANSWERS: Answer[] = [
     id: 'education',
     match: ['education', 'study', 'studied', 'school', 'university', 'college', 'degree', 'dean', 'lister', 'honors', 'nu-dasma', 'dlsu'],
     text: "Christian studies BS IT (Mobile & Web) at NU-Dasmariñas (2023–2026) — Dean's Lister, 7 consecutive terms. SHS with High Honors at DLSU-D (2019–2021).",
+  },
+  {
+    id: 'overview',
+    match: ['projects', 'project', 'live', 'shipped', 'built', 'builds', 'portfolio', 'websites', 'status', 'wip', 'deployed'],
+    text: 'Christian has 4 projects: Nucleus Mobile Capstone and the Inea Scents System are shipped — the Inea landing site is live at ineascents.vercel.app and its booking app at ineascents-app.vercel.app. BudgeTrax and Lalatracker are work in progress, and all code is on github.com/christianmeude.',
+  },
+  {
+    id: 'certifications',
+    match: ['certification', 'certifications', 'certified', 'certificate', 'credly', 'credential', 'packet', 'tracer'],
+    text: 'Christian holds IT Specialist — HTML and CSS (Certiport, Jun 2026) and Introduction to Packet Tracer (Cisco, Jun 2025), both verifiable on Credly — see the Certifications section on this page.',
+  },
+  {
+    id: 'services',
+    match: ['service', 'services', 'offer', 'offers', 'process', 'engage', 'pricing', 'cost', 'timeline'],
+    text: 'Christian takes full-time roles, freelance projects, and collaborations across mobile apps, web apps, and systems. Pick an intent and scope in the contact section and it composes the email for you.',
   },
   {
     id: 'cv',

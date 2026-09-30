@@ -37,8 +37,8 @@ export default function Hero() {
           </div>
         </div>
         <div data-hero-entrance className="relative hidden min-h-[320px] overflow-hidden bg-[#0a0a0a] text-[#f5f2ee] md:block md:border-l-[3px]">
-          {/* Desktop: seamless vertical loop. */}
-          <div className="hidden h-full max-h-[560px] flex-col overflow-hidden p-8 opacity-60 md:flex md:p-12">
+          {/* Desktop: seamless vertical loop, clipped flush at the panel edges. */}
+          <div className="hidden h-full flex-col overflow-hidden px-8 opacity-60 md:flex md:px-12">
             <div
               className="animate-marquee-y flex shrink-0 flex-col will-change-transform"
               aria-label="Surfaces shipped"
@@ -59,10 +59,10 @@ export default function Hero() {
           </div>
         </div>
       </div>
-      {/* Mobile: horizontal surfaces marquee below the hero. Desktop untouched. */}
-      <div data-hero-entrance className="overflow-hidden border-t-[3px] border-[#0a0a0a] bg-[#0a0a0a] py-3 text-[#f5f2ee] md:hidden">
+      {/* Mobile: horizontal surfaces marquee below the hero. Same voice as desktop. */}
+      <div data-hero-entrance className="overflow-hidden border-t-[3px] border-[#0a0a0a] bg-[#0a0a0a] py-4 text-[#f5f2ee] md:hidden">
         <div
-          className="animate-marquee flex w-max whitespace-nowrap will-change-transform"
+          className="animate-marquee flex w-max whitespace-nowrap opacity-60 will-change-transform"
           aria-label="Surfaces shipped"
         >
           {[0, 1].map((half) => (
@@ -70,9 +70,9 @@ export default function Hero() {
               {SURFACES.map((s) => (
                 <span
                   key={`${half}-${s}`}
-                  className="mx-5 font-mono text-xs font-bold uppercase tracking-[0.2em]"
+                  className="font-display mx-5 text-2xl font-bold uppercase tracking-wide"
                 >
-                  ★ {s}
+                  {s}
                 </span>
               ))}
             </div>
