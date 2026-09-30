@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
 function GitHubIcon() {
   return (
@@ -13,6 +13,17 @@ function GitHubIcon() {
 export default function RepoPill({ label, url }: { label: string; url: string }) {
   const [open, setOpen] = useState(false)
   const [copied, setCopied] = useState(false)
+  // Matches globals.css: desktop hover-capable sm+ shows URL + copy by default.
+  const [alwaysVisible, setAlwaysVisible] = useState(false)
+  useEffect(() => {
+    const mq = window.matchMedia('(min-width: 640px) and (hover: hover)')
+    setAlwaysVisible(mq.matches)
+    const onChange = (e: MediaQueryListEvent) => setAlwaysVisible(e.matches)
+    mq.addEventListener('change', onChange)
+    return () => mq.removeEventListener('change', onChange)
+  }, [])
+  const [focused, setFocused] = useState(false)
+  const actionsVisible = open || alwaysVisible || focused
   const short = url.replace('https://', '')
 
   const copy = async () => {
@@ -31,7 +42,14 @@ export default function RepoPill({ label, url }: { label: string; url: string })
   }
 
   return (
-    <div className="repo-pill" data-open={open || undefined}>
+    <div
+      className="repo-pill"
+      data-open={open || undefined}
+      onFocus={() => setFocused(true)}
+      onBlur={(e) => {
+        if (!e.currentTarget.contains(e.relatedTarget as Node | null)) setFocused(false)
+      }}
+    >
       <a
         href={url}
         target="_blank"
@@ -68,6 +86,8 @@ export default function RepoPill({ label, url }: { label: string; url: string })
       <button
         type="button"
         onClick={copy}
+        tabIndex={actionsVisible ? 0 : -1}
+        aria-hidden={!actionsVisible}
         aria-label={copied ? 'Copied!' : `Copy ${label} URL`}
         className="repo-copy inline-flex min-h-[44px] min-w-[44px] items-center justify-center rounded-full border-2 border-[#f5f2ee] text-sm"
       >

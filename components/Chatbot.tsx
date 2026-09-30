@@ -20,6 +20,8 @@ export default function Chatbot() {
   const [input, setInput] = useState('')
   const [busy, setBusy] = useState(false)
   const logRef = useRef<HTMLDivElement | null>(null)
+  const fabRef = useRef<HTMLButtonElement | null>(null)
+  const inputRef = useRef<HTMLInputElement | null>(null)
 
   useEffect(() => {
     fetch('/api/chat')
@@ -31,6 +33,19 @@ export default function Chatbot() {
   useEffect(() => {
     logRef.current?.scrollTo({ top: logRef.current.scrollHeight })
   }, [msgs, open])
+
+  useEffect(() => {
+    if (!open) return
+    inputRef.current?.focus()
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        setOpen(false)
+        fabRef.current?.focus()
+      }
+    }
+    window.addEventListener('keydown', onKey)
+    return () => window.removeEventListener('keydown', onKey)
+  }, [open])
 
   if (!enabled) return null
 
@@ -67,9 +82,12 @@ export default function Chatbot() {
             <span className="type-mono-label">Ask about my work</span>
             <button
               type="button"
-              onClick={() => setOpen(false)}
+              onClick={() => {
+                setOpen(false)
+                fabRef.current?.focus()
+              }}
               aria-label="Close chat"
-              className="inline-flex min-h-[36px] min-w-[36px] items-center justify-center font-bold"
+              className="inline-flex min-h-[44px] min-w-[44px] items-center justify-center font-bold"
             >
               <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
                 <path
@@ -110,6 +128,7 @@ export default function Chatbot() {
             </label>
             <input
               id="chat-input"
+              ref={inputRef}
               value={input}
               onChange={(e) => setInput(e.target.value)}
               placeholder="e.g. What did you build?"
@@ -136,6 +155,7 @@ export default function Chatbot() {
         </div>
       )}
       <button
+        ref={fabRef}
         type="button"
         onClick={() => setOpen((v) => !v)}
         aria-expanded={open}

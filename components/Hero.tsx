@@ -38,7 +38,7 @@ export default function Hero() {
         </div>
         <div data-hero-entrance className="relative hidden min-h-[320px] overflow-hidden bg-[#0a0a0a] text-[#f5f2ee] md:block md:border-l-[3px]">
           {/* Desktop: seamless vertical loop. */}
-          <div className="hidden h-full max-h-[560px] flex-col overflow-hidden p-8 opacity-40 md:flex md:p-12">
+          <div className="hidden h-full max-h-[560px] flex-col overflow-hidden p-8 opacity-60 md:flex md:p-12">
             <div
               className="animate-marquee-y flex shrink-0 flex-col will-change-transform"
               aria-label="Surfaces shipped"
