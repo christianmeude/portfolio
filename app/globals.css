@@ -10,6 +10,8 @@
   --color-grey: #cccccc;
   --color-smoke: #777777;
   --color-coal: #444444;
+  --color-card: #111111;
+  --color-muted: #555555;
 }
 
 html {
@@ -25,7 +27,6 @@ body {
   font-family: var(--font-body);
   background: #f5f2ee;
   color: #0a0a0a;
-  overflow-x: hidden;
 }
 
 .font-display {
@@ -50,7 +51,7 @@ body {
   box-shadow: 3px 3px 0 #0a0a0a;
 }
 .shadow-brutal-sm {
-  box-shadow: 3px 3px 0 #555;
+  box-shadow: 3px 3px 0 var(--color-muted);
 }
 
 .type-outline {
@@ -123,11 +124,11 @@ body {
 .btn-primary-brutal {
   background: #0a0a0a;
   color: #f5f2ee;
-  box-shadow: 3px 3px 0 #555;
+  box-shadow: 3px 3px 0 var(--color-muted);
 }
 .btn-primary-brutal:hover {
   transform: translate(2px, 2px);
-  box-shadow: 1px 1px 0 #555;
+  box-shadow: 1px 1px 0 var(--color-muted);
 }
 .btn-ghost-brutal {
   background: #f5f2ee;
