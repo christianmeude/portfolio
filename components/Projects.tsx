@@ -16,7 +16,7 @@ export default function Projects() {
             <li
               key={p.slug}
               data-reveal
-              className="border-[3px] border-[#f5f2ee] bg-card p-6 md:p-8"
+              className="border-[3px] border-[#f5f2ee] bg-card p-6 md:p-10"
             >
               <div className="flex flex-wrap items-center justify-between gap-3">
                 <span className="font-mono text-sm text-[#777]">{p.index}</span>
@@ -30,7 +30,7 @@ export default function Projects() {
                   {p.statusLabel}
                 </span>
               </div>
-              <h3 className="font-display mt-3 text-4xl font-extrabold uppercase md:text-5xl">
+              <h3 className="font-display mt-3 text-4xl font-extrabold uppercase md:text-6xl">
                 {p.title}
               </h3>
               <p className="mt-1 font-semibold text-[#cccccc]">{p.tagline}</p>
@@ -65,7 +65,7 @@ export default function Projects() {
                         href={part.liveUrl}
                         target="_blank"
                         rel="noreferrer noopener"
-                        className="inline-flex min-h-[44px] items-center gap-2 border-[3px] border-[#f5f2ee] bg-[#f5f2ee] px-5 text-sm font-bold text-[#0a0a0a]"
+                        className="inline-flex min-h-[44px] items-center gap-2 border-[3px] border-[#f5f2ee] bg-[#f5f2ee] px-7 text-sm font-bold uppercase tracking-[0.1em] text-[#0a0a0a]"
                         aria-label={`Visit live ${part.label} (opens in new tab)`}
                       >
                         Visit {part.label} ↗

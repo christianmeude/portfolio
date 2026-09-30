@@ -10,10 +10,10 @@ export default function Hero() {
     <section id="top" className="border-b-[3px] border-[#0a0a0a]">
       <div className="grid grid-cols-1 gap-0 md:grid-cols-2">
         <div className="flex flex-col gap-5 px-6 py-12 md:gap-6 md:px-12 md:py-20">
-          <span data-hero-entrance className="type-mono-label inline-block w-fit border-[3px] border-[#0a0a0a] bg-white px-3 py-2 shadow-brutal">
+          <span data-hero-entrance className="type-mono-label inline-block w-fit border-[3px] border-[#0a0a0a] bg-[#0a0a0a] px-3 py-2 text-[#f5f2ee] shadow-brutal">
             ★ Open to roles &amp; freelance
           </span>
-          <h1 data-hero-entrance className="font-display text-[clamp(3.5rem,10vw,7.5rem)] font-extrabold uppercase leading-[0.9]">
+          <h1 data-hero-entrance className="font-display text-[clamp(3.5rem,12vw,9rem)] font-extrabold uppercase leading-[0.85]">
             Christian
             <br />
             <span className="type-outline">Meude</span>
@@ -48,7 +48,7 @@ export default function Hero() {
                   {SURFACES.map((s) => (
                     <span
                       key={`${half}-${s}`}
-                      className="font-display py-3 text-3xl font-bold uppercase tracking-wide md:text-4xl"
+                      className="font-display py-2 text-4xl font-bold uppercase tracking-wide md:text-5xl"
                     >
                       {s}
                     </span>
@@ -70,7 +70,7 @@ export default function Hero() {
               {SURFACES.map((s) => (
                 <span
                   key={`${half}-${s}`}
-                  className="font-display mx-5 text-2xl font-bold uppercase tracking-wide"
+                  className="font-display mx-5 text-3xl font-bold uppercase tracking-wide"
                 >
                   {s}
                 </span>
