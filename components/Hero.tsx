@@ -7,9 +7,10 @@ const hasCV = existsSync(join(process.cwd(), 'public', 'cv.pdf'))
 
 export default function Hero() {
   return (
-    <section id="top" className="border-b-[3px] border-[#0a0a0a]">
-      <div className="grid grid-cols-1 gap-0 md:grid-cols-2">
-        <div className="flex flex-col gap-5 px-6 py-12 md:gap-6 md:px-12 md:py-20">
+    <section id="top" className="flex min-h-[calc(100svh-4.5rem)] flex-col border-b-[3px] border-[#0a0a0a]">
+      {/* Viewport-fit: nav (~72px) + hero fill exactly one screen on first land. */}
+      <div className="grid flex-1 grid-cols-1 gap-0 md:grid-cols-2">
+        <div className="flex flex-col justify-center gap-5 px-6 py-12 md:gap-6 md:px-12 md:py-20">
           <span data-hero-entrance className="type-mono-label inline-block w-fit border-[3px] border-[#0a0a0a] bg-white px-3 py-2 shadow-brutal">
             ★ Open to roles &amp; freelance
           </span>
@@ -59,8 +60,8 @@ export default function Hero() {
           </div>
         </div>
       </div>
-      {/* Mobile: horizontal surfaces marquee below the hero. Same voice as desktop. */}
-      <div data-hero-entrance className="overflow-hidden border-t-[3px] border-[#0a0a0a] bg-[#0a0a0a] py-4 text-[#f5f2ee] md:hidden">
+      {/* Mobile: horizontal surfaces marquee pinned to the viewport bottom edge. */}
+      <div data-hero-entrance className="mt-auto overflow-hidden border-t-[3px] border-[#0a0a0a] bg-[#0a0a0a] py-4 text-[#f5f2ee] md:hidden">
         <div
           className="animate-marquee flex w-max whitespace-nowrap opacity-60 will-change-transform"
           aria-label="Surfaces shipped"
