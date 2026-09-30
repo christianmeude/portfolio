@@ -38,7 +38,7 @@ export default function Certifications() {
               <h3 className="font-display text-2xl font-extrabold uppercase leading-tight">
                 {c.title}
               </h3>
-              <p className="mt-2 text-sm font-semibold text-[#555]">
+              <p className="mt-2 text-sm font-semibold text-muted">
                 {c.issuer} · {c.date}
               </p>
               <a

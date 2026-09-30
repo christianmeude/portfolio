@@ -102,7 +102,7 @@ export default function Contact() {
                 GitHub
               </a>
             </div>
-            <p className="mt-3 select-all font-mono text-xs text-[#555]">{EMAIL}</p>
+            <p className="mt-3 select-all font-mono text-xs text-muted">{EMAIL}</p>
           </div>
         </div>
 

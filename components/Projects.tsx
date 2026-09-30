@@ -16,7 +16,7 @@ export default function Projects() {
             <li
               key={p.slug}
               data-reveal
-              className="border-[3px] border-[#f5f2ee] bg-[#111] p-6 md:p-8"
+              className="border-[3px] border-[#f5f2ee] bg-card p-6 md:p-8"
             >
               <div className="flex flex-wrap items-center justify-between gap-3">
                 <span className="font-mono text-sm text-[#777]">{p.index}</span>

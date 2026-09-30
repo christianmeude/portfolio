@@ -106,7 +106,7 @@ export default function SiteNav() {
             <li key={l.href}>
               <a
                 href={l.href}
-                className="font-body text-sm font-bold uppercase tracking-[0.2em] opacity-60 transition-opacity hover:opacity-100"
+                className="font-body text-sm font-bold uppercase tracking-[0.2em] opacity-70 transition-opacity hover:opacity-100"
               >
                 {l.label}
               </a>

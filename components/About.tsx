@@ -20,7 +20,7 @@ export default function About() {
               data-reveal
               className="border-[3px] border-[#0a0a0a] bg-white p-5 shadow-brutal"
             >
-              <dt className="type-mono-label text-[#555]">{f.k}</dt>
+              <dt className="type-mono-label text-muted">{f.k}</dt>
               <dd className="mt-2 font-semibold leading-relaxed">{f.v}</dd>
             </div>
           ))}
