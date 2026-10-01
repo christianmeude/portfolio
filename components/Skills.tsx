@@ -1,20 +1,22 @@
 import { FAMILIAR, PROFICIENT } from '../lib/site'
+import SkillMark from './SkillMark'
 
 function Group({ title, items, dark }: { title: string; items: string[]; dark?: boolean }) {
   return (
     <div
       data-reveal
-      className={`border-[3px] border-[#0a0a0a] p-6 shadow-brutal ${dark ? 'bg-[#0a0a0a] text-[#f5f2ee]' : 'bg-white'}`}
+      className={`border-[3px] border-[#0a0a0a] p-6 ${dark ? 'bg-[#0a0a0a] text-[#f5f2ee] shadow-brutal-sm' : 'bg-white shadow-brutal'}`}
     >
       <h3 className="type-mono-label opacity-70">{title}</h3>
       <ul className="mt-4 flex flex-wrap gap-2.5" aria-label={title}>
         {items.map((s) => (
           <li
             key={s}
-            className={`inline-flex min-h-[44px] items-center rounded-full border-[3px] px-4 text-sm font-bold ${
+            className={`inline-flex min-h-[44px] items-center gap-2 rounded-full border-[3px] px-4 text-sm font-bold ${
               dark ? 'border-[#f5f2ee] text-[#f5f2ee]' : 'border-[#0a0a0a]'
             }`}
           >
+            <SkillMark skill={s} />
             {s}
           </li>
         ))}
