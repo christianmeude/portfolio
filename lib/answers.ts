@@ -12,7 +12,7 @@ export const ANSWERS: Answer[] = [
   {
     id: 'who',
     match: ['who', 'christian', 'about you', 'yourself', 'name', 'introduce'],
-    text: 'Christian Meude is a mobile, web & systems developer from the Philippines, open to remote roles and freelance work. He builds the whole system — landing, app, and admin — and ships end to end.',
+    text: 'Christian Meude is a mobile, web & systems developer from the Philippines, open to remote roles and freelance work. He builds the whole system — landing, app, and admin — building and deploying end to end.',
   },
   {
     id: 'availability',
@@ -27,22 +27,22 @@ export const ANSWERS: Answer[] = [
   {
     id: 'stack',
     match: ['stack', 'technologies', 'tech', 'tools', 'languages', 'framework'],
-    text: 'Proficient: React, React Native, Expo, TypeScript, Tailwind, Supabase, Git. Familiar: Flutter, Dart, Laravel, Inertia, PostgreSQL, expo-router, expo-sqlite, REST APIs, Vercel, Neon. Foundations from his degree — Java, Python, Kotlin, PHP, Node/Express, MySQL, MongoDB, Firebase — stay in the CV.',
+    text: 'Proficient: React Native, Expo, EAS Build, Flutter, Dart, JavaScript, TypeScript, React, Tailwind CSS, HTML/CSS, Laravel, PHP, Inertia, Supabase, PostgreSQL, Git, Vercel, Render. Familiar: Next.js, REST APIs, expo-sqlite, Node.js/Express, Java, Python, MySQL, Firebase.',
   },
   {
     id: 'nucleus',
-    match: ['nucleus', 'capstone', 'research', 'nu-dasma', 'dasmariñas', 'papers', 'live'],
-    text: 'Nucleus Mobile Capstone is a research app for NU-Dasmariñas (shipped): sign-in, paper discovery, drafts, and faculty reviews on Supabase. Built with Expo, React Native, and Supabase. Repo: github.com/christianmeude/capstone-nucleus-rn.',
+    match: ['nucleus', 'capstone', 'research', 'nu-dasma', 'dasmariñas', 'papers', 'live', 'testing', 'defense', 'pending'],
+    text: 'NUcleus Mobile is a solo-built capstone research app for NU-Dasmariñas students and faculty — in testing, defense pending. It covers research browsing and submission, a faculty review queue (approve, reject, or request revisions), status tracking, co-author invitations, and publication requests with DOI assignment. Built with Expo, React Native, TypeScript, and Supabase; repo: github.com/christianmeude/capstone-nucleus-rn.',
   },
   {
     id: 'inea',
-    match: ['inea', 'scent', 'booking', 'flutter', 'laravel', 'admin', 'events', 'live', 'website'],
-    text: 'Inea Scents System (shipped) is an end-to-end scent-bar booking system: a brand/landing site live at ineascents.vercel.app, a Flutter customer booking app live at ineascents-app.vercel.app, and a Laravel + Inertia admin for bookings, packages, and inquiries. Three repos: inea-scents-landing, inea-scents-client, and inea-scents — all on github.com/christianmeude.',
+    match: ['inea', 'scent', 'booking', 'flutter', 'laravel', 'admin', 'events', 'live', 'website', 'delivered', 'prelaunch', 'test', 'paymongo'],
+    text: 'Inea Scents System is a client booking platform, delivered and pre-launch: a landing site with inquiry form (live at ineascents.vercel.app), a Flutter customer app with packages, time slots, and checkout (live at ineascents-app.vercel.app, PayMongo in test mode), and a Laravel + Inertia admin/API for bookings, packages, and inquiries. Three repos: ineascents-landing, ineascents-app, and ineascents-backend on github.com/christianmeude.',
   },
   {
     id: 'budgetrax',
     match: ['budgetrax', 'budget', 'payoff', 'cutoff', 'bills', 'spare'],
-    text: 'BudgeTrax (work in progress) is a pay-cutoff budgeting tracker: cutoff allotments, bill payoff, and a to-spare balance. Built with Expo, React Native, and expo-router. Repo: github.com/christianmeude/BudgeTrax.',
+    text: 'BudgeTrax (work in progress) is a pay-cutoff budgeting tracker: cutoff allotments, bill payoff, a due-date calendar, and a to-spare balance. Built with Expo, React Native, and expo-router. Repo: github.com/christianmeude/BudgeTrax.',
   },
   {
     id: 'lalatracker',
@@ -62,12 +62,12 @@ export const ANSWERS: Answer[] = [
   {
     id: 'education',
     match: ['education', 'study', 'studied', 'school', 'university', 'college', 'degree', 'dean', 'lister', 'honors', 'nu-dasma', 'dlsu'],
-    text: "Christian studies BS IT (Mobile & Web) at NU-Dasmariñas (2023–2026) — Dean's Lister, 7 consecutive terms. SHS with High Honors at DLSU-D (2019–2021).",
+    text: "Christian studies BS IT (Mobile & Web) at NU-Dasmariñas (2023–2026, expected 2026) — Dean's Lister, 10 consecutive terms. SHS with High Honors at DLSU-D (2019–2021).",
   },
   {
     id: 'overview',
-    match: ['projects', 'project', 'live', 'shipped', 'built', 'builds', 'portfolio', 'websites', 'status', 'wip', 'deployed'],
-    text: 'Christian has 4 projects: Nucleus Mobile Capstone and the Inea Scents System are shipped — the Inea landing site is live at ineascents.vercel.app and its booking app at ineascents-app.vercel.app. BudgeTrax and Lalatracker are work in progress, and all code is on github.com/christianmeude.',
+    match: ['projects', 'project', 'live', 'shipped', 'built', 'builds', 'portfolio', 'websites', 'status', 'wip', 'deployed', 'testing', 'prelaunch', 'defense'],
+    text: 'Christian has 4 projects: NUcleus Mobile (capstone, solo-built — in testing, defense pending) and the Inea Scents System (delivered, pre-launch) — the Inea landing site is live at ineascents.vercel.app and its booking app at ineascents-app.vercel.app. BudgeTrax and Lalatracker are work in progress, and all code is on github.com/christianmeude.',
   },
   {
     id: 'certifications',

@@ -6,11 +6,11 @@ export default function About() {
       <div className="mx-auto max-w-6xl px-6 py-16 md:px-10 md:py-24">
         <p className="type-mono-label">01 — About</p>
         <h2 data-reveal className="font-display mt-3 text-5xl font-extrabold uppercase md:text-7xl">
-          The whole system, shipped
+          The whole system, built
         </h2>
         <p data-reveal className="mt-4 max-w-2xl text-lg leading-relaxed">
           I&apos;m Christian, a developer from the Philippines building for remote roles and
-          freelance — from landing page to app to admin panel, shipped live. This page is
+          freelance — from landing page to app to admin panel, deployed. This page is
           my CV in motion: every project below links to live work or real code.
         </p>
         <dl className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-2">

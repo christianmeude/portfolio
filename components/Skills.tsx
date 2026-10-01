@@ -29,7 +29,7 @@ export default function Skills() {
       <div className="mx-auto max-w-6xl px-6 py-16 md:px-10 md:py-24">
         <p className="type-mono-label">02 — Skills</p>
         <h2 data-reveal className="font-display mt-3 text-5xl font-extrabold uppercase md:text-7xl">Stack</h2>
-        <div className="mt-10 grid grid-cols-1 gap-5 md:grid-cols-2">
+        <div className="mt-10 grid grid-cols-1 gap-5">
           <Group title="Proficient" items={PROFICIENT} />
           <Group title="Familiar" items={FAMILIAR} dark />
         </div>

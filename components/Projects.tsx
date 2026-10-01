@@ -20,13 +20,7 @@ export default function Projects() {
             >
               <div className="flex flex-wrap items-center justify-between gap-3">
                 <span className="font-mono text-sm text-[#777]">{p.index}</span>
-                <span
-                  className={`type-mono-label border-2 px-3 py-1 ${
-                    p.status === 'shipped'
-                      ? 'border-[#f5f2ee] bg-[#f5f2ee] text-[#0a0a0a]'
-                      : 'border-[#f5f2ee] text-[#f5f2ee]'
-                  }`}
-                >
+                <span className="type-mono-label border-2 border-[#f5f2ee] px-3 py-1 text-[#f5f2ee]">
                   {p.statusLabel}
                 </span>
               </div>
@@ -34,6 +28,11 @@ export default function Projects() {
                 {p.title}
               </h3>
               <p className="mt-1 font-semibold text-[#cccccc]">{p.tagline}</p>
+              {p.statusDetail && (
+                <p className="mt-1 font-mono text-xs tracking-[0.15em] text-[#cccccc] uppercase">
+                  {p.statusDetail}
+                </p>
+              )}
               <p className="mt-3 max-w-2xl leading-relaxed">{p.outcome}</p>
               <ul className="mt-4 flex flex-wrap gap-2" aria-label={`${p.title} stack`}>
                 {p.stack.map((s) => (

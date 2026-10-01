@@ -25,6 +25,8 @@ export default function RepoPill({ label, url }: { label: string; url: string })
   const [focused, setFocused] = useState(false)
   const actionsVisible = open || alwaysVisible || focused
   const short = url.replace('https://', '')
+  // Readable label: repo name instead of a truncated full URL.
+  const repo = short.split('/').filter(Boolean).pop() ?? short
 
   const copy = async () => {
     try {
@@ -60,7 +62,7 @@ export default function RepoPill({ label, url }: { label: string; url: string })
         <GitHubIcon />
         {label}
         <span className="repo-url font-mono font-normal" aria-hidden="true">
-          {short}
+          {repo}
         </span>
       </a>
       <button

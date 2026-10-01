@@ -21,7 +21,7 @@ export default function Hero() {
           </h1>
           <p data-hero-entrance className="font-body mt-2 max-w-md text-lg">
             Mobile, web &amp; systems developer open to remote roles and freelance — Expo
-            apps, Flutter clients, and Laravel dashboards, shipped end to end.
+            apps, Flutter clients, and Laravel dashboards, building and deploying end to end.
           </p>
           <div data-hero-entrance className="mt-6 flex flex-wrap gap-3">
             <a href="#projects" className="btn-brutal btn-primary-brutal">
@@ -44,7 +44,7 @@ export default function Hero() {
           <div className="absolute inset-0 hidden flex-col overflow-hidden px-8 opacity-60 md:flex md:px-12">
             <div
               className="animate-marquee-y flex shrink-0 flex-col will-change-transform"
-              aria-label="Surfaces shipped"
+              aria-label="Surfaces"
             >
               {[0, 1].map((half) => (
                 <div key={half} className="flex shrink-0 flex-col" aria-hidden={half === 1}>
@@ -62,11 +62,11 @@ export default function Hero() {
           </div>
         </div>
       </div>
-      {/* Mobile: horizontal surfaces marquee pinned to the viewport bottom edge. */}
-      <div data-hero-entrance className="mt-auto overflow-hidden border-t-[3px] border-[#0a0a0a] bg-[#0a0a0a] py-4 text-[#f5f2ee] md:hidden">
+      {/* Mobile: taller horizontal surfaces marquee pinned to the viewport bottom edge. */}
+      <div data-hero-entrance className="mt-auto overflow-hidden border-t-[3px] border-[#0a0a0a] bg-[#0a0a0a] py-6 text-[#f5f2ee] md:hidden">
         <div
           className="animate-marquee flex w-max whitespace-nowrap opacity-60 will-change-transform"
-          aria-label="Surfaces shipped"
+          aria-label="Surfaces"
         >
           {[0, 1].map((half) => (
             <div key={half} className="flex shrink-0 items-center" aria-hidden={half === 1}>

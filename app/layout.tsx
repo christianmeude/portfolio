@@ -21,11 +21,11 @@ const mono = Space_Mono({
 export const metadata: Metadata = {
   title: 'Christian Meude — Mobile, Web & Systems Developer',
   description:
-    'Portfolio of Christian Meude: shipped mobile + web + systems work, stack, and contact. Open to roles and freelance.',
-  metadataBase: new URL('https://meude-portfolio.vercel.app'),
+    'Portfolio of Christian Meude: mobile + web + systems work, stack, and contact. Open to roles and freelance.',
+  metadataBase: new URL('https://christianmeude.vercel.app'),
   openGraph: {
     title: 'Christian Meude — Developer Portfolio',
-    description: 'Shipped work, honest stack, one email away.',
+    description: 'Deployed work, honest stack, one email away.',
     type: 'website',
   },
 }
