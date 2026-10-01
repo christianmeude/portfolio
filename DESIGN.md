@@ -89,13 +89,13 @@ components:
 
 **Creative North Star: "Cream Brutalism" — ADR 0007.**
 
-Cream first, loud borders, honest proof. The visitor lands on a sticky nav + badge + giant condensed name with an outline surname + CTAs — then scrolls an About fact-grid, Proficient/Familiar stack cards, numbered projects 01–04 with Live/WIP pills and always-visible repo pills, and ends in an intent-select mailto composer. A 000/100 preloader opens the page; marquee motion is surfaces-only (vertical loop on the desktop hero panel, horizontal strip below the hero on mobile). Every claim resolves to a repo, a WIP label, or an explicit concept tag.
+Cream first, loud borders, honest proof. The visitor lands on a sticky nav + badge + giant condensed name with an outline surname + CTAs — then scrolls an About fact-grid, Proficient/Familiar stack cards, numbered projects 01–04 with status pills and always-visible repo pills, and ends in an intent-select mailto composer. Marquee motion is surfaces-only (vertical loop on the desktop hero panel, horizontal strip below the hero on mobile). Every claim resolves to a repo, a WIP label, or an explicit concept tag.
 
 **Key Characteristics:**
 - Cream-first neo-brutalism — 3px ink borders, hard `3px 3px 0` shadows, outline display type
 - Hero renders settled on first paint — no entrance animation, no stats row
 - Numbered project cards carry the evidence, not mockups or carousels
-- Four motions only: GSAP-tweened preloader + surfaces marquee + scroll reveal + overlay fade
+- Three motions only: surfaces marquee + scroll reveal + overlay fade
 
 ## Colors
 
@@ -108,9 +108,9 @@ Ink on cream, inverted to cream on ink for the Projects section. No hue accent �
 ### Neutral
 - **Card White** (#FFFFFF): About fact cards, Skills Proficient card, Contact composer cards.
 - **Card Ink** (#0a0a0a): Skills Familiar card, project cards sit on the ink section ground.
-- **Grey** (#cccccc): muted mono labels on dark, preloader sub-copy.
+- **Grey** (#cccccc): muted mono labels on dark.
 - **Smoke** (#777777): secondary mono labels on light (fact keys), mobile overlay numerals.
-- **Coal** (#444444): preloader track, muted fills.
+- **Coal** (#444444): muted fills.
 
 ### Named Rules (optional, powerful)
 **The Contrast-Is-The-Accent Rule.** No sky blue, no chrome wash. Meaning comes from ink↔cream inversion and border weight, never from a hue accent.
@@ -183,7 +183,7 @@ Honest, tactile, evidence-led. Ink borders everywhere; pills for actions, square
 - Badge (`★ Open to roles & freelance`), giant `Christian` + outline `Meude`, one proof line, `View my work` / `Get in touch` / conditional `Download CV` (hidden until `public/cv.pdf` lands). No ledger, no stats — breathing room instead, sized so the full hero fits a 1440×900 viewport. Right panel: ink ground with vertical surfaces loop on desktop only; mobile gets a horizontal ink surfaces marquee strip below the hero content (desktop pixel-identical). No entrance animation, no divider marquee between sections.
 
 ### Projects
-- Stacked numbered cards 01–04: index numeral, Live/WIP status pill, display title, tagline, outcome line, stack pills, per-part label/detail rows (Inea trio), repo pills with always-visible URLs. No grid, no carousel, no emulators (see ADR-0006 supersede notice).
+- Stacked numbered cards 01–04: index numeral, status pill, display title, tagline, status subtitle, outcome line, stack pills, per-part label/detail rows (Inea trio), repo pills with always-visible URLs. No grid, no carousel, no emulators (see ADR-0006 supersede notice).
 
 ### Repo Links
 - **Style:** pill with 18px GitHub mark, short label, full URL revealed on hover/focus/toggle (expand `+` affordance always visible on touch), copy button with 2s confirmation + live region
@@ -194,12 +194,12 @@ Honest, tactile, evidence-led. Ink borders everywhere; pills for actions, square
 
 ## Do's and Don'ts
 
-Concrete guardrails grounded in the shipped implementation.
+Concrete guardrails grounded in the current implementation.
 
 ### Do:
 - **Do** keep 3px ink borders, hard shadows, and 44px targets on everything interactive.
 - **Do** keep repo URLs always visible or one toggle away — never hover-only, never truncated beyond recognition.
-- **Do** keep the hero settled on first paint; reserve motion for the tweened preloader, surfaces marquee, scroll reveals, and overlay fade.
+- **Do** keep the hero settled on first paint; reserve motion for the surfaces marquee, scroll reveals, and overlay fade.
 - **Do** freeze all motion under `prefers-reduced-motion` and keep content in its final state.
 - **Do** keep landmarks, a visible 3px focus ring, and a skip link.
 

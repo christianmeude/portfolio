@@ -33,5 +33,5 @@ _Avoid_: Background animation, hero canvas, gradient blobs
 ### Positioning
 
 **Cream Brutalism**:
-The committed visual world: cream-first neo-brutalism, numbered projects as evidence, marquee + preloader as the two authored motions, honest stats only.
+The committed visual world: cream-first neo-brutalism, numbered projects as evidence, surfaces marquee as the authored motion, honest stats only.
 _Avoid_: Midnight Chrome, dark mode, dark theme (those describe the retired world)

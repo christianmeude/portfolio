@@ -28,9 +28,9 @@ Next.js App Router single-page site with anchored sections: Hero (`#top`), About
 
 Confirmed functionality:
 
-- 4 projects defined in `lib/site.ts`: Nucleus Mobile Capstone (shipped, Expo/React Native/Supabase), Inea Scents System (shipped, 3 parts: landing / Flutter app / Laravel + Inertia admin), BudgeTrax (WIP, Expo/React Native/expo-router), Lalatracker (WIP, Expo/expo-router/expo-sqlite offline ledger).
+- 4 projects defined in `lib/site.ts`: NUcleus Mobile (in testing, Expo/React Native/TypeScript/Supabase), Inea Scents System (delivered, pre-launch, 3 parts: landing / Flutter app / Laravel + Inertia admin), BudgeTrax (WIP, Expo/React Native/expo-router), Lalatracker (WIP, Expo/expo-router/expo-sqlite offline ledger).
 - Real links only: repo URLs via GitHub + `mailto:christianmeude17@gmail.com`; empty link lists mean no link is rendered.
-- Cream-first brutalism: 3px ink borders, hard shadows, preloader 000/100, marquee dividers, responsive stacked mobile / split desktop hero, 44px minimum touch targets.
+- Cream-first brutalism: 3px ink borders, hard shadows, marquee dividers, responsive stacked mobile / split desktop hero, 44px minimum touch targets.
 - Static-first Next.js on Vercel; no CMS, no analytics confirmed. Server code is limited to the `/api/chat` chatbot route.
 
 Explicitly undecided / allowed to expand: adding projects, resume/CV, additional socials, or blog sections later. No decision yet on which comes first.
@@ -45,7 +45,7 @@ Real proof in repo: project outcomes + repo links in `lib/site.ts`, About fact-g
 
 ## Product Principles
 
-1. Proof over claims: every capability ties to a shipped repo or an explicit WIP / concept label.
+1. Proof over claims: every capability ties to a deployed repo or an explicit testing / pre-launch / WIP label.
 2. Fast recruiter scan: one idea per viewport, outcomes and links visible without hover.
 3. Readable systems: reviewable codebases and accessible defaults over effects.
 4. Static and reachable: single page that loads fast and ends in one email action.
