@@ -7,13 +7,7 @@ import Lenis from 'lenis'
 
 gsap.registerPlugin(ScrollTrigger)
 
-declare global {
-  interface Window {
-    __cmReady?: boolean
-  }
-}
-
-/** One motion owner: Lenis smooth scroll, preloader-gated hero entrance, scroll reveals. */
+/** One motion owner: Lenis smooth scroll, hero entrance, scroll reveals. */
 export default function Motion() {
   useEffect(() => {
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return
@@ -42,13 +36,8 @@ export default function Motion() {
         tl.eventCallback('onComplete', () => ScrollTrigger.refresh())
       }
 
-      if (window.__cmReady) {
-        playEntrance()
-      } else {
-        window.addEventListener('cm:ready', playEntrance, { once: true })
-        // Fallback: never leave the hero hidden if the signal is missed.
-        window.setTimeout(playEntrance, 4000)
-      }
+      // No preloader: play the entrance immediately on mount.
+      playEntrance()
 
       // Scroll reveals only — hero owns its entrance above.
       gsap.utils.toArray<HTMLElement>('[data-reveal]').forEach((el) => {
