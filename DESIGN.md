@@ -183,11 +183,11 @@ Honest, tactile, evidence-led. Ink borders everywhere; pills for actions, square
 - Badge (`★ Open to roles & freelance`), giant `Christian` + outline `Meude`, one proof line, `View my work` / `Get in touch` / conditional `Download CV` (hidden until `public/cv.pdf` lands). No ledger, no stats — breathing room instead, sized so the full hero fits a 1440×900 viewport. Right panel: ink ground with vertical surfaces loop on desktop only; mobile gets a horizontal ink surfaces marquee strip below the hero content (desktop pixel-identical). No entrance animation, no divider marquee between sections.
 
 ### Projects
-- Stacked numbered cards 01–04: index numeral, status pill, display title, tagline, status subtitle, outcome line, stack pills, per-part label/detail rows (Inea trio), repo pills with always-visible URLs. No grid, no carousel, no emulators (see ADR-0006 supersede notice).
+- Stacked numbered cards 01–04: index numeral, status pill, display title, tagline, status subtitle, outcome line, stack pills, per-part label/detail rows (Inea trio), repo pills showing the repo name. No grid, no carousel, no emulators (see ADR-0006 supersede notice).
 
 ### Repo Links
-- **Style:** pill with 18px GitHub mark, short label, full URL revealed on hover/focus/toggle (expand `+` affordance always visible on touch), copy button with 2s confirmation + live region
-- **State:** hover/focus inverts to cream on ink; nothing is hover-only
+- **Style:** pill with 18px GitHub mark + repo name only (no label text) — the repo is proof, not the focus; live buttons carry the highlight. Full URL in the accessible name, copy button with 2s confirmation + live region
+- **State:** hover/focus inverts to cream on ink; copy appears on hover/focus keyboard-side only — nothing interactive on touch
 
 ### Contact + Chatbot
 - Contact is an intent-select mailto composer: intent pills (Full-time / Freelance / Collaboration / Hi) + scope pills compose the subject/body of a `mailto:` with a free-text details field; `Compose email` + `GitHub` actions beside the selectable email address. Chatbot answers from curated `lib/answers.ts` via `/api/chat` (Gemini key in env); unconfigured or unmatched questions fall back to the refusal / email redirect, never invented copy.

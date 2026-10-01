@@ -23,8 +23,8 @@ A pill carrying an 18px brand mark (or initials tile where no mark exists) plus 
 _Avoid_: Badge, tag, skill pill
 
 **Repo link**:
-A repository pill pairing its short surface label with the always-visible `github.com/…` URL — reachable on touch, keyboard, and scan alike, with no hover step.
-_Avoid_: Repository button, GitHub link, hover-reveal
+A repository pill showing the GitHub mark plus the repo name — reachable on touch, keyboard, and scan alike, with no hover step and no toggle. The full `github.com/…` URL lives in its accessible name, and copy appears on hover/focus only.
+_Avoid_: Repository button, GitHub link, hover-reveal, expand toggle
 
 **Chrome ambient**:
 The fixed full-page liquid-chrome layer behind all content. Atmosphere only — it never carries information and is hidden from assistive technology.

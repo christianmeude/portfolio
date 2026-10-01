@@ -22,6 +22,10 @@ export default function Chatbot() {
   const logRef = useRef<HTMLDivElement | null>(null)
   const fabRef = useRef<HTMLButtonElement | null>(null)
   const inputRef = useRef<HTMLInputElement | null>(null)
+  // Mobile: lift the widget above the hero marquee while the marquee is
+  // visible; dock bottom-right once scrolled past it. Instant switch.
+  const [liftPx, setLiftPx] = useState(0)
+  const [marqueeVisible, setMarqueeVisible] = useState(false)
 
   useEffect(() => {
     let cancelled = false
@@ -62,6 +66,23 @@ export default function Chatbot() {
   }, [msgs, open])
 
   useEffect(() => {
+    const bar = document.getElementById('hero-marquee')
+    // Desktop has no bottom marquee (md:hidden), so this stays docked there.
+    if (!bar) return
+    const measure = () => setLiftPx(bar.offsetHeight + 16)
+    measure()
+    const io = new IntersectionObserver(([entry]) => setMarqueeVisible(entry.isIntersecting), {
+      threshold: 0,
+    })
+    io.observe(bar)
+    window.addEventListener('resize', measure)
+    return () => {
+      io.disconnect()
+      window.removeEventListener('resize', measure)
+    }
+  }, [])
+
+  useEffect(() => {
     if (!open) return
     inputRef.current?.focus()
     const onKey = (e: KeyboardEvent) => {
@@ -98,7 +119,10 @@ export default function Chatbot() {
   }
 
   return (
-    <div className="fixed right-4 bottom-4 z-[60] flex max-h-[calc(100dvh-2rem)] flex-col items-end gap-3">
+    <div
+      className="fixed right-4 bottom-4 z-[60] flex max-h-[calc(100dvh-2rem)] flex-col items-end gap-3"
+      style={marqueeVisible ? { bottom: liftPx } : undefined}
+    >
       {open && (
         <div
           role="dialog"

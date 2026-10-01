@@ -11,9 +11,8 @@ function GitHubIcon() {
 }
 
 export default function RepoPill({ label, url }: { label: string; url: string }) {
-  const [open, setOpen] = useState(false)
   const [copied, setCopied] = useState(false)
-  // Matches globals.css: desktop hover-capable sm+ shows URL + copy by default.
+  // Matches globals.css: desktop hover-capable sm+ shows the copy button by default.
   const [alwaysVisible, setAlwaysVisible] = useState(false)
   useEffect(() => {
     const mq = window.matchMedia('(min-width: 640px) and (hover: hover)')
@@ -23,9 +22,9 @@ export default function RepoPill({ label, url }: { label: string; url: string })
     return () => mq.removeEventListener('change', onChange)
   }, [])
   const [focused, setFocused] = useState(false)
-  const actionsVisible = open || alwaysVisible || focused
+  const actionsVisible = alwaysVisible || focused
   const short = url.replace('https://', '')
-  // Readable label: repo name instead of a truncated full URL.
+  // Readable label: repo name only — the repo is proof, not the focus.
   const repo = short.split('/').filter(Boolean).pop() ?? short
 
   const copy = async () => {
@@ -46,7 +45,6 @@ export default function RepoPill({ label, url }: { label: string; url: string })
   return (
     <div
       className="repo-pill"
-      data-open={open || undefined}
       onFocus={() => setFocused(true)}
       onBlur={(e) => {
         if (!e.currentTarget.contains(e.relatedTarget as Node | null)) setFocused(false)
@@ -60,31 +58,10 @@ export default function RepoPill({ label, url }: { label: string; url: string })
         aria-label={`${label}: ${short} (opens in new tab)`}
       >
         <GitHubIcon />
-        {label}
         <span className="repo-url font-mono font-normal" aria-hidden="true">
           {repo}
         </span>
       </a>
-      <button
-        type="button"
-        onClick={() => setOpen((v) => !v)}
-        aria-expanded={open}
-        aria-label={open ? 'Collapse link' : 'Expand full link'}
-        className="repo-expand inline-flex min-h-[44px] min-w-[44px] items-center justify-center rounded-full border-2 border-[#f5f2ee]/40 text-sm font-bold"
-      >
-        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
-          {open ? (
-            <path d="M2 7h10" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" />
-          ) : (
-            <path
-              d="M7 2v10M2 7h10"
-              stroke="currentColor"
-              strokeWidth="2.5"
-              strokeLinecap="round"
-            />
-          )}
-        </svg>
-      </button>
       <button
         type="button"
         onClick={copy}

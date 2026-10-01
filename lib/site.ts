@@ -64,8 +64,7 @@ export const PROJECTS: Project[] = [
       },
       {
         label: 'Admin',
-        detail:
-          'Bookings, packages, inquiries. Polling, no realtime — API sleeps on the free plan (~1 min wake): https://ineascents.onrender.com',
+        detail: 'Bookings, packages, inquiries.',
         url: gh('https://github.com/christianmeude/ineascents-backend.git'),
       },
     ],

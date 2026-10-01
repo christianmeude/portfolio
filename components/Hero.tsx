@@ -63,7 +63,11 @@ export default function Hero() {
         </div>
       </div>
       {/* Mobile: taller horizontal surfaces marquee pinned to the viewport bottom edge. */}
-      <div data-hero-entrance className="mt-auto overflow-hidden border-t-[3px] border-[#0a0a0a] bg-[#0a0a0a] py-6 text-[#f5f2ee] md:hidden">
+      <div
+        id="hero-marquee"
+        data-hero-entrance
+        className="mt-auto overflow-hidden border-t-[3px] border-[#0a0a0a] bg-[#0a0a0a] py-[1.65rem] text-[#f5f2ee] md:hidden"
+      >
         <div
           className="animate-marquee flex w-max whitespace-nowrap opacity-60 will-change-transform"
           aria-label="Surfaces"
