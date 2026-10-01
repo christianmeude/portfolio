@@ -70,18 +70,39 @@ export default function Chatbot() {
     // Desktop has no bottom marquee (md:hidden): rect is empty, stays docked.
     if (!bar) return
     let raf = 0
-    const update = () => {
-      raf = 0
+    // Eased follow: snap on first measure, then trail the target so the
+    // glide reads soft instead of rigidly scroll-locked.
+    let current: number | null = null
+    const target = () => {
       const mh = bar.offsetHeight
       const visible = mh
         ? Math.min(Math.max(bar.getBoundingClientRect().bottom - (window.innerHeight - mh), 0), mh)
         : 0
-      wrapRef.current?.style.setProperty('bottom', `${16 + visible}px`)
+      return 16 + visible
+    }
+    const apply = (px: number) => wrapRef.current?.style.setProperty('bottom', `${px}px`)
+    const tick = () => {
+      const t = target()
+      if (current === null) {
+        current = t
+        apply(t)
+        raf = 0
+        return
+      }
+      current += (t - current) * 0.12
+      if (Math.abs(t - current) < 0.5) {
+        current = t
+        apply(t)
+        raf = 0
+        return
+      }
+      apply(current)
+      raf = requestAnimationFrame(tick)
     }
     const schedule = () => {
-      if (!raf) raf = requestAnimationFrame(update)
+      if (!raf) raf = requestAnimationFrame(tick)
     }
-    update()
+    schedule()
     window.addEventListener('scroll', schedule, { passive: true })
     window.addEventListener('resize', schedule)
     return () => {
@@ -89,7 +110,9 @@ export default function Chatbot() {
       window.removeEventListener('resize', schedule)
       if (raf) cancelAnimationFrame(raf)
     }
-  }, [])
+    // Re-run when the widget mounts late (it waits on the chat probe), so
+    // the first measure lands on a real node instead of a null ref.
+  }, [enabled])
 
   useEffect(() => {
     if (!open) return
